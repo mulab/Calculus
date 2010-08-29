@@ -8,6 +8,7 @@ stageII[f_,x_]:=Catch[Module[
 	intinf={};(*record the infomation of a function to integrate*)
 	tans;(*template answer*)
 	SetDirectory[NotebookDirectory[]];(*set directory to current directory*)
+	Import["linear.m"];
 	Import["intSubExp.m"];
 	Import["intSubPow.m"];
 	Import["intSubFra.m"];
