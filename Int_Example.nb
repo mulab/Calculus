@@ -1,0 +1,83 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      2198,         73]
+NotebookOptionsPosition[      1897,         59]
+NotebookOutlinePosition[      2241,         74]
+CellTagsIndexPosition[      2198,         71]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"intTest", "[", 
+    RowBox[{"f_", ",", "x_", ",", 
+     RowBox[{"x", 
+      RowBox[{"(", "u", ")"}], "_"}]}], "]"}], ":=", 
+   RowBox[{"Module", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"Return", 
+       RowBox[{"(", 
+        RowBox[{"SIN", "[", 
+         RowBox[{"{", 
+          RowBox[{"e", ",", "y", ",", 
+           RowBox[{
+            RowBox[{"y", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"(", "x", ")"}], "."}], "/", "x"}]}], "\[Rule]", 
+            RowBox[{"x", 
+             RowBox[{"(", "u", ")"}]}]}]}], "}"}], "]"}], ")"}]}], ";", 
+      "\[IndentingNewLine]", 
+      RowBox[{"Return", " ", 
+       RowBox[{"(", 
+        RowBox[{"z", "/.", 
+         RowBox[{"x", "\[Rule]", 
+          RowBox[{"x", 
+           RowBox[{"(", "u", ")"}]}]}]}], ")"}]}], ";"}]}], 
+    "\[IndentingNewLine]", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.5106547950263767`*^9, 3.5106548156165547`*^9}, {
+  3.5106548542377634`*^9, 3.510654866197448*^9}, {3.510656239901019*^9, 
+  3.5106564758795166`*^9}, {3.510656525999383*^9, 3.5106565304486375`*^9}, {
+  3.5106567323171835`*^9, 3.51065673557137*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.5106562425161686`*^9, 3.51065624254117*^9}}]
+},
+WindowSize->{607, 577},
+WindowMargins->{{Automatic, 7}, {Automatic, 50}},
+FrontEndVersion->"7.0 for Microsoft Windows (32-bit) (November 10, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 1252, 34, 112, "Input"],
+Cell[1800, 56, 93, 1, 31, InheritFromParent]
+}
+]
+*)
+
+(* End of internal cache information *)
+
