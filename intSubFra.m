@@ -80,7 +80,7 @@ intSubFra[f_,x_]:=Module[
 				deno=nume/base
 			];
 			If[linear[nume,x,a,b]=!=Null,
-				{a,b}=linear[nume,x,a,b],
+				{a,b}=linear[nume,x,a,b]
 			];
 			If[linear[deno,x,c,d]=!=Null,
 				{c,d}=linear[deno,x,c,d]
@@ -100,7 +100,7 @@ intSubFra[f_,x_]:=Module[
 		];
 		If[a===Null,(*None matches*)
 			Return["NotMatch"]
-		]
+		];
 		If[a*d-b*c==0,
 			Return["NotMatch"]
 		];
