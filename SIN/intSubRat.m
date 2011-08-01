@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
 (* Method 8 in Stage II, (8)Rational functions *)
-(* Last revised by ivan on 15:55 Aug 1, 2011. Email: ma_wan _li .6209@163.com *)
+(* Last revised by ivan on 17:35 Aug 1, 2011. Email: ma_wan _li .6209@163.com *)
 (* Now, it calls Horowitz-Ostrogradsky method to part the integrand into rational
 	part and log part, then use Rothstein-Trager method to integrate the logpart*)
 (* When the kernal realized function Apart and ApartSquareFree, this part
@@ -11,6 +11,7 @@ intSubRat[f_,x_]:=Module[
 	e=Simplify[e]; e=Together[e];
 	r=Denominator[e];q=Numerator[e];
 	If[!(PolynomialQ[r,x]&&PolynomialQ[q,x]),Return["NotMatch"];];
+	If[Exponent[q,x]>=Exponent[r,x],Return["NotMatch"];];
 	If[(q/r)=!=e,Return["NotMatch"];];
 	{Q1,r1,Q2,r2,x}=HorowitzOstrogradsky[q,r,x];
 	Q2r2=Cancel[Q2/r2]; Q2=Numerator[Q2r2];r2=Denominator[Q2r2];
@@ -95,7 +96,11 @@ RothsteinTrager[q_,r_,x_]:=Module[(*Input parameter is Numerator, Denominator, V
 	];
 	Return[inte];
 ]
-RothsteinTrager[4x,x^2-4x+5,x]
+
+
+
+(*RothsteinTrager[4x,x^2-4x+5,x]*)
+RothsteinTrager[x,x+1,x]
 
 
 (*Print["final ans=",RothsteinTrager[3x^2+1,x^3+x+1,x]];
