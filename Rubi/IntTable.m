@@ -1,14 +1,17 @@
 (* ::Package:: *)
 
-ListIntegrate=
+(*\:79ef\:5206\:8868\:529f\:80fd\:ff0c\:6ce8\:610f\:548cDDM\:51d1\:5fae\:5206\:65b9\:6cd5\:7684\:5206\:79bb\:ff0c\:79ef\:5206\:8868\:4e2d\:4e0d\:5e94\:8be5\:5305\:542b\:8f6c\:6362\:89c4\:5219\:ff0c\:5e94\:8be5\:662f\:79ef\:51fa\:6765\:7684\:7ed3\:679c*)
+(*Shao Qiming , shaoqiming8@gmail.com/15210589502*)
+(*\:6ce8\:610fax+b\:5e94\:8be5\:5206\:6210\:56db\:6761\:89c4\:5219\:6765\:5199\:ff0c\:5185\:6838\:6682\:65f6\:4e0d\:63d0\:4f9boptional\:51fd\:6570*)
+(*\:8be5\:8868\:8fd8\:53ef\:4ee5\:6269\:5927*)
+ListIntegrate1=
 {
- A[a_ f_, x_] /; FreeQ[a, x] :>  a A[f, x] ,
- A[a_, x_] /; FreeQ[a, x] :>  a x ,
- A[x_, x_]  :>  x^2/2 ,
- A[f_ + g_, x_]  :>  A[f, x] + A[g, x],
- A[x_^n_ Sqrt[a_ x_ + b_], x_] /; FreeQ[n, x] && FreeQ[a, x] && FreeQ[b, x] :>  (2 x^n)/((2 n + 3) a) (Sqrt[(a x + b)])^3 - (2 n b)/((2 n + 3) a) A[x^(n - 1) Sqrt[a x + b], x] ,
- A[f_[a_ x_ + b_], x_] /; FreeQ[{a, b}, x] :>  A[f[a x + b],a x + b] / a ,
-
+(*  A[a_ f_, x_] /; FreeQ[a, x] :>  a A[f, x] ,*)
+  A[a_, x_] /; FreeQ[a, x] :>  a x ,
+  A[x_, x_]  :>  x^2/2 ,
+(*  A[f_ + g_, x_]  :>  A[f, x] + A[g, x],*)
+  A[x_^n_ Sqrt[a_ x_ + b_], x_] /; FreeQ[n, x] && FreeQ[a, x] && FreeQ[b, x] :>  (2 x^n)/((2 n + 3) a) (Sqrt[(a x + b)])^3 - (2 n b)/((2 n + 3) a) A[x^(n - 1) Sqrt[a x + b], x] ,
+(*  A[f_[a_ x_ + b_], x_] /; FreeQ[{a, b}, x] :>  A[f[a x + b],a x + b] / a ,*)
   A[1,x_] :> x,
   A[1/x_,x_] :> Log[x],
   A[x_^n_, x_] /; FreeQ[{n}, x] :>  x^(1 + n)/(1 + n) ,
@@ -16,7 +19,7 @@ ListIntegrate=
   A[a_^x_, x_] /; FreeQ[{a}, x] :>  a^x/Log[a] ,
   A[1/(1 + x_^2), x_]  :>  ArcTan[x],
   A[1/(1 - x_^2), x_]  :>  1/2 Log[-1 - x] - 1/2 Log[-1 + x],
-  A[1/(2 Sqrt[x]),x_] :> Sqrt[x],
+  A[1/(2 Sqrt[x_]),x_] :> Sqrt[x],
   A[1/Sqrt[1 - x_^2], x_]  :>  ArcSin[x],
   A[1/Sqrt[1 + x_^2], x_]  :>  ArcSinh[x],
   A[1/Sqrt[-1 + x_^2], x_]  :>  Log[2 (x + Sqrt[-1 + x^2])],
@@ -34,8 +37,7 @@ ListIntegrate=
   A[Tan[x_], x_]  :>  -Log[Cos[x]],
   A[Cot[x_], x_]  :>  Log[Sin[x]],
   A[Csc[x_], x_]  :>  -Log[2 Cos[x/2]] + Log[2 Sin[x/2]],
-  A[Sec[x_], x_]  :>  -Log[Cos[x/2] - Sin[x/2]] + 
-    Log[Cos[x/2] + Sin[x/2]],
+  A[Sec[x_], x_]  :>  -Log[Cos[x/2] - Sin[x/2]] + Log[Cos[x/2] + Sin[x/2]],
   A[Sinh[x_], x_]  :>  Cosh[x],
   A[Cosh[x_], x_]  :>  Sinh[x],
   A[Csch[x_]^2, x_]  :>  -Coth[x],
@@ -148,20 +150,31 @@ ListIntegrate=
   A[E^(a_ x_),x_] /;FreeQ[{a},x] :> E^(a x)/a,
   A[b_^(a_ x_),x_] /;FreeQ[{a,b},x]:> b^(a x)/(a Log[b]),
   A[E^(a_ x_) Sin[b_ x_], x_]/;FreeQ[{a,b},x] :> (E^(a x) (-(b Cos[b x]) + a Sin[b x]))/(a^2 + b^2),
-  A[E^(a_ x_) Cos[b_ x_], x_]/;FreeQ[{a,b},x] :> (E^(a x) (a Cos[b x] + b Sin[b x]))/(a^2 + b^2)
+  A[E^(a_ x_) Cos[b_ x_], x_]/;FreeQ[{a,b},x] :> (E^(a x) (a Cos[b x] + b Sin[b x]))/(a^2 + b^2),
   (*Integration with E*)
+  (*new*)
+  A[1/(x_+a_),x_]/;FreeQ[a,x] :>  Log[x+a],
+  A[1/(a_ x_ +b_),x_]/;FreeQ[{a,b},x] :>  Log[a x+b]/a,
+  A[x_(E^x_),x_] :> -E^x + x(E^x),
+  A[x_(E^(x_+a_)),x_]/;FreeQ[a,x] :> x E^x -E^x+x^2 E^a/2,
+  A[x_(E^(a_ x_)),x_]/;FreeQ[a,x] :> x (E^(a x))/a-E^(a x)/a^2,
+  A[x_(E^(a_ x_+b_)),x_]/;FreeQ[{a,b},x] :> x (E^(a x+b))/a -E^(a x+ b)/a^2 
+  (*new*)
 
 };
 
 IntTable[f_,x_]:=Module[
     {},
-    ret=A[f,x]//.ListIntegrate;
+    ret=A[f,x]//.ListIntegrate1;
     If[Head[ret]===A||Count[ret,_A,Infinity]!=0,Return["NotFound"],Return[ret]];
 	Return["NotFound"]
 ];
 
 
 IntTable[Sqrt[10 x^3],x]
+IntTable[2,x]
+IntTable[x,x]
+IntTable[Sin[x],x]
 
 
-IntTable[1/x,x]
+
