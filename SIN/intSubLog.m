@@ -1,7 +1,46 @@
 (* ::Package:: *)
 
+(* Method 10 in Stage II, (8)Rational functions of logarithms*)
+(* Last by ivan on 16:56 Aug 1, 2011. Email: ma_wan _li .6209@163.com *)
+(* The codes that are down earlier is at bottom of this file*)
+(* Principle: if the integrand is f(log(x))dx, substitude log(x) by y
+	and output f(y)exp(y)dy  *)
+intSubLog[f_,x_]:=Module[
+	{e1,e2,e3,e4,a,b,e},
+	e1 = f/.Log[x]->log1;
+	e2 = f/.Log[x + b_]->log2;
+	e3 = f/.Log[a_ x]->log3;
+	e4 = f/.Log[a_ x + b_]->log4;
+	If[FreeQ[e1,x] ,
+		a=1;b=0;e=f/.Log[x]->y,
+		If[FreeQ[e2,x],
+			a=1;b=Extract[f,Drop[Position[f,x][[1]],-1]][[1]];e=f/.Log[b + x]->y,
+			If[FreeQ[e3,x],
+				a=Extract[f,Drop[Position[f,x][[1]],-1]][[1]];b=0;e=f/.Log[a x]->y,
+				If[FreeQ[e4,x],
+					a=Extract[f,Drop[Position[f,x][[1]],-1]][[1]];
+					b=Extract[f,Drop[Position[f,x][[1]],-2]][[1]];
+					e=f/.Log[b + a x]->y;
+				];
+			];
+		];
+	];
+	e=f/.Log[b + a x]->y;
+	If[!FreeQ[e,x],Return["NotMatch"];];
+	If[!FreeQ[a,x],Return["NotMatch"];];
+	If[!FreeQ[b,x],Return["NotMatch"];];
+	Return[{e Exp[y],y,Log[a x + b]}];
+]
+
+
+intSubLog[Log[x+2]/(Log[x+2]+1)^2,x]
+intSubLog[1/Log[x],x]
+
+
+(*
 (* Moses method 10
     Rational function times an elemently function of log[c,a+bx]   *)
+
 intSubLog[f_,x_]:=Module[
 
 (*\:6211\:5c06log\:5185\:7684\:8868\:8fbe\:5f0f\:5206\:4e3a4\:79cd\:ff1ax\:ff0cx+b\:ff0cax\:ff0cax+b\:ff1b\:5206\:522b\:5bf9\:5e94\:ff1apos1\:ff0cpos2\:ff0cpos3\:ff0cpos4\:ff0c\:82e5\:4e0d\:662f4\:79cd\:5f62\:5f0f\:4e4b\:4e00
@@ -75,8 +114,4 @@ If[pos4=={},,If[c==1,Return["NotMatch"],
 If[c==1,Return[{Test,y}];,
 Return ["NotMatch"]];
 	]
-
-
-
-
-
+*)
