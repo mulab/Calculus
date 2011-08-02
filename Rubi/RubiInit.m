@@ -1,71 +1,79 @@
 (* ::Package:: *)
 
 SetDirectory[NotebookDirectory[]];
-Import["original\\AlgebraicFunctions\\AlgebraicFunctionsOfBinomials.m"];
-Import["original\\AlgebraicFunctions\\AlgebraicFunctionsOfLinears.m"];
-Import["original\\AlgebraicFunctions\\AlgebraicFunctionsOfTrinomials.m"];
-Import["original\\ExponentialFunctions\\ExponentialFunctions.m"];
-Import["original\\ExponentialFunctions\\LogarithmFunctions.m"];
-Import["original\\ExponentialFunctions\\ProductsOfExponentialAndHyperbolicFunctions.m"];
-Import["original\\ExponentialFunctions\\ProductsOfExponentialAndTrigFunctions.m"];
-Import["original\\HyperbolicFunctions\\HyperbolicSecantFunctions.m"];
-Import["original\\HyperbolicFunctions\\HyperbolicSineFunctions.m"];
-Import["original\\HyperbolicFunctions\\HyperbolicSubstitution.m"];
-Import["original\\HyperbolicFunctions\\HyperbolicTangentFunctions.m"];
-Import["original\\HyperbolicFunctions\\RationalFunctionsOfHyperbolicSines.m"];
-Import["original\\HyperbolicFunctions\\RationalFunctionsOfHyperbolicSinesAndCosines.m"];
-Import["original\\HyperbolicFunctions\\TwoHyperbolicFunctions.m"];
-Import["original\\InverseHyperbolicFunctions\\InverseHyperbolicCosecantFunctions.m"];
-Import["original\\InverseHyperbolicFunctions\\InverseHyperbolicCosineFunctions.m"];
-Import["original\\InverseHyperbolicFunctions\\InverseHyperbolicCotangentFunctions.m"];
-Import["original\\InverseHyperbolicFunctions\\InverseHyperbolicSecantFunctions.m"];
-Import["original\\InverseHyperbolicFunctions\\InverseHyperbolicSineFunctions.m"];
-Import["original\\InverseHyperbolicFunctions\\InverseHyperbolicTangentFunctions.m"];
-Import["original\\InverseTrigFunctions\\InverseCosecantFunctions.m"];
-Import["original\\InverseTrigFunctions\\InverseCosineFunctions.m"];
-Import["original\\InverseTrigFunctions\\InverseCotangentFunctions.m"];
-Import["original\\InverseTrigFunctions\\InverseSecantFunctions.m"];
-Import["original\\InverseTrigFunctions\\InverseSineFunctions.m"]; 
-Import["original\\InverseTrigFunctions\\InverseTangentFunctions.m"];
-Import["original\\RationalFunctions\\RationalFunctionsOfBinomials.m"];
-Import["original\\RationalFunctions\\RationalFunctionsOfLinears.m"];
-Import["original\\RationalFunctions\\RationalFunctionsOfTrinomials.m"];
-Import["original\\SpecialFunctions\\ErrorFunctions.m"];
-Import["original\\SpecialFunctions\\ExponentialIntegralFunctions.m"];
-Import["original\\SpecialFunctions\\FresnelIntegralFunctions.m"];
-Import["original\\SpecialFunctions\\GammaFunctions.m"];
-Import["original\\SpecialFunctions\\HyperbolicIntegralFunctions.m"];
-Import["original\\SpecialFunctions\\LogarithmIntegralFunctions.m"];
-Import["original\\SpecialFunctions\\PolylogarithmFunctions.m"];
-Import["original\\SpecialFunctions\\ProductLogarithmFunctions.m"];
-Import["original\\SpecialFunctions\\TrigIntegralFunctions.m"];
-Import["original\\SpecialFunctions\\ZetaFunctions.m"];
-Import["original\\TrigFunctions\\(sin^j)^m (a+a sin^k)^n.m"];
-Import["original\\TrigFunctions\\(sin^j)^m (A+B sin^k) (a+a sin^k)^n.m"];
-Import["original\\TrigFunctions\\(sin^j)^m (A+B sin^k) (a+b sin^k)^n.m"];
-Import["original\\TrigFunctions\\(sin^j)^m (a+b sin^k)^n.m"];
-Import["original\\TrigFunctions\\(sin^j)^m (A+B sin^k+C sin^(2k)) (a+a sin^k)^n.m"];
-Import["original\\TrigFunctions\\(sin^j)^m (A+B sin^k+C sin^(2k)) (a+b sin^k)^n.m"];
-Import["original\\TrigFunctions\\DomainMapOfIntegrationRules.m"];
-Import["original\\TrigFunctions\\RationalFunctionsOfSinesAndCosines.m"];
-Import["original\\TrigFunctions\\SecantFunctions.m"];
-Import["original\\TrigFunctions\\SineFunctions.m"];
-Import["original\\TrigFunctions\\TangentFunctions.m"];
-Import["original\\TrigFunctions\\TrigNormalization.m"];
-Import["original\\TrigFunctions\\TrigSubstitution.m"];
-Import["original\\TrigFunctions\\TwoTrigFunctions.m"];
-Import["original\\GeneralIntegrationRules.m"];
-Import["original\\IntegrationUtilityFunctions.m"];
-(*Import["TableInt.m"];*)
+(*Get["TableInt.m"];
+Get["original\\IntegrationUtilityFunctions.m"];
+Get["original\\GeneralIntegrationRules.m"];*)
+Get["original\\RationalFunctions\\RationalFunctionsOfLinears.m"];
+Get["original\\RationalFunctions\\RationalFunctionsOfBinomials.m"];
+Get["original\\RationalFunctions\\RationalFunctionsOfTrinomials.m"];
+Get["original\\AlgebraicFunctions\\AlgebraicFunctionsOfLinears.m"];
+Get["original\\AlgebraicFunctions\\AlgebraicFunctionsOfBinomials.m"];
+Get["original\\AlgebraicFunctions\\AlgebraicFunctionsOfTrinomials.m"];
+Get["original\\ExponentialFunctions\\ExponentialFunctions.m"];
+Get["original\\ExponentialFunctions\\ProductsOfExponentialAndTrigFunctions.m"];
+Get["original\\ExponentialFunctions\\ProductsOfExponentialAndHyperbolicFunctions.m"];
+Get["original\\ExponentialFunctions\\LogarithmFunctions.m"];
+Get["original\\TrigFunctions\\SineFunctions.m"];
+Get["original\\TrigFunctions\\TangentFunctions.m"];
+Get["original\\TrigFunctions\\SecantFunctions.m"];
+Get["original\\TrigFunctions\\(sin^j)^m (a+a sin^k)^n.m"];
+Get["original\\TrigFunctions\\(sin^j)^m (a+b sin^k)^n.m"];
+Get["original\\TrigFunctions\\(sin^j)^m (A+B sin^k) (a+a sin^k)^n.m"];
+Get["original\\TrigFunctions\\(sin^j)^m (A+B sin^k) (a+b sin^k)^n.m"];
+Get["original\\TrigFunctions\\(sin^j)^m (A+B sin^k+C sin^(2k)) (a+a sin^k)^n.m"];
+Get["original\\TrigFunctions\\(sin^j)^m (A+B sin^k+C sin^(2k)) (a+b sin^k)^n.m"];
+(*Get["original\\TrigFunctions\\DomainMapOfIntegrationRules.m"];*)
+Get["original\\TrigFunctions\\RationalFunctionsOfSinesAndCosines.m"];
+Get["original\\TrigFunctions\\TwoTrigFunctions.m"];
+Get["original\\TrigFunctions\\TrigNormalization.m"];
+Get["original\\TrigFunctions\\TrigSubstitution.m"];
+Get["original\\InverseTrigFunctions\\InverseSineFunctions.m"]; 
+Get["original\\InverseTrigFunctions\\InverseCosineFunctions.m"];
+Get["original\\InverseTrigFunctions\\InverseTangentFunctions.m"];
+Get["original\\InverseTrigFunctions\\InverseCotangentFunctions.m"];
+Get["original\\InverseTrigFunctions\\InverseSecantFunctions.m"];
+Get["original\\InverseTrigFunctions\\InverseCosecantFunctions.m"];
+Get["original\\HyperbolicFunctions\\HyperbolicSineFunctions.m"];
+Get["original\\HyperbolicFunctions\\HyperbolicTangentFunctions.m"];
+Get["original\\HyperbolicFunctions\\HyperbolicSecantFunctions.m"];
+Get["original\\HyperbolicFunctions\\RationalFunctionsOfHyperbolicSinesAndCosines.m"];
+Get["original\\HyperbolicFunctions\\TwoHyperbolicFunctions.m"];
+Get["original\\HyperbolicFunctions\\HyperbolicSubstitution.m"];
+Get["original\\HyperbolicFunctions\\RationalFunctionsOfHyperbolicSines.m"];
+Get["original\\InverseHyperbolicFunctions\\InverseHyperbolicSineFunctions.m"];
+Get["original\\InverseHyperbolicFunctions\\InverseHyperbolicCosineFunctions.m"];
+Get["original\\InverseHyperbolicFunctions\\InverseHyperbolicTangentFunctions.m"];
+Get["original\\InverseHyperbolicFunctions\\InverseHyperbolicCotangentFunctions.m"];
+Get["original\\InverseHyperbolicFunctions\\InverseHyperbolicSecantFunctions.m"];
+Get["original\\InverseHyperbolicFunctions\\InverseHyperbolicCosecantFunctions.m"];
+Get["original\\SpecialFunctions\\ErrorFunctions.m"];
+Get["original\\SpecialFunctions\\FresnelIntegralFunctions.m"];
+Get["original\\SpecialFunctions\\ExponentialIntegralFunctions.m"];
+Get["original\\SpecialFunctions\\TrigIntegralFunctions.m"];
+Get["original\\SpecialFunctions\\HyperbolicIntegralFunctions.m"];
+Get["original\\SpecialFunctions\\LogarithmIntegralFunctions.m"];
+Get["original\\SpecialFunctions\\GammaFunctions.m"];
+Get["original\\SpecialFunctions\\ZetaFunctions.m"];
+Get["original\\SpecialFunctions\\PolylogarithmFunctions.m"];
+Get["original\\SpecialFunctions\\ProductLogarithmFunctions.m"];
+Get["original\\GeneralIntegrationRules.m"];
+Get["original\\IntegrationUtilityFunctions.m"]; 
 
 
-(*
-Int[E^x,x]
+(*Int[E^x,x]
 Int[x^4*(1-x^2)^(-5/2),x]
 Int[x^(1/2)*(1+x)^(5/2),x]
-Int[2,x] 
-*)
+Int[Log[3*(4*(5+6*x)^7)^2],x]
+Int[(x^3)^(-1/3),x]
+Int[x E^x]*)
 
 
-(* ::InheritFromParent:: *)
+(*Int[(a+b*Sqrt[x])^20/Sqrt[x],x]*)
+
+
+(*Int[(1-2 Sqrt[x])^20/Sqrt[x],x]*)
+
+
+(* ::Input:: *)
 (* *)
