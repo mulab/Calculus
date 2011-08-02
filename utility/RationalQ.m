@@ -58,7 +58,7 @@ deno=Denominator[e];
 (*Print[{nume,deno}];*)
 Do[
 temp=L[[i]];
-If[PolynomialQ[nume,temp]&&PolynomialQ[deno,temp],,bo=False],
+If[!PolynomialQ[nume,temp]||!PolynomialQ[deno,temp],bo=False],
 {i,Length[L]}
 ];
 Return[bo]
@@ -66,19 +66,8 @@ Return[bo]
 (*\:5bf9\:6bd4Return[False]\:548cbo=False\:4e24\:79cd\:60c5\:51b5*)
 
 
-RationalQ[x^2,{x}]
-
-
+(*RationalQ[x^2,{x}]
 RationalQ[x^(1/2),{x}]
-
-
 RationalQ[x^5+Sin[x] x^7,{x}]
-
-
 RationalQ[(x^5+x^7+y^3)/(x^3+y^5),{x,y}]
-
-
-RationalQ[4 x Log[x]+x+1,{x}]
-
-
-RationalQ[]
+RationalQ[4 x Log[x]+x+1,{x}]*)

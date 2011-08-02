@@ -5,6 +5,7 @@ BeginPackage["Rubi`"];
 Int::usage="Int[f[x],x] returns the integral";
 
 Begin["`Private`"];
+
 SetDirectory[NotebookDirectory[]];
 
 Get["TableInt.m"];
