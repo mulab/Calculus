@@ -1,0 +1,686 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     22137,        677]
+NotebookOptionsPosition[     19964,        615]
+NotebookOutlinePosition[     20310,        630]
+CellTagsIndexPosition[     20267,        627]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"(*", " ", 
+  RowBox[{
+  "\:8be5\:6d4b\:8bd5\:7528\:4e8e\:6bd4\:5bf9IntTable\:548cNoCloseTable\:5728\
+Rubi3\:5b58\:5728\:7684\:60c5\:51b5\:4e0b\:662f\:5426\:8fd8\:6709\:5fc5\:8981\
+\:5b58\:5728", "\:ff0c", 
+   "\:8bf7\:4e8b\:5148\:5c06\:76f8\:5e94\:51fd\:6570\:52a0\:8f7d"}], " ", 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.521261073588776*^9, 3.5212611181062503`*^9}, {
+  3.521261259550805*^9, 3.5212612702843823`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(*", " ", "\:65e0\:95ed\:5f62\:5f0f\:6d4b\:8bd5", " ", 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.521261169448146*^9, 3.5212611774796057`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"E", "^", 
+    RowBox[{"(", 
+     RowBox[{"x", "^", "2"}], ")"}]}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"E", "^", 
+    RowBox[{"(", 
+     RowBox[{"-", 
+      RowBox[{"x", "^", "2"}]}], ")"}]}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"E", "^", "x"}], "/", "x"}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"1", "/", 
+    RowBox[{"Log", "[", "x", "]"}]}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Sin", "[", "x", "]"}], "/", "x"}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Cos", "[", "x", "]"}], "/", "x"}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Tan", "[", "x", "]"}], "/", "x"}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Cot", "[", "x", "]"}], "/", "x"}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Sec", "[", "x", "]"}], "/", "x"}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Csc", "[", "x", "]"}], "/", "x"}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"Sin", "[", 
+    RowBox[{"x", "^", "2"}], "]"}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"Cos", "[", 
+    RowBox[{"x", "^", "2"}], "]"}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"Tan", "[", 
+    RowBox[{"x", "^", "2"}], "]"}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"Cot", "[", 
+    RowBox[{"x", "^", "2"}], "]"}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"Sec", "[", 
+    RowBox[{"x", "^", "2"}], "]"}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"Csc", "[", 
+    RowBox[{"x", "^", "2"}], "]"}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"Sinh", "[", 
+    RowBox[{"x", "^", "2"}], "]"}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"Cosh", "[", 
+    RowBox[{"x", "^", "2"}], "]"}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"Tanh", "[", 
+    RowBox[{"x", "^", "2"}], "]"}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"x", "/", 
+    RowBox[{"Sin", "[", "x", "]"}]}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"x", "/", 
+    RowBox[{"Cos", "[", "x", "]"}]}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"x", "/", 
+    RowBox[{"Tan", "[", "x", "]"}]}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"x", "/", 
+    RowBox[{"Cot", "[", "x", "]"}]}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"x", "/", 
+    RowBox[{"ArcSin", "[", "x", "]"}]}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"x", "/", 
+    RowBox[{"ArcCos", "[", "x", "]"}]}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"x", "/", 
+    RowBox[{"ArcTan", "[", "x", "]"}]}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"x", "/", 
+    RowBox[{"ArcCot", "[", "x", "]"}]}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"x", "/", 
+    RowBox[{"ArcSec", "[", "x", "]"}]}], ",", "x"}], "]"}], "\n", 
+ RowBox[{"Int", "[", 
+  RowBox[{
+   RowBox[{"x", "/", 
+    RowBox[{"ArcCsc", "[", "x", "]"}]}], ",", "x"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.5212612879053*^9, 3.521261396963224*^9}, {
+  3.521261539364025*^9, 3.521261571040766*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "2"], " ", 
+  SqrtBox["\[Pi]"], " ", 
+  RowBox[{"Erfi", "[", "x", "]"}]}]], "Output",
+ CellChangeTimes->{3.521261402011431*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "2"], " ", 
+  SqrtBox["\[Pi]"], " ", 
+  RowBox[{"Erf", "[", "x", "]"}]}]], "Output",
+ CellChangeTimes->{3.521261402011431*^9}],
+
+Cell[BoxData[
+ RowBox[{"ExpIntegralEi", "[", "x", "]"}]], "Output",
+ CellChangeTimes->{3.521261402011431*^9}],
+
+Cell[BoxData[
+ RowBox[{"LogIntegral", "[", "x", "]"}]], "Output",
+ CellChangeTimes->{3.521261402011431*^9}],
+
+Cell[BoxData[
+ RowBox[{"SinIntegral", "[", "x", "]"}]], "Output",
+ CellChangeTimes->{3.521261402011431*^9}],
+
+Cell[BoxData[
+ RowBox[{"CosIntegral", "[", "x", "]"}]], "Output",
+ CellChangeTimes->{3.521261402011431*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$IterationLimit", "::", "itlim"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Iteration limit of \[NoBreak]\\!\\(4096\\)\[NoBreak] \
+exceeded. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/$IterationLimit/itlim\\\", ButtonNote -> \
+\\\"$IterationLimit::itlim\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.521261409419813*^9}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Int", "[", 
+   RowBox[{"Rubi`Private`v$4787", ",", "x"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.5212614094328136`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$IterationLimit", "::", "itlim"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Iteration limit of \[NoBreak]\\!\\(4096\\)\[NoBreak] \
+exceeded. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/$IterationLimit/itlim\\\", ButtonNote -> \
+\\\"$IterationLimit::itlim\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5212614167101517`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Int", "[", 
+   RowBox[{"Rubi`Private`v$8890", ",", "x"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.5212614167121515`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$IterationLimit", "::", "itlim"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Iteration limit of \[NoBreak]\\!\\(4096\\)\[NoBreak] \
+exceeded. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/$IterationLimit/itlim\\\", ButtonNote -> \
+\\\"$IterationLimit::itlim\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5212614239505267`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Int", "[", 
+   RowBox[{"Rubi`Private`v$12988", ",", "x"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.521261423952527*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$IterationLimit", "::", "itlim"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Iteration limit of \[NoBreak]\\!\\(4096\\)\[NoBreak] \
+exceeded. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/$IterationLimit/itlim\\\", ButtonNote -> \
+\\\"$IterationLimit::itlim\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5212614314729567`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Int", "[", 
+   RowBox[{"Rubi`Private`v$17088", ",", "x"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.521261431474957*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  SqrtBox[
+   FractionBox["\[Pi]", "2"]], " ", 
+  RowBox[{"FresnelS", "[", 
+   RowBox[{
+    SqrtBox[
+     FractionBox["2", "\[Pi]"]], " ", "x"}], "]"}]}]], "Output",
+ CellChangeTimes->{3.521261431475957*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  SqrtBox[
+   FractionBox["\[Pi]", "2"]], " ", 
+  RowBox[{"FresnelC", "[", 
+   RowBox[{
+    SqrtBox[
+     FractionBox["2", "\[Pi]"]], " ", "x"}], "]"}]}]], "Output",
+ CellChangeTimes->{3.5212614314779572`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$IterationLimit", "::", "itlim"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Iteration limit of \[NoBreak]\\!\\(4096\\)\[NoBreak] \
+exceeded. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/$IterationLimit/itlim\\\", ButtonNote -> \
+\\\"$IterationLimit::itlim\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5212614384253387`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Int", "[", 
+   RowBox[{"Rubi`Private`v$21190", ",", "x"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.521261438426338*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$IterationLimit", "::", "itlim"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Iteration limit of \[NoBreak]\\!\\(4096\\)\[NoBreak] \
+exceeded. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/$IterationLimit/itlim\\\", ButtonNote -> \
+\\\"$IterationLimit::itlim\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5212614453117294`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Int", "[", 
+   RowBox[{"Rubi`Private`v$25288", ",", "x"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.5212614453137293`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$IterationLimit", "::", "itlim"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Iteration limit of \[NoBreak]\\!\\(4096\\)\[NoBreak] \
+exceeded. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/$IterationLimit/itlim\\\", ButtonNote -> \
+\\\"$IterationLimit::itlim\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5212614523761044`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Int", "[", 
+   RowBox[{"Rubi`Private`v$29386", ",", "x"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.5212614523791046`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$IterationLimit", "::", "itlim"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Iteration limit of \[NoBreak]\\!\\(4096\\)\[NoBreak] \
+exceeded. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/$IterationLimit/itlim\\\", ButtonNote -> \
+\\\"$IterationLimit::itlim\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.521261459302334*^9}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Int", "[", 
+   RowBox[{"Rubi`Private`v$33484", ",", "x"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.5212614593043337`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox["1", "4"]}], " ", 
+   SqrtBox["\[Pi]"], " ", 
+   RowBox[{"Erf", "[", "x", "]"}]}], "+", 
+  RowBox[{
+   FractionBox["1", "4"], " ", 
+   SqrtBox["\[Pi]"], " ", 
+   RowBox[{"Erfi", "[", "x", "]"}]}]}]], "Output",
+ CellChangeTimes->{3.5212614593083344`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "4"], " ", 
+   SqrtBox["\[Pi]"], " ", 
+   RowBox[{"Erf", "[", "x", "]"}]}], "+", 
+  RowBox[{
+   FractionBox["1", "4"], " ", 
+   SqrtBox["\[Pi]"], " ", 
+   RowBox[{"Erfi", "[", "x", "]"}]}]}]], "Output",
+ CellChangeTimes->{3.521261459310334*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$IterationLimit", "::", "itlim"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Iteration limit of \[NoBreak]\\!\\(4096\\)\[NoBreak] \
+exceeded. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/$IterationLimit/itlim\\\", ButtonNote -> \
+\\\"$IterationLimit::itlim\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5212614661506395`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Int", "[", 
+   RowBox[{"Rubi`Private`v$37590", ",", "x"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.5212614661506395`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$IterationLimit", "::", "itlim"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Iteration limit of \[NoBreak]\\!\\(4096\\)\[NoBreak] \
+exceeded. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/$IterationLimit/itlim\\\", ButtonNote -> \
+\\\"$IterationLimit::itlim\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.521261473085948*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"-", "2"}], " ", "x", " ", 
+   RowBox[{"ArcTanh", "[", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"\[ImaginaryI]", " ", "x"}]], "]"}]}], "+", 
+  RowBox[{"2", " ", 
+   RowBox[{"Hold", "[", 
+    RowBox[{"Int", "[", 
+     RowBox[{"Rubi`Private`v$41688", ",", "x"}], "]"}], "]"}]}]}]], "Output",
+ CellChangeTimes->{3.521261473087948*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"-", "2"}], " ", "\[ImaginaryI]", " ", "x", " ", 
+   RowBox[{"ArcTan", "[", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"\[ImaginaryI]", " ", "x"}]], "]"}]}], "+", 
+  RowBox[{"\[ImaginaryI]", " ", 
+   RowBox[{"PolyLog", "[", 
+    RowBox[{"2", ",", 
+     RowBox[{
+      RowBox[{"-", "\[ImaginaryI]"}], " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"\[ImaginaryI]", " ", "x"}]]}]}], "]"}]}], "-", 
+  RowBox[{"\[ImaginaryI]", " ", 
+   RowBox[{"PolyLog", "[", 
+    RowBox[{"2", ",", 
+     RowBox[{"\[ImaginaryI]", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"\[ImaginaryI]", " ", "x"}]]}]}], "]"}]}]}]], "Output",
+ CellChangeTimes->{3.5212614730939484`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{"\[ImaginaryI]", " ", 
+     SuperscriptBox["x", "2"]}], "2"]}], "+", 
+  RowBox[{"x", " ", 
+   RowBox[{"Log", "[", 
+    RowBox[{"1", "-", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"2", " ", "\[ImaginaryI]", " ", "x"}]]}], "]"}]}], "-", 
+  RowBox[{
+   FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", 
+   RowBox[{"PolyLog", "[", 
+    RowBox[{"2", ",", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"2", " ", "\[ImaginaryI]", " ", "x"}]]}], "]"}]}]}]], "Output",
+ CellChangeTimes->{3.5212614730959487`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{"\[ImaginaryI]", " ", 
+    SuperscriptBox["x", "2"]}], "2"], "-", 
+  RowBox[{"x", " ", 
+   RowBox[{"Log", "[", 
+    RowBox[{"1", "+", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"2", " ", "\[ImaginaryI]", " ", "x"}]]}], "]"}]}], "+", 
+  RowBox[{
+   FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", 
+   RowBox[{"PolyLog", "[", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"2", " ", "\[ImaginaryI]", " ", "x"}]]}]}], 
+    "]"}]}]}]], "Output",
+ CellChangeTimes->{3.5212614730969486`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$IterationLimit", "::", "itlim"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Iteration limit of \[NoBreak]\\!\\(4096\\)\[NoBreak] \
+exceeded. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/$IterationLimit/itlim\\\", ButtonNote -> \
+\\\"$IterationLimit::itlim\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.521261480458229*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   SuperscriptBox["x", "2"], 
+   RowBox[{"2", " ", 
+    RowBox[{"ArcSin", "[", "x", "]"}]}]], "+", 
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   RowBox[{"Rubi`Private`Subst", "[", 
+    RowBox[{
+     RowBox[{"Hold", "[", 
+      RowBox[{"Int", "[", 
+       RowBox[{"Rubi`Private`v$45788", ",", "x"}], "]"}], "]"}], ",", "x", 
+     ",", 
+     RowBox[{"ArcSin", "[", "x", "]"}]}], "]"}]}]}]], "Output",
+ CellChangeTimes->{3.521261480460229*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$IterationLimit", "::", "itlim"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Iteration limit of \[NoBreak]\\!\\(4096\\)\[NoBreak] \
+exceeded. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/$IterationLimit/itlim\\\", ButtonNote -> \
+\\\"$IterationLimit::itlim\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.521261487737562*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   SuperscriptBox["x", "2"], 
+   RowBox[{"2", " ", 
+    RowBox[{"ArcCos", "[", "x", "]"}]}]], "+", 
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   RowBox[{"Rubi`Private`Subst", "[", 
+    RowBox[{
+     RowBox[{"Hold", "[", 
+      RowBox[{"Int", "[", 
+       RowBox[{"Rubi`Private`v$49886", ",", "x"}], "]"}], "]"}], ",", "x", 
+     ",", 
+     RowBox[{"ArcCos", "[", "x", "]"}]}], "]"}]}]}]], "Output",
+ CellChangeTimes->{3.5212614877385626`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$IterationLimit", "::", "itlim"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Iteration limit of \[NoBreak]\\!\\(4096\\)\[NoBreak] \
+exceeded. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/$IterationLimit/itlim\\\", ButtonNote -> \
+\\\"$IterationLimit::itlim\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5212614946749573`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Int", "[", 
+   RowBox[{"Rubi`Private`v$53984", ",", "x"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.5212614946769576`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$IterationLimit", "::", "itlim"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Iteration limit of \[NoBreak]\\!\\(4096\\)\[NoBreak] \
+exceeded. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/$IterationLimit/itlim\\\", ButtonNote -> \
+\\\"$IterationLimit::itlim\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.521261501594348*^9}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Int", "[", 
+   RowBox[{"Rubi`Private`v$58082", ",", "x"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.5212615015963483`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$IterationLimit", "::", "itlim"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Iteration limit of \[NoBreak]\\!\\(4096\\)\[NoBreak] \
+exceeded. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/$IterationLimit/itlim\\\", ButtonNote -> \
+\\\"$IterationLimit::itlim\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5212615084297323`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Int", "[", 
+   RowBox[{"Rubi`Private`v$62180", ",", "x"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.521261508431732*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"$IterationLimit", "::", "itlim"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Iteration limit of \[NoBreak]\\!\\(4096\\)\[NoBreak] \
+exceeded. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/$IterationLimit/itlim\\\", ButtonNote -> \
+\\\"$IterationLimit::itlim\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.5212615152600636`*^9}],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Int", "[", 
+   RowBox[{"Rubi`Private`v$66278", ",", "x"}], "]"}], "]"}]], "Output",
+ CellChangeTimes->{3.5212615152610636`*^9}]
+}, Open  ]]
+},
+WindowSize->{701, 858},
+WindowMargins->{{Automatic, -1140}, {Automatic, 3}},
+FrontEndVersion->"8.0 for Microsoft Windows (64-bit) (November 7, 2010)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 443, 9, 52, "Input"],
+Cell[1003, 31, 167, 3, 31, "Input"],
+Cell[CellGroupData[{
+Cell[1195, 38, 3656, 121, 592, "Input"],
+Cell[4854, 161, 170, 5, 47, "Output"],
+Cell[5027, 168, 169, 5, 47, "Output"],
+Cell[5199, 175, 109, 2, 30, "Output"],
+Cell[5311, 179, 107, 2, 30, "Output"],
+Cell[5421, 183, 107, 2, 30, "Output"],
+Cell[5531, 187, 107, 2, 30, "Output"],
+Cell[5641, 191, 471, 10, 24, "Message"],
+Cell[6115, 203, 174, 4, 30, "Output"],
+Cell[6292, 209, 473, 10, 24, "Message"],
+Cell[6768, 221, 174, 4, 30, "Output"],
+Cell[6945, 227, 473, 10, 24, "Message"],
+Cell[7421, 239, 173, 4, 30, "Output"],
+Cell[7597, 245, 473, 10, 24, "Message"],
+Cell[8073, 257, 173, 4, 30, "Output"],
+Cell[8249, 263, 231, 8, 55, "Output"],
+Cell[8483, 273, 233, 8, 55, "Output"],
+Cell[8719, 283, 473, 10, 24, "Message"],
+Cell[9195, 295, 173, 4, 30, "Output"],
+Cell[9371, 301, 473, 10, 24, "Message"],
+Cell[9847, 313, 175, 4, 30, "Output"],
+Cell[10025, 319, 473, 10, 24, "Message"],
+Cell[10501, 331, 175, 4, 30, "Output"],
+Cell[10679, 337, 471, 10, 24, "Message"],
+Cell[11153, 349, 175, 4, 30, "Output"],
+Cell[11331, 355, 321, 11, 47, "Output"],
+Cell[11655, 368, 299, 10, 47, "Output"],
+Cell[11957, 380, 473, 10, 24, "Message"],
+Cell[12433, 392, 175, 4, 30, "Output"],
+Cell[12611, 398, 471, 10, 24, "Message"],
+Cell[13085, 410, 389, 11, 37, "Output"],
+Cell[13477, 423, 742, 20, 37, "Output"],
+Cell[14222, 445, 594, 17, 50, "Output"],
+Cell[14819, 464, 601, 18, 50, "Output"],
+Cell[15423, 484, 471, 10, 24, "Message"],
+Cell[15897, 496, 480, 15, 52, "Output"],
+Cell[16380, 513, 471, 10, 24, "Message"],
+Cell[16854, 525, 482, 15, 52, "Output"],
+Cell[17339, 542, 473, 10, 24, "Message"],
+Cell[17815, 554, 175, 4, 30, "Output"],
+Cell[17993, 560, 471, 10, 24, "Message"],
+Cell[18467, 572, 175, 4, 30, "Output"],
+Cell[18645, 578, 473, 10, 24, "Message"],
+Cell[19121, 590, 173, 4, 30, "Output"],
+Cell[19297, 596, 473, 10, 24, "Message"],
+Cell[19773, 608, 175, 4, 30, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
