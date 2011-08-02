@@ -5,10 +5,10 @@ where R(x) is a rational function *)
 (*the method 7 of SIN StageII, Moses*)
 (*Shao Qiming*)
 intSubRep[f_,x_]:=Module[
-{e=f,R,P,eP,a={}},
+{e=f,R,P,eP,a={},U={}},
 (*\:5224\:65adR\:662f\:5426\:4e3a\:6709\:7406\:51fd\:6570\:ff0c\:63d0\:53d6R\:548cP*)
 SetDirectory[NotebookDirectory[]];
-Import["RationalQ.m"];
+Import["..\\utility\\RationalQ.m"];
 If[Head[e]===Times,(*then*)
 eP=e[[1]];
 If[!MatchQ[eP,E^_],Print[{eP}];Return["NotMatch"]];
@@ -26,7 +26,7 @@ S=Rn-cx;
 	If[Head[cx]===Power,c=1,(*else*)
 	If[FreeQ[cx,x],c=cx,c=1]
 ]](*Get const "c", not necessary*)*)
-Print[{cx,Q,S}];
+(*Print[{cx,Q,S}];*)
 (*\:6709\:5173\:8868\:8fbe\:5f0f\:7684\:6392\:5e8f*)
 (*construct T*)
 (*at=cx/D[P,x]/Q;
@@ -43,9 +43,10 @@ at=cx/D[P,x]/Q;
 Pb=R-D[P,x]*at-D[at,x];
 TU=Pb*Q;
 AppendTo[a,at];
-Print[{TU,"TU"}];
-{T,U}=dapart[TU,x];
-Print[{T,U}];
+(*Print[{TU,"TU"}];*)
+{T,Ut}=dapart[TU,x];
+AppendTo[U,Ut];
+(*Print[{T,Ut}];*)
 While[T!=0,
 If[Length[T]>1,cx=T[[-1]],cx=T];(*Get cx^m_1*)
 R=T/Q;
@@ -53,11 +54,12 @@ at=cx/D[P,x]/Q;
 Pb=R-D[P,x]*at-D[at,x];
 AppendTo[a,at];
 TU=Pb*Q;
-{T,U}=dapart[TU,x];
-Print[{T,U,"xuanhuan"}]
+{T,Ut}=dapart[TU,x];
+AppendTo[U,Ut];
+(*Print[{T,U,"xuanhuan"}]*)
 ];
-Print[{a,U,"hh"}];
-If[U!=0,Return["NoClose"],Return[{Total[a]*E^P,x}],Return["NoClose"]];
+(*Print[{a,U,"hh"}];*)
+If[Total[U]!=0,Return["NoClose"],Return[{Simplify[Total[a]]*E^P,x}],Return["NoClose"]];
 ]
 
 
@@ -95,14 +97,6 @@ intSubRep[(1+2 x^2)*E^(x^2),x]
 intSubRep[E^(x^2),x]
 intSubRep[E^x*(1/x+1/x^2),x]
 
-
-
-NotebookDirectory[]
-
-
-dapart[1/y,y]
-Apart[1/y]
-dapart[1,x]
 
 
 
