@@ -415,5 +415,13 @@ Int[x_(E^(a_ x_)),x_]:= x (E^(a x))/a-E^(a x)/a^2 /;FreeQ[a,x]
 Int[x_(E^(a_ x_+b_)),x_]:= x (E^(a x+b))/a -E^(a x+ b)/a^2 /;FreeQ[{a,b},x] 
 
 
-(*Int[3^(2 x),x]*)
+Int[x_/Sqrt[a_+x_^2],x_]:= Sqrt[a+x^2]/;FreeQ[a,x]
 
+
+Int[a_ x_/Sqrt[b_+x_^2],x_]:= a Sqrt[b+ x^2] /;FreeQ[{a,b},x]
+
+
+Int[x_/Sqrt[a_+b_ x_^2],x_] := Sqrt[a+b x^2]/b /;FreeQ[{a,b},x]&&NonzeroQ[b]
+
+
+Int[a_ x_/Sqrt[b_+c_ x_^2],x_] := a Sqrt[b+c x^2]/c /;FreeQ[{a,b,c},x]&&NonzeroQ[c]

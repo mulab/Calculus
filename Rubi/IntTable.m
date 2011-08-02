@@ -162,7 +162,11 @@ IntegrateList=
   A[x_(E^x_),x_] :> -E^x + x(E^x),
   A[x_(E^(x_+a_)),x_]/;FreeQ[a,x] :> x E^x -E^x+x^2 E^a/2,
   A[x_(E^(a_ x_)),x_]/;FreeQ[a,x] :> x (E^(a x))/a-E^(a x)/a^2,
-  A[x_(E^(a_ x_+b_)),x_]/;FreeQ[{a,b},x] :> x (E^(a x+b))/a -E^(a x+ b)/a^2 
+  A[x_(E^(a_ x_+b_)),x_]/;FreeQ[{a,b},x] :> x (E^(a x+b))/a -E^(a x+ b)/a^2 ,
+  A[x_/Sqrt[a_+x_^2],x_]/;FreeQ[a,x] :>  Sqrt[a+x^2] ,
+  A[a_ x_/Sqrt[b_ +x_^2],x_]/;FreeQ[{a,b},x] :> a Sqrt[b+x^2],
+  A[x_/Sqrt[a_+b_ x_^2],x_]/;FreeQ[{a,b},x]&&b=!=0 :> Sqrt[a+b x^2]/b,
+  A[a_ x_/Sqrt[b_+c_ x_^2],x_]/;FreeQ[{a,b,c},x]&&c=!=0 :> a Sqrt[b+c x^2]/c
   (*new*)
 
 };
