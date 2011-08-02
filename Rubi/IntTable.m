@@ -1,17 +1,21 @@
 (* ::Package:: *)
 
-(*\:79ef\:5206\:8868\:529f\:80fd\:ff0c\:6ce8\:610f\:548cDDM\:51d1\:5fae\:5206\:65b9\:6cd5\:7684\:5206\:79bb\:ff0c\:79ef\:5206\:8868\:4e2d\:4e0d\:5e94\:8be5\:5305\:542b\:8f6c\:6362\:89c4\:5219\:ff0c\:5e94\:8be5\:662f\:79ef\:51fa\:6765\:7684\:7ed3\:679c*)
+(*\:79ef\:5206\:8868\:529f\:80fd\:ff0c\:6ce8\:610f\:548cDDM\:51d1\:5fae\:5206\:65b9\:6cd5\:7684\:5206\:79bb\:ff0c\:79ef\:5206\:8868\:4e2d\:4e0d\:5e94\:8be5\:5305\:542b\:8f6c\:6362\:89c4\:5219\:ff0c
+\:5e94\:8be5\:662f\:79ef\:51fa\:6765\:7684\:7ed3\:679c\:ff0c\:4e14\:53ea\:8fdb\:884c\:4e00\:6b21\:66ff\:6362\:3002\:8be5\:8868\:8fd8\:53ef\:4ee5\:6269\:5927*)
 (*Shao Qiming , shaoqiming8@gmail.com/15210589502*)
 (*\:6ce8\:610fax+b\:5e94\:8be5\:5206\:6210\:56db\:6761\:89c4\:5219\:6765\:5199\:ff0c\:5185\:6838\:6682\:65f6\:4e0d\:63d0\:4f9boptional\:51fd\:6570*)
-(*\:8be5\:8868\:8fd8\:53ef\:4ee5\:6269\:5927*)
+(**)
 ListIntegrate1=
 {
 (*  A[a_ f_, x_] /; FreeQ[a, x] :>  a A[f, x] ,*)
   A[a_, x_] /; FreeQ[a, x] :>  a x ,
   A[x_, x_]  :>  x^2/2 ,
 (*  A[f_ + g_, x_]  :>  A[f, x] + A[g, x],*)
-  A[x_^n_ Sqrt[a_ x_ + b_], x_] /; FreeQ[n, x] && FreeQ[a, x] && FreeQ[b, x] :>  (2 x^n)/((2 n + 3) a) (Sqrt[(a x + b)])^3 - (2 n b)/((2 n + 3) a) A[x^(n - 1) Sqrt[a x + b], x] ,
+  A[x_^n_ Sqrt[a_ x_ + b_], x_] /; FreeQ[n, x] && FreeQ[a, x] && FreeQ[b, x] :>  
+		(2 x^n)/((2 n + 3) a) (Sqrt[(a x + b)])^3 - (2 n b)/((2 n + 3) a) A[x^(n - 1) Sqrt[a x + b], x] ,
 (*  A[f_[a_ x_ + b_], x_] /; FreeQ[{a, b}, x] :>  A[f[a x + b],a x + b] / a ,*)
+(*  A[Sqrt[x_^n_],x_] /;x>0 :> x^(n/2+1)/(n/2+1),
+  A[a_ Sqrt[x_^n_],x_] /;FreeQ[a,x]:> x^(n/2+1)/(n/2+1),*)
   A[1,x_] :> x,
   A[1/x_,x_] :> Log[x],
   A[x_^n_, x_] /; FreeQ[{n}, x] :>  x^(1 + n)/(1 + n) ,
@@ -166,7 +170,7 @@ ListIntegrate1=
 IntTable[f_,x_]:=Module[
     {},
     ret=A[f,x]//.ListIntegrate1;
-    If[Head[ret]===A||Count[ret,_A,Infinity]!=0,Return["NotFound"],Return[ret]];
+    If[Head[ret]===A,Return["NotFound"],Return[ret]];
 	Return["NotFound"]
 ];
 
@@ -175,6 +179,7 @@ IntTable[Sqrt[10 x^3],x]
 IntTable[2,x]
 IntTable[x,x]
 IntTable[Sin[x],x]
+
 
 
 
