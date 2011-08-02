@@ -5,7 +5,7 @@
 (*Shao Qiming , shaoqiming8@gmail.com/15210589502*)
 (*\:6ce8\:610fax+b\:5e94\:8be5\:5206\:6210\:56db\:6761\:89c4\:5219\:6765\:5199\:ff0c\:5185\:6838\:6682\:65f6\:4e0d\:63d0\:4f9boptional\:51fd\:6570*)
 (**)
-ListIntegrate1=
+IntegrateList=
 {
 (*  A[a_ f_, x_] /; FreeQ[a, x] :>  a A[f, x] ,*)
   A[a_, x_] /; FreeQ[a, x] :>  a x ,
@@ -167,19 +167,16 @@ ListIntegrate1=
 
 };
 
+
 IntTable[f_,x_]:=Module[
     {},
-    ret=A[f,x]//.ListIntegrate1;
+    ret=A[f,x]//.IntegrateList;
     If[Head[ret]===A,Return["NotFound"],Return[ret]];
 	Return["NotFound"]
 ];
 
 
-IntTable[Sqrt[10 x^3],x]
+(*IntTable[Sqrt[10 x^3],x]
 IntTable[2,x]
 IntTable[x,x]
-IntTable[Sin[x],x]
-
-
-
-
+IntTable[Sin[x],x]*)

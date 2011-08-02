@@ -637,6 +637,3 @@ Int[(Sin[c_.+d_.*x_]^j_.)^m_.*(a_+b_.*Sin[c_.+d_.*x_]^k_.)^n_,x_Symbol] :=
       (a+b*Sin[c+d*x]^k)^(n+1),x]] /;
 FreeQ[{a,b,c,d},x] && OneQ[j^2,k^2] && NonzeroQ[a^2-b^2] && RationalQ[m,n] && 
   j*k*m<0 && n<-1
-
-
-

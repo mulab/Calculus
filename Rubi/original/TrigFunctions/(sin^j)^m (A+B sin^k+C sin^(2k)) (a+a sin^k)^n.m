@@ -156,6 +156,3 @@ Int[(Sin[c_.+d_.*x_]^j_.)^m_.*(A_.+C_.*Sin[c_.+d_.*x_]^k2_)*(a_+b_.*Sin[c_.+d_.*
       (a+b*Sin[c+d*x]^k)^n,x]] /;
 FreeQ[{a,b,c,d,A,C},x] && OneQ[j^2,k^2] && k2===2*k && ZeroQ[a^2-b^2] && 
   RationalQ[m,n] && NonzeroQ[j*k*m+n+(k+3)/2] && j*k*m>=-1 && n>-1
-
-
-

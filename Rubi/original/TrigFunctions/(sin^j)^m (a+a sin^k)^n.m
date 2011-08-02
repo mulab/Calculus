@@ -354,6 +354,3 @@ Int[( Sin[c_.+d_.*x_]^j_.)^m_.*(a_+b_.* Sin[c_.+d_.*x_]^k_.)^n_,x_Symbol] :=
       (a*(j*k*m+2*n+(k+3)/2)-b*(j*k*m+n+(k+3)/2)* Sin[c+d*x]^k)*(a+b* Sin[c+d*x]^k)^(n+1),x]] /;
 FreeQ[{a,b,c,d},x] && OneQ[j^2,k^2] && ZeroQ[a^2-b^2] && RationalQ[m,n] && 
   j*k*m<0 && n<=-1
-
-
-

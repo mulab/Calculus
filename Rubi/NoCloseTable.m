@@ -44,10 +44,7 @@ If[Head[r] === A, Return["NotMatch"], Return["NoClose"]]
 ]
 
 
-NoClose[E^(x^2),x]
+(*NoClose[E^(x^2),x]
 NoClose[x/ArcCsc[x],x]
 NoClose[Sec[x^2],x]
-NoClose[x E^x,x]
-
-
-
+NoClose[x E^x,x]*)

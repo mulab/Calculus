@@ -158,4 +158,4 @@ Begin["Private`"]
 End[]
 Integrate[f_,x_] := Module[{r = Expand[`Private`A[f,x]]},
 If[Head[r] == Private`A, 'Integrate[f, x], r]];
-EndPackage[]v
+EndPackage[]
