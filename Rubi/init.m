@@ -8,6 +8,7 @@ Begin["`Private`"];
 SetDirectory[NotebookDirectory[]];
 
 Get["TableInt.m"];
+Get["NoCloseInt.m"];
 Get["original\\RationalFunctions\\RationalFunctionsOfLinears.m"];
 Get["original\\RationalFunctions\\RationalFunctionsOfBinomials.m"];
 Get["original\\RationalFunctions\\RationalFunctionsOfTrinomials.m"];
