@@ -72,6 +72,10 @@ intDDM[E^x/(1+E^x),x]
 intDDM[Sin[x]Cos[x],x]
 intDDM[x (x^2+1)^(1/2),x]
 intDDM[Cos[E^x]^2 Sin[E^x] E^x,x]
+intDDM[x^2,x](*\:3002\:3002\:3002\:3002Anything is converted*)
+intDDM[Cos[x]^2 Sin[x],x]
+
+
 
 
 
