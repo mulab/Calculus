@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-BeginPackage["Rubi`"];
+BeginPackage["Calculus`Rubi`"];
 Int::usage="Int[f[x],x] returns the integral";
 
 

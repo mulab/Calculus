@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-(*BeginPackage["Albi`"];
+(*BeginPackage["Calculus`Albi`"];
 
 SIN::usage="SIN[f[x],x] returns the integral";
 
