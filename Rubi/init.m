@@ -6,6 +6,7 @@ Int::usage="Int[f[x],x] returns the integral";
 
 Begin["`Private`"];
 
+(* Edit ShowSteps and SimplifyFlag in ShowStep.m *)
 RulesDirectory=NotebookDirectory[]<>"original\\";
 Get[RulesDirectory<>"LoadRules.m"];
 If[ShowSteps, StepFunction[Int]];
