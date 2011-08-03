@@ -33,8 +33,8 @@ intSubLog[f_,x_]:=Module[
 ]
 
 
-intSubLog[Log[x+2]/(Log[x+2]+1)^2,x]
-intSubLog[1/Log[x],x]
+(*intSubLog[Log[x+2]/(Log[x+2]+1)^2,x]
+intSubLog[1/Log[x],x]*)
 
 
 (*

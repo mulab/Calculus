@@ -18,14 +18,14 @@ intSubTri[f_, x_]:=Module[
 	Sometimes it causes problems; I mean it make some expression more complicated*)
 
 
-exp1=(Sin[x])^2;
+(*exp1=(Sin[x])^2;
 intSubTri[exp1,x]
 exp2=Sqrt[A^2+B^2(Sin[x])^2]/Sin[x];
 intSubTri[exp2,x]
 exp3=1/(1+Cos[x]);
 intSubTri[exp3,x]
 
-(*
+
 intSubTri[Cos[3 x] Cos[n x],x]
 intSubTri[Tan[Sin[x+5]]/Exp[5+x],x]
 intSubTri[(Sin[z])^2(Cos[z])^3,z]
@@ -235,7 +235,7 @@ Trans3[f_, x_, xt_]:=Module[
 *)
 
 
-Trans3[(Sin[z])^(4)(Cos[z])^7,z,t]
+(*Trans3[(Sin[z])^(4)(Cos[z])^7,z,t]*)
 
 
 (* part IV: All trigonometric functions are transformed into sines and cosines *)
@@ -308,11 +308,11 @@ but, this part seems to work the same as Elem(tan(y),sec^2(y),NEGLECT! *)
 (*This paragraph of code should be examined. I suspect there remains some error*)
 
 
-exp1=Tan[x]+Exp[(Cos[x])^10+1/(Cos[x])^2]
+(*exp1=Tan[x]+Exp[(Cos[x])^10+1/(Cos[x])^2]
 Trans5[exp1,x,x]
 exp2=Cot[x]+Exp[(Sin[x])^10+1/(Tan[x])^2]
 Trans5[exp2,x,x]
-Trans5[1/2-1/2*Cos[2*x],x,x]
+Trans5[1/2-1/2*Cos[2*x],x,x]*)
 
 
 (* part VI: Finally, the substitution z=tan(y/2)=sin (y)/(z+cos(y)) is made *)
@@ -334,7 +334,7 @@ Trans6[f_, y_, yx_]:=Module[
 ]
 
 
-Trans6[1/(1+Cos[x]),x,x]
+(*Trans6[1/(1+Cos[x]),x,x]*)
 
 
 (*------------------------------------------------------------------------*)
@@ -345,7 +345,7 @@ Trans6[1/(1+Cos[x]),x,x]
 (*------------------------------------------------------------------------*)
 (*------------------------------------------------------------------------*)
 (*If f has the form a*x+b,a and b are constants,this function returns the coefficients,otherwise returns Null*)
-Lineart[f_,x_,a_,b_]:=Module[
+(*Lineart[f_,x_,a_,b_]:=Module[
 	{m=a,n=b,temp},
 	Switch[f,
  	_Plus,(*the form is m*x+n*)
@@ -389,15 +389,15 @@ Lineart[f_,x_,a_,b_]:=Module[
   	];
  	Return[{m, n}]
  	]	
-]
+]*)
 
 
-Lineart[Sin[3x+5],x,3,5]
-Print["this"]
+(*Lineart[Sin[3x+5],x,3,5]
+Print["this"]*)
 
 
 (*The integrand is an elementary function of the trigonometric function applied to linear argument in the variable of integration.*)
-intSubTri2[f_,x_]:=Catch[
+(*intSubTri2[f_,x_]:=Catch[
 	Module[
 	{e=f,pos,loci,triArg,triFun={{},{},{},{},{},{}},a=Null,b=Null,n,temp,s,trigList,i},
 	tri={Sin,Cos,Tan,Cot,Sec,Csc};
@@ -494,13 +494,13 @@ intSubTri2[f_,x_]:=Catch[
 	
 
 
+*)
 
 
 
 
-
-intSubTri2[(6 (1/y^6)^(1/6) (y^6)^(2/3))/(-1+(y^6)^(1/6)),y]
-intSubTri2[Sin[2 x],x]
+(*intSubTri2[(6 (1/y^6)^(1/6) (y^6)^(2/3))/(-1+(y^6)^(1/6)),y]
+intSubTri2[Sin[2 x],x]*)
 
 
 

@@ -6,12 +6,12 @@
 \:79cd\:5f62\:5f0f\:ff0c\:5e76\:5206\:522b\:5904\:7406\:3002*)
 intSubRfs[f_,x_]:=Module[
 {e=f,a,b,c,d,t,pos1,pos2,pos3},
-SetDirectory[".\\"];
+SetDirectory[NotebookDirectory[]];
 (*Set Package Diretory*)
-Import["RationalQ.m"];
+Import["..\\Utility\\RationalQ.m"];
 (*Print[RationalQ[x^(1/2),{x}]];
 Print[RationalQ[x^2,{x}]];*)(*Import test*)
-Import["intSubRat.m"];
+Import[".\\intSubRat.m"];
 (*Print[intSubRat[x^2,x]];*)
 
 (*"R Log[s]"*)
@@ -80,6 +80,9 @@ intSubRfs[x Log[x],x]
 intSubRfs[x ArcSin[x^2],x]
 intSubRfs[Log[x^2+2x]/(x^2+2x+1),x]
 intSubRfs[x^2 ArcTan[x],x]
+
+
+
 
 
 

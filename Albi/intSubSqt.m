@@ -74,17 +74,14 @@ Return[e];
 ]
 
 
-(*defin1[AAA^2+BBB^2]
-defin1[5]
-defin1[3.2]
-defin1[7/3]*)
-
-
-intSubSqt[x^4/(1-x^2)^(5/2),x]
+(*intSubSqt[x^4/(1-x^2)^(5/2),x]
 intSubSqt[x/(1-5x+x^2)^(5/2),x]
 intSubSqt[(3x+2)/Sqrt[4x^2+2]+Sqrt[4x^2+2],x]
 intSubSqt[(3x+2)/Sqrt[5x^2+x+3]+Sqrt[4x^2+2],x]
-intSubSqt[Sqrt[A^2+B^2-B^2 x^2]/(1-x^2),x]
+intSubSqt[Sqrt[A^2+B^2-B^2 x^2]/(1-x^2),x]*)
+
+
+
 
 
 

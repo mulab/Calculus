@@ -91,12 +91,12 @@ Return[{c,a-c}];
 
 
 
-intSubRep[x E^x,x]
+(*intSubRep[x E^x,x]
 intSubRep[x/(x+1)^2*E^x,x]
 intSubRep[(1+2 x^2)*E^(x^2),x]
 intSubRep[E^(x^2),x]
 intSubRep[E^x*(1/x+1/x^2),x]
 
-
+*)
 
 

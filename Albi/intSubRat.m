@@ -21,6 +21,7 @@ intSubRat[f_,x_]:=Module[
 	If[Left!=0,Print["LEFT = ",left];
 		Print["If you see this, please report bug to ivan"]
 	];
+
 	If[inte==="CANNOT SOLVE",Return["NotMatch"],Return[Q1/r1+inte]]
 ]	
 (*Problem remaining:
@@ -29,16 +30,16 @@ Log[f[x]-b I]-Log[f[x]+b I]====into=====2 I(ArcTan[f[x]/b]-Pi/2]
 *)
 
 
-intSubRat[x/(x^3+1),x]
+(*intSubRat[x/(x^3+1),x]
 intSubRat[1/(1+2x)/(1+x^2),x]
 intSubRat[(x-2)/(x^2+2x+3),x]
 intSubRat[(2x^3+2x^2+5x+5)/(x^4+5x^2+4),x]
-intSubRat[1/(x^4+1),x]
+intSubRat[1/(x^4+1),x]*)
 
 
-mya=-(1/4) (-1)^(1/4) Log[(-1)^(1/4)-x]-1/4 (-1)^(3/4) Log[(-1)^(3/4)-x]+1/4 (-1)^(1/4) Log[(-1)^(1/4)+x]+1/4 (-1)^(3/4) Log[(-1)^(3/4)+x];
+(*mya=-(1/4) (-1)^(1/4) Log[(-1)^(1/4)-x]-1/4 (-1)^(3/4) Log[(-1)^(3/4)-x]+1/4 (-1)^(1/4) Log[(-1)^(1/4)+x]+1/4 (-1)^(3/4) Log[(-1)^(3/4)+x];
 sta=ArcTan[(-1+x^2)/(Sqrt[2] x)]/(2 Sqrt[2])-Log[(1-Sqrt[2] x+x^2)/(1+Sqrt[2] x+x^2)]/(4 Sqrt[2]);
-N[mya-sta/.x->10](*0.55536` -3.33067`*^-16 I left, do not change with x*)
+N[mya-sta/.x->10](*0.55536` -3.33067`*^-16 I left, do not change with x*)*)
 
 
 (*Horowitz-Ostrogradsky method for rational function integration*)
@@ -64,8 +65,8 @@ HorowitzOstrogradsky[q_,r_,x_]:=Module[(*Input parameter is Numerator, Denominat
 ] 
 
 
-(*HorowitzOstrogradsky[7(x)*(3x^2-2x),(x^6-4x^5+7)*(x-3)^3,x]*)
-HorowitzOstrogradsky[x^7-24x^4-4x^2+8x-8,x^8+6x^6+12x^4+8x^2,x]
+(*HorowitzOstrogradsky[7(x)*(3x^2-2x),(x^6-4x^5+7)*(x-3)^3,x]
+HorowitzOstrogradsky[x^7-24x^4-4x^2+8x-8,x^8+6x^6+12x^4+8x^2,x]*)
 
 
 (* This function deserves more consideration *)
@@ -99,8 +100,8 @@ RothsteinTrager[q_,r_,x_]:=Module[(*Input parameter is Numerator, Denominator, V
 
 
 
-(*RothsteinTrager[4x,x^2-4x+5,x]*)
-RothsteinTrager[x,x+1,x]
+(*RothsteinTrager[4x,x^2-4x+5,x]
+RothsteinTrager[x,x+1,x]*)
 
 
 (*Print["final ans=",RothsteinTrager[3x^2+1,x^3+x+1,x]];
@@ -111,4 +112,4 @@ Print["final ans=",RothsteinTrager[x,x^3+2,x]];*)
 
 
 
-RationalQ[(x^5+x^7+y^3)/(x^3+y^5),{x,y}]
+(*RationalQ[(x^5+x^7+y^3)/(x^3+y^5),{x,y}]*)

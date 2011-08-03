@@ -66,6 +66,7 @@ intDDM[f_,x_]:=Catch[Module[
 ]
 
 
+(*
 intDDM[x E^x^2,x]
 intDDM[4Cos[2x+3] ,x]
 intDDM[E^x/(1+E^x),x]
@@ -75,7 +76,7 @@ intDDM[Cos[E^x]^2 Sin[E^x] E^x,x]
 intDDM[x^2,x](*\:3002\:3002\:3002\:3002Anything is converted*)
 intDDM[Cos[x]^2 Sin[x],x]
 
-
+*)
 
 
 

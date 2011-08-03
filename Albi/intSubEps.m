@@ -12,9 +12,9 @@ Return[{e,x}]
 ]
 
 
-intSubEps[x(Cos[x]+Sin[x]),x]
+(*intSubEps[x(Cos[x]+Sin[x]),x]
 intSubEps[(x+E^x)/x,x]
-intSubEps[x (1+E^x)^2,x]
+intSubEps[x (1+E^x)^2,x]*)
 
 
 

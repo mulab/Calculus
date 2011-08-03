@@ -147,7 +147,7 @@ intSubFra[f_,x_]:=Module[
 ]
 
 
-intSubFra[Cos[x^(1/2)],x]
+(*intSubFra[Cos[x^(1/2)],x]
 intSubFra[x (x+1)^(1/2),x]
 intSubFra[1/(x^(1/2)-x^(1/3)),x]
 intSubFra[((x+1)/(2x+3))^(1/2),x]
@@ -155,7 +155,7 @@ intSubFra[Sin[x],x]
 intSubFra[x^(2/3)/(x^(1/2)-x^(1/6)),x]
 linear[3 x+ 5,x,c,d]
 Lin[2 x+5,x]
-Lin[1,x]
+Lin[1,x]*)
 
 
 

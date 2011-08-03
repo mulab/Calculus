@@ -81,7 +81,7 @@ intSubBin[f_,x_]:=Module[
 			d=Denominator[r2];
 			e=e/((c2*q/d)*x^(q-1)*(c1+c2*x^q)^(1/d-1));
 			e=e/.x->((y^d-c1)/c2)^(1/q);
-			Return[{Simplify[e],y,(c1+c2*x^q)^(1/Denominator(r2))}]
+			Return[{Simplify[e],y,(c1+c2*x^q)^(1/Denominator[r2])}]
 		];
 		If[Head[r1+r2]===Integer,(*substitute y=((c1+c2*y)/y)^(1/d1),d1 is the denominator of r1*)
 			d=Denominator[r1];
@@ -92,14 +92,13 @@ intSubBin[f_,x_]:=Module[
 		Return["NotMatch"]
 	]
 ]
-assertion
 
 
-(*Test:*)
+(*Test:
 intSubBin[x^4*(1-x^2)^(-5/2),x]
 intSubBin[x^(1/2)*(1+x)^(5/2),x]
 
-
+*)
 
 
 

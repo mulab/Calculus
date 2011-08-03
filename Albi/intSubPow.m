@@ -23,7 +23,7 @@ intSubPow[f_,x_]:=Module[
 			c=exponent;
 			exponent=1
 		];
-		temp=e/temp,	
+		temp=e/temp;	
 (* the following part seems to be wrong, bucause here e/temp is still part1
   besides, why counld part 2 be also the form x^c? 		
 		If[MatchQ[e/temp,x^_],(*the second part is of the form x^c,c!=1*)
@@ -75,10 +75,10 @@ to deal with*)
   
 
 
-intSubPow[Sin[x^2]*x^3,x]
+(*intSubPow[Sin[x^2]*x^3,x]
 intSubPow[x^7/(x^12+1),x]
 intSubPow[x^(3a)Sin[x^(2a)],x]
-intSubPow[x^(7a)/(x^(12a)+1)*Sin[x],x]
+intSubPow[x^(7a)/(x^(12a)+1)*Sin[x],x]*)
 
 
 

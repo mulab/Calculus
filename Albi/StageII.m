@@ -3,10 +3,11 @@
 times=0;
 ans=Null;
 rfs=Null;
-stageII[f_,x_]:=Catch[Module[
-	{tans},
-	SetDirectory[".\\"];(*Set Package Diretory*)
-	Import["intSubExp.m"];
+StageII[f_,x_]:=Module[
+	{tans,xt=x},
+	SetDirectory[NotebookDirectory[]];(*Set Package Diretory*)
+	
+	(*Import["intSubExp.m"];
 	Import["intSubPow.m"];
 	Import["intSubFra.m"];
 	Import["intSubBin.m"];
@@ -17,21 +18,26 @@ stageII[f_,x_]:=Catch[Module[
 	Import["intSubLog.m"];
 	Import["IntTable.m"];
 	Import["RationalQ.m"];
-(**)If[(tans=IntTable[f,x])=!="NotFound",
-		ans=tans,
-		modPow[f,x]
-(**)	];
-	If[rfs=!=Null,
-		ans=rfs+ans
-	];(*\:5904\:7406modRfs\:7684\:95ee\:9898*)
-	Throw[ans]
-]]
+
+	If[(SubAns=intSubExp[f,x])=!="NotMatch",
+		f=SubAns[[1]];x=ans[[2]];xt=x/.ans[[3]];
+		If[(MainAnsExp=Main[f,x])=!="NotMatch",
+			Return[{MainAnsExp/.x->xt}];
+		];
+	];
+			
+	Print[{"Now,f=",f,", x=",x,", xt=",xt}];*)
+	Return["NotMatch"];
+]
+
+
+(*StageII[Exp[x]/(2+3Exp[2x]),x]*)
 
 
 (*Elem (ai^(bi*xi+ci))*)
 modExp[f_,x_]:=Module[
 	{intinf,tans},(*intinf\:8bb0\:5f55\:79ef\:5206\:51fd\:6570\:4fe1\:606f*)
-	If[(intinf=intSubExp[f,x])=!="NotMatch",(*\:53ef\:4ee5\:8f6c\:6362*)
+	If[(intinf=intSubExp[f,x,xt])=!="NotMatch",(*\:53ef\:4ee5\:8f6c\:6362*)
 Print[{"exp",f,intinf}];
 		If[(tans=IntTable[intinf[[1]],intinf[[2]]])=!="NotFound",(*\:67e5\:5230\:79ef\:5206\:8868*)
 			ans=tans,
@@ -189,43 +195,15 @@ Print[times];
 
 
 
-stageII[Sin[x],x]
-
-
+(*stageII[Sin[x],x]
 stageII[E^(2 x)/(a + b E^(4 x)), x]
-
-
 stageII[x^3Sin[x^2],x]
-
-
 stageII[x^7/(x^12+1),x]
-
-
 stageII[Cos[x^(1/2)],x]
-
-
 stageII[1/(x^(1/2)-x^(1/3)),x]
-
-
 stageII[x^(1/2)*(1+x)^(5/2),x]
-
-
 stageII[Sqrt[A^2+B^2*Cos[2x]^2]*Cos[2x],x]
-
-
 stageII[Sqrt[1-4x+3x^2]/(1+x^2),x]
-
-
 stageII[y^2* ArcTan[y],y]
-
-
 stageII[1/(x (1+(Log[x])^2)),x]
-
-
-
-
-
-
-
-
-
+*)

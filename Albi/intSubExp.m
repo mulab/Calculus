@@ -84,13 +84,13 @@ intSubExp[f_,x_]:=Module[
 ];
 
 
-intSubExp[E^x/(2+3E^(2x)),x]
+(*intSubExp[E^x/(2+3E^(2x)),x]
 intSubExp[E^(2x)/(a+b E^(4x)),x]
 intSubExp[E^(x+1)/(1+E^x),x]
 intSubExp[10^x E^x,x]
 intSubExp[(a+b^(c x+h))/(d+e^(f x+g)),x]
 intSubExp[a^x/b^x,x]
-(*intSubExp[x/(1+E^x),x]
+intSubExp[x/(1+E^x),x]
 intSubExp[x/(1+x),x]
 intSubExp[x,x]
 \:8be5\:51fd\:6570\:53ea\:8981\:5b58\:5728a^(b x+c)\:ff0c\:5c31\:4f1a\:5904\:7406\:ff0c\:9664\:6b64\:4e4b\:5916\:ff0c\:4e0d\:4f1a\:5bf9\:5176\:5b83\:7c7b\:578b\:7684x\:6240\:7ed9\:7684\:4fe1\:606f\:7ed9\:51fa\:591a\:4f59\:7684\:5224\:65ad
