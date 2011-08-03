@@ -106,7 +106,7 @@ Trans1[f_, x_]:=Module[
 (* Attention: input expr cannot contain coef, even -1. So input Cos[n x] Sin[-m x] will cause error because coef=-1 will be added on expr *)
 
 
-ans=Trans1[Cos[3 x] Cos[n x],x]
+(*ans=Trans1[Cos[3 x] Cos[n x],x]*)
 
 
 (* part II) If the arugments are the same but are not identically x, 
@@ -158,7 +158,7 @@ Trans2[f_, x_, xt_]:=Module[
 ]
 
 
-Trans2[Tan[Sin[x+5]]/Exp[5+x],x,t^2]
+(*Trans2[Tan[Sin[x+5]]/Exp[5+x],x,t^2]*)
 
 
 (* part III *)
@@ -267,12 +267,12 @@ Trans4[f_, y_, yx_]:=Module[
 ]
 
 
-exp1=(Sin[x])^(-5)*Exp[(Sin[x])^10+Cos[x]+(Sin[x])^(-2)]
+(*exp1=(Sin[x])^(-5)*Exp[(Sin[x])^10+Cos[x]+(Sin[x])^(-2)]
 Trans4[exp1,x,x]
 exp2=(Cos[x])^(3)*Exp[(Sin[x])+(Cos[x])^(-2)]
 Trans4[exp2,x,x]	
 exp3=Sqrt[A^2+B^2(Sin[x])^2]/Sin[x]
-Trans4[exp3,x,x]	
+Trans4[exp3,x,x]	*)
 
 
 (* part V: All trigonometric functions are transformed into secants and tangents *)
@@ -488,15 +488,10 @@ Print["this"]*)
 	Throw[{Simplify[2/(1+y^2)*e/a],y}];
 
 	Throw["NotMatch"](*!!Need improve,return transformed expressions,so are the aboves*)
-
 ]
 ]
 	
-
-
 *)
-
-
 
 
 (*intSubTri2[(6 (1/y^6)^(1/6) (y^6)^(2/3))/(-1+(y^6)^(1/6)),y]

@@ -3,35 +3,27 @@
 times=0;
 ans=Null;
 rfs=Null;
-StageII[f_,x_]:=Module[
-	{tans,xt=x},
+StageII[ff_,xx_]:=Module[
+	{tans,f=ff,x=xx,xt=xx},
 	SetDirectory[NotebookDirectory[]];(*Set Package Diretory*)
 	
-	(*Import["intSubExp.m"];
-	Import["intSubPow.m"];
-	Import["intSubFra.m"];
-	Import["intSubBin.m"];
-	Import["intSubSqt.m"];
-	Import["intSubTri.m"];
-	Import["intSubRat.m"];
-	Import["intSubRfs.m"];
-	Import["intSubLog.m"];
-	Import["IntTable.m"];
-	Import["RationalQ.m"];
-
 	If[(SubAns=intSubExp[f,x])=!="NotMatch",
-		f=SubAns[[1]];x=ans[[2]];xt=x/.ans[[3]];
-		If[(MainAnsExp=Main[f,x])=!="NotMatch",
+		f=SubAns[[1]];x=SubAns[[2]];xt=SubAns[[3]] /.x->xt;
+
+MainAnsExp=SIN[f,x];
+		If[True,(*(MainAnsExp=SIN[f,x])=!="NotMatch",*)
 			Return[{MainAnsExp/.x->xt}];
-		];
+			Print["Getting Main Answer"];
+		]
 	];
-			
-	Print[{"Now,f=",f,", x=",x,", xt=",xt}];*)
+
+	Print[{"Now,f=",f,", x=",x,", xt=",xt}];
 	Return["NotMatch"];
 ]
 
 
-(*StageII[Exp[x]/(2+3Exp[2x]),x]*)
+Clear [x];
+StageII[Exp[x]/(2+3Exp[2x]),x]
 
 
 (*Elem (ai^(bi*xi+ci))*)

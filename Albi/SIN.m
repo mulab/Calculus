@@ -1,6 +1,6 @@
 (* ::Package:: *)
 
-Main[f_,x_]:=Module[
+SIN[f_,x_]:=Module[
 	{e=f,right,c=1,re},
 	SetDirectory[NotebookDirectory[]];
 (*	Import["StageII.m"];*)
@@ -12,16 +12,16 @@ Main[f_,x_]:=Module[
 	
 	(*\:5173\:4e8e\:52a0\:6cd5\:7684\:90e8\:5206\:ff0c\:9700\:8981\:8003\:8651\:4e24\:9879\:6216\:8005\:4e09\:9879\:5408\:5e76\:8003\:8651\:7684\:5fc5\:8981*)
 (*	If[ Head[e]==Plus,
-		If[ (Main[e[[1]],x]=!="NotFound")&&(Main[e[[2]],x]=!="NotFound"),
-			Return[Main[e[[1]],x]+Main[e[[2]],x]]
+		If[ (SIN[e[[1]],x]=!="NotFound")&&(SIN[e[[2]],x]=!="NotFound"),
+			Return[SIN[e[[1]],x]+SIN[e[[2]],x]]
 		]
 	];*)
-	If[Head[e]===Plus,Return[Main[e[[1]],x]+Main[e-e[[1]],x]]];
+	If[Head[e]===Plus,Return[SIN[e[[1]],x]+SIN[e-e[[1]],x]]];
 
 (*the head of e is impossible to be Minus*)
 (*	If[ Head[e]==Minus,
-		If[ (Main[e[[1]],x]=!="NotFound")&&(Main[e[[2]],x]=!="NotFound"),
-			Return[Main[e[[1]],x]-Main[e[[2]],x]]
+		If[ (SIN[e[[1]],x]=!="NotFound")&&(SIN[e[[2]],x]=!="NotFound"),
+			Return[SIN[e[[1]],x]-SIN[e[[2]],x]]
 		]
 	];*)
 	(*Get Constant*)
@@ -32,28 +32,28 @@ Main[f_,x_]:=Module[
 			],
 			{i,Length[e]}
 		];
-		Return[c*Main[e/c,x]];
+		Return[c*SIN[e/c,x]];
 	];
 	 
 (*	If[ Head[e]==Times,
 		If[ (D[e[[1]],x]==0),
-			Return[e[[1]]*Main[e[[2]],x]]
+			Return[e[[1]]*SIN[e[[2]],x]]
 		];
 		If[ (D[e[[2]],x]==0),
-			Return[e[[2]]*Main[e[[1]],x]]
+			Return[e[[2]]*SIN[e[[1]],x]]
 		];
 	];*)
 	
 	(*\:7a81\:7136\:53d1\:73b0intDDM\:6709\:70b9\:4e07\:80fd\:ff0c\:6709\:70b9bug*)
 	re=intDDM[e,x];
 	rex=re/.re[[2]]->x;
-	If[re=!="NotMatch"&&re=!=rex,Return[Main[ re[[1]],re[[2]] ]/.re[[2]]->re[[3]] ] ];
+	If[re=!="NotMatch"&&re=!=rex,Return[SIN[ re[[1]],re[[2]] ]/.re[[2]]->re[[3]] ] ];
 	
 	(*Stage I Method II*)
 	If[ Head[e]==Power,
 		right=e[[2]];
 		If[ (Head[right]===Integer&&right>0)&&(MatchQ[e[[1]],Plus[_,__]]),
-			Return[Main[Expand[e],x]]			
+			Return[SIN[Expand[e],x]]			
 		];
 	];
 	
@@ -76,29 +76,29 @@ Main[f_,x_]:=Module[
 ];
 
 
-(*Main[1,x]
-Main[5/(x^2),x]
-Main[Sin[x^2],x]
-Main[e^x,x]
-Main[Sqrt[a x+b],x]
-Main[Sqrt[a x^2 +b x +c]+Sqrt[a x +b],x]
-Main[Sqrt[x^2+1],x]
-Main[a^x+a x,x]
-Main[x^x,x]
-Main[x a^x,x]*)
+(*SIN[1,x]
+SIN[5/(x^2),x]
+SIN[Sin[x^2],x]
+SIN[e^x,x]
+SIN[Sqrt[a x+b],x]
+SIN[Sqrt[a x^2 +b x +c]+Sqrt[a x +b],x]
+SIN[Sqrt[x^2+1],x]
+SIN[a^x+a x,x]
+SIN[x^x,x]
+SIN[x a^x,x]*)
 
 
 
-NotebookDirectory[]
+(*NotebookDirectory[]*)
 
 
-IntTable[x^2,x]
+(*IntTable[x^2,x]
 NoClose[E^(x^2),x]
-Main[x^2,x]
-Main[(x+1)^2,x]
-(*Main[(5x+2)/(3x+1),x]*)
+SIN[x^2,x]
+SIN[(x+1)^2,x]
+(*SIN[(5x+2)/(3x+1),x]*)
 intDDM[(x+1)^2,x]
-
+*)
 
 
 

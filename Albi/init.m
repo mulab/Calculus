@@ -35,3 +35,4 @@ Int[x E^x]*)
 
 (*Int[(a+b*Sqrt[x])^20/Sqrt[x],x]*)
 (*Int[(1-2 Sqrt[x])^20/Sqrt[x],x]*)
+
