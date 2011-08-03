@@ -5,7 +5,7 @@ where R(x) is a rational function *)
 (*the method 7 of SIN StageII, Moses*)
 (*Shao Qiming*)
 intSubRep[f_,x_]:=Module[
-{e=f,R,P,eP,a={},U={}},
+{e=f,R,P,eP,a={},U={},S,Q,Rn,cx,at,Pb,TU,T,Ut},
 (*\:5224\:65adR\:662f\:5426\:4e3a\:6709\:7406\:51fd\:6570\:ff0c\:63d0\:53d6R\:548cP*)
 SetDirectory[NotebookDirectory[]];
 Import["..\\utility\\RationalQ.m"];
@@ -65,7 +65,7 @@ If[Total[U]!=0,Return["NoClose"],Return[{Simplify[Total[a]]*E^P,x}],Return["NoCl
 
 (*dapart\:5c06\:4e00\:4e2a\:5173\:4e8ex\:7684\:8868\:8fbe\:5f0f\:5206\:89e3\:6210\:5173\:4e8ex\:7684\:591a\:9879\:5f0f\:548c\:6709\:7406\:5f0f*)
 dapart[f_,x_]:=Module[
-{e=f,a,c,tt,len},
+{e=f,a,c,tt,len,thispart},
 a=Apart[Simplify[e]];
 c=0;
 (*\:4ee5\:4e0b\:5904\:7406\:5355\:9879*)

@@ -6,7 +6,7 @@
 (* Principle: if the integrand is f(log(x))dx, substitude log(x) by y
 	and output f(y)exp(y)dy  *)
 intSubLog[f_,x_]:=Module[
-	{e1,e2,e3,e4,a,b,e},
+	{e1,e2,e3,e4,a,b,e,log1,log2,log3,log4,y},
 	e1 = f/.Log[x]->log1;
 	e2 = f/.Log[x + b_]->log2;
 	e3 = f/.Log[a_ x]->log3;

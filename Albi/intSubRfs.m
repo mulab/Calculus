@@ -76,10 +76,12 @@ intSubRfs[ArcTan[y],y]
 intSubRfs[ArcSin[x],x]*)
 (*intSubRfs[y^2* ArcTan[y+1]+1,y]*)
 (*\:8fd9\:4e9b\:4f8b\:5b50\:5728StageI\:5c31\:5df2\:7ecf\:89e3\:51b3\:4e86\:ff0c\:90fd\:4e0d\:5e94\:8be5\:5b58\:5728\:4e86*)
-intSubRfs[x Log[x],x]
+(*intSubRfs[x Log[x],x]
 intSubRfs[x ArcSin[x^2],x]
 intSubRfs[Log[x^2+2x]/(x^2+2x+1),x]
-intSubRfs[x^2 ArcTan[x],x]
+intSubRfs[x^2 ArcTan[x],x]*)
+
+intSubRfs[Log[x^2+2x]/(x^2+2x+1),x]
 
 
 

@@ -74,7 +74,7 @@ HorowitzOstrogradsky[x^7-24x^4-4x^2+8x-8,x^8+6x^6+12x^4+8x^2,x]*)
 
 
 RothsteinTrager[q_,r_,x_]:=Module[(*Input parameter is Numerator, Denominator, Variable*)
-	{res,roots,ci,vi,inte=0},
+	{len1,res,roots,ci,vi,y,inte=0},
 
 	res = Resultant[q-y D[r,x],r,x];
 	roots = Roots[res==0,y]; (*get the roots ck or y and delete repeated ones*)

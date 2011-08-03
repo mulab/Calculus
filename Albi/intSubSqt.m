@@ -5,7 +5,7 @@ where a,b,c are constants (c!=0&a^2+b^2!=0) and R is a rational function of its 
 (*the method 5 of SIN ( Symbolic INtegrator ) stage II*)
 (*Shao Qiming & Zhang Junlin*)
 intSubSqt[f_,x_]:=Module[
-	{e=f,pos,loci,et,y,sqt,a=Null,b=Null,c=Null,A,C,a1,c1},
+	{e=f,pos,loci,et,y,sqt,a=Null,b=Null,c=Null,A,C,a1,c1,z},
 	pos=Position[e,Power[Plus[_,__],Rational[_Integer,2]]];
 	If[pos==={},Return["NotMatch"]];(*do not have Sqrt[c*x^2+b*x+a]*)	
 	If[!PolynomialQ[et,x],Return["NotMatch"]];

@@ -9,7 +9,7 @@
 (*aaThe integrand is not a rational function and possesses the form ax^r*(c1+c2*x^q)*p,
 where A,c1,c2 are constants,p,q,r are rational numbers and c1*c2*q*p!=0*)
 intSubBin[f_,x_]:=Module[
-	{e=f,l,part,i,se,se1,se2,a=1,r,p,q,c1,c2,r1,r2,d},
+	{e=f,y,l,part,i,se,se1,se2,a=1,r,p,q,c1,c2,r1,r2,d},
 	If[Head[e]===Times,
 		l=Length[e];
 		part=Table[Part[e,i],{i,l}];

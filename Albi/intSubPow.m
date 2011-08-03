@@ -4,7 +4,7 @@
 (*The integrand is of the form x^c Elem (x^Subscript[k, i]),where c,Subscript[k, i] are integers
 substitute y=x^k,k=gcd ({c+1,Subscript[k, 1],Subscript[k, 2],...}),k!=1,returns the transformed integrand*)
 intSubPow[f_,x_]:=Module[
-	{e=f,pos,c,temp,i,m={},pow,ki,k,exponent},
+	{e=f,pos,c,temp,i,m={},y,pow,ki,k,exponent},
 	If[Head[e]===Times,
 		temp=Level[e,1][[1]],
 		Return["NotMatch"]

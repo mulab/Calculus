@@ -115,7 +115,7 @@ Trans1[f_, x_]:=Module[
 	OTHERWISE,Return the third*)
 
 Trans2[f_, x_, xt_]:=Module[
-	{e=f,pos,a,b,yx,linearexp},
+	{e=f,pos,a,b,yx,linearexp,y},
 	pos=Position[f,a_ x + b_];
 	If[Length[pos]>0,
 		(*a=Level[Extract[f,pos[[1]]],1][[1]];*)
@@ -242,7 +242,7 @@ Trans3[f_, x_, xt_]:=Module[
 (* All Sin[y] are replaced by sin[y] in order to prevent being simplified by system*)
 (* I first try to replace this variables and then test whether throughly*)
 Trans4[f_, y_, yx_]:=Module[
-	{e,d,m,n,z},(* transform to sin and cos*)
+	{e,d,m,n,z,sin,cos},(* transform to sin and cos*)
 	e = Simplify[f] /.Sin[y]->sin[y] /.Cos[y]->cos[y];
 	e = e /.Tan[y]->sin[y] /cos[y]/.Cot[y]->cos[y]/sin[y];
 	e = e /.Csc[y]->1/sin[y] /.Sec[y]->1/cos[y];
@@ -279,7 +279,7 @@ Trans4[exp3,x,x]	*)
 (* Just like part IV, are trigonometirc functions are rewritten in lowercase 
 	in order to prevent simplification*)
 Trans5[f_, y_, yx_]:=Module[
-	{e,d,m,n,z},(* transform to tan and sec*)
+	{e,d,m,n,z,tan,sec},(* transform to tan and sec*)
 	e = f /. Sin[y] -> tan[y]/sec[y] /. Cos[y] -> 1/sec[y];
 	e = e /. Tan[y] -> tan[y] /. Cot[y] -> 1/tan[y];
 	e = e /. Csc[y] -> sec[y]/tan[y] /. Sec[y] -> sec[y];
