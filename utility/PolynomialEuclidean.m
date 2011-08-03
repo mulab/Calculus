@@ -1,5 +1,16 @@
 (* ::Package:: *)
 
+Euclidean[A_,B_,x_]:=Module[
+	{a=A,b=B,q,r},
+	While[b=!=0,
+		{q,r}=PolyDivide[a,b,x];
+		a=b;
+		b=r;
+	];
+	a
+]
+
+
 (* Given a Euclidean domain D and a,b,c\[Element]D with c\[Element](a,b), return s,t,g\[Element]D such that g=gcd(a,b) and s*a+t*b=g *)
 ExtendedEuclidean[A_,B_,x_]:=Module[
 	{a=A,b=B,s,t,g,q,r,a1,b1,r1},
