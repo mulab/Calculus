@@ -1,8 +1,8 @@
 (* ::Package:: *)
 
-BeginPackage["Rubi`"];
+BeginPackage["Albi`"];
 
-Int::usage="Int[f[x],x] returns the integral";
+SIN::usage="SIN[f[x],x] returns the integral";
 
 Begin["`Private`"];
 
