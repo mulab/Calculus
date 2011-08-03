@@ -241,7 +241,7 @@ Int[Sqrt[b_ + a_ x_], x_]  := (2 (b + a x)^(3/2))/(3 a)/;FreeQ[{a, b}, x]
 Int[x_ Sqrt[b_ + a_ x_],x_]:= (2 Sqrt[b + a x] (-2 b^2 + a b x + 3 a^2 x^2))/(15 a^2) /;FreeQ[{a, b}, x] 
 
 
- Int[1/(x_^2 +a_^2),x_] := ArcTan[x/a]/a /;FreeQ[{a},x] && a!=0
+Int[1/(x_^2 +a_^2),x_] := ArcTan[x/a]/a /;FreeQ[{a},x] && a!=0
 
 
 Int[1/(x_^2 -a_^2),x_] := -(ArcTanh[x/a]/a) /;FreeQ[{a},x] && a!=0
@@ -425,3 +425,12 @@ Int[x_/Sqrt[a_+b_ x_^2],x_] := Sqrt[a+b x^2]/b /;FreeQ[{a,b},x]&&NonzeroQ[b]
 
 
 Int[a_ x_/Sqrt[b_+c_ x_^2],x_] := a Sqrt[b+c x^2]/c /;FreeQ[{a,b,c},x]&&NonzeroQ[c]
+
+
+Int[Cos[x_]^n_,x_] := Cos[x]^(n-1)*Sin[x]/n + Dist[n-1/n,Int[Cos[x]^(n-2),x]]/;FreeQ[n,x]&&IntegersQ[n]&&n>1
+
+
+Int[Sin[x_]^n_,x_] := -Sin[x]^(n-1)*Cos[x]/n + Dist[n-1/n,Int[Sin[x]^(n-2),x]]/;FreeQ[n,x]&&IntegersQ[n]&&n>1
+
+
+Int[Tan[x_]^n_,x_] := -Tan[x]^(n-1)/(n-1)-Int[Tan[x]^(n-2),x]/;FreeQ[n,x]&&IntegersQ[n]&&n>1
