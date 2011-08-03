@@ -1430,33 +1430,33 @@ FunctionOfTrig[u_,v_,x_] :=
 
 
 (* u is a function of the insert sine function of x.  If u can be put in the
-form (Sin (c+d*x)^j)^m*(A+B*Sin (c+d*x)^k+C*Sin (c+d*x)^(2*k))*(a+b*Sin (c+d*x)^k)^n
+form (sin (c+d*x)^j)^m*(A+B*sin (c+d*x)^k+C*sin (c+d*x)^(2*k))*(a+b*sin (c+d*x)^k)^n
 where 2*m and 2*n are integers and j^2=k^2=1, RecognizedFunctionOfTrigQ[u,x]
 returns True; else it returns False. *)
 RecognizedFunctionOfTrigQ[u_,x_Symbol] :=
-  MatchQ[u,(a_.+b_.*Sin[c_.+d_.*x]^k_.)^n_. /; 
+  MatchQ[u,(a_.+b_.*sin[c_.+d_.*x]^k_.)^n_. /; 
     FreeQ[{a,b,c,d,n},x] && k^2===1] ||
-  MatchQ[u,(A_.+B_.*Sin[c_.+d_.*x]^i_.)*(a_.+b_.*Sin[c_.+d_.*x]^k_.)^n_. /; 
+  MatchQ[u,(A_.+B_.*sin[c_.+d_.*x]^i_.)*(a_.+b_.*sin[c_.+d_.*x]^k_.)^n_. /; 
     FreeQ[{a,b,c,d,A,B,n},x] && i^2===1 && k^2===1] ||
-  MatchQ[u,(A_.+C_.*Sin[c_.+d_.*x]^i2_)*(a_.+b_.*Sin[c_.+d_.*x]^k_.)^n_. /; 
+  MatchQ[u,(A_.+C_.*sin[c_.+d_.*x]^i2_)*(a_.+b_.*sin[c_.+d_.*x]^k_.)^n_. /; 
     FreeQ[{a,b,c,d,A,C,n},x] && i2^2===4 && k^2===1] ||
-  MatchQ[u,(A_.+B_.*Sin[c_.+d_.*x]^i_.+C_.*Sin[c_.+d_.*x]^i2_)*(a_.+b_.*Sin[c_.+d_.*x]^k_.)^n_. /; 
+  MatchQ[u,(A_.+B_.*sin[c_.+d_.*x]^i_.+C_.*sin[c_.+d_.*x]^i2_)*(a_.+b_.*sin[c_.+d_.*x]^k_.)^n_. /; 
     FreeQ[{a,b,c,d,A,B,C,n},x] && i^2===1 && k^2===1 && i2===2*i] ||
 
-  MatchQ[u,(Sin[c_.+d_.*x]^j_.)^m_.*(A_.+B_.*Sin[c_.+d_.*x]^k_.) /; 
+  MatchQ[u,(sin[c_.+d_.*x]^j_.)^m_.*(A_.+B_.*sin[c_.+d_.*x]^k_.) /; 
     FreeQ[{c,d,A,B,m},x] && j^2===1 && k^2===1] ||
-  MatchQ[u,(Sin[c_.+d_.*x]^j_.)^m_.*(A_.+C_.*Sin[c_.+d_.*x]^k2_) /; 
+  MatchQ[u,(sin[c_.+d_.*x]^j_.)^m_.*(A_.+C_.*sin[c_.+d_.*x]^k2_) /; 
     FreeQ[{c,d,A,C,m},x] && j^2===1 && k2^2===4] ||
-  MatchQ[u,(Sin[c_.+d_.*x]^j_.)^m_.*(A_.+B_.*Sin[c_.+d_.*x]^k_.+C_.*Sin[c_.+d_.*x]^k2_) /; 
+  MatchQ[u,(sin[c_.+d_.*x]^j_.)^m_.*(A_.+B_.*sin[c_.+d_.*x]^k_.+C_.*sin[c_.+d_.*x]^k2_) /; 
     FreeQ[{c,d,A,B,C,m},x] && j^2===1 && k^2===1 && k2===2*k] ||
 
-  MatchQ[u,(Sin[c_.+d_.*x]^j_.)^m_.*(a_.+b_.*Sin[c_.+d_.*x]^k_.)^n_. /; 
+  MatchQ[u,(sin[c_.+d_.*x]^j_.)^m_.*(a_.+b_.*sin[c_.+d_.*x]^k_.)^n_. /; 
     FreeQ[{a,b,c,d,m,n},x] && j^2===1 && k^2===1] ||
-  MatchQ[u,(Sin[c_.+d_.*x]^j_.)^m_.*(A_.+B_.*Sin[c_.+d_.*x]^i_.)*(a_.+b_.*Sin[c_.+d_.*x]^k_.)^n_. /; 
+  MatchQ[u,(sin[c_.+d_.*x]^j_.)^m_.*(A_.+B_.*sin[c_.+d_.*x]^i_.)*(a_.+b_.*sin[c_.+d_.*x]^k_.)^n_. /; 
     FreeQ[{a,b,c,d,A,B,m,n},x] && i^2===1 && j^2===1 && k^2===1] ||
-  MatchQ[u,(Sin[c_.+d_.*x]^j_.)^m_.*(A_.+C_.*Sin[c_.+d_.*x]^i2_)*(a_.+b_.*Sin[c_.+d_.*x]^k_.)^n_. /; 
+  MatchQ[u,(sin[c_.+d_.*x]^j_.)^m_.*(A_.+C_.*sin[c_.+d_.*x]^i2_)*(a_.+b_.*sin[c_.+d_.*x]^k_.)^n_. /; 
     FreeQ[{a,b,c,d,A,C,m,n},x] && i2^2===4 && j^2===1 && k^2===1] ||
-  MatchQ[u,(Sin[c_.+d_.*x]^j_.)^m_.*(A_.+B_.*Sin[c_.+d_.*x]^i_.+C_.*Sin[c_.+d_.*x]^i2_)*(a_.+b_.*Sin[c_.+d_.*x]^k_.)^n_. /; 
+  MatchQ[u,(sin[c_.+d_.*x]^j_.)^m_.*(A_.+B_.*sin[c_.+d_.*x]^i_.+C_.*sin[c_.+d_.*x]^i2_)*(a_.+b_.*sin[c_.+d_.*x]^k_.)^n_. /; 
     FreeQ[{a,b,c,d,A,B,C,m,n},x] && i^2===1 && j^2===1 && k^2===1 && i2===2*i]
 
 
@@ -2188,28 +2188,28 @@ SubstForPower[u_,bas_,deg_,x_] :=
 
 
 (* u (v) is an expression of the form f (Sin[v],Cos[v],Tan[v],Cot[v],Sec[v],Csc[v]). *)
-(* SubstForTrig[u,Sin,cos,v,x] returns the expression f (Sin,cos,Sin/cos,cos/Sin,1/cos,1/Sin). *)
-SubstForTrig[u_,Sin_,cos_,v_,x_] :=
+(* SubstForTrig[u,sin,cos,v,x] returns the expression f (sin,cos,sin/cos,cos/sin,1/cos,1/sin). *)
+SubstForTrig[u_,sin_,cos_,v_,x_] :=
   If[AtomQ[u],
     u,
   If[TrigQ[u] && IntegerQuotientQ[u[[1]],v],
     If[u[[1]]===v || ZeroQ[u[[1]]-v],
       If[SinQ[u],
-        Sin,
+        sin,
       If[CosQ[u],
         cos,
       If[TanQ[u],
-        Sin/cos,
+        sin/cos,
       If[CotQ[u],
-        cos/Sin,
+        cos/sin,
       If[SecQ[u],
         1/cos,
-      1/Sin]]]]],
-    Map[Function[SubstForTrig[#,Sin,cos,v,x]],
+      1/sin]]]]],
+    Map[Function[SubstForTrig[#,sin,cos,v,x]],
 			ReplaceAll[TrigExpand[Head[u][u[[1]]/v*x]],x->v]]],
   If[ProductQ[u] && CosQ[u[[1]]] && SinQ[u[[2]]] && ZeroQ[u[[1,1]]-v/2] && ZeroQ[u[[2,1]]-v/2],
-    Sin/2*SubstForTrig[Drop[u,2],Sin,cos,v,x],
-  Map[Function[SubstForTrig[#,Sin,cos,v,x]],u]]]]
+    sin/2*SubstForTrig[Drop[u,2],sin,cos,v,x],
+  Map[Function[SubstForTrig[#,sin,cos,v,x]],u]]]]
 
 
 (* u (v) is an expression of the form f (Sinh[v],Cosh[v],Tanh[v],Coth[v],Sech[v],Csch[v]). *)
@@ -2418,22 +2418,22 @@ SubstForInverseLinear[u_,x_Symbol] :=
 
 
 (* u is a function of trig functions of a linear function of x. *)
-(* SubstInertSineForTrigOfLinear[u] returns u with the trig functions replaced with the inert Sin function. *)
+(* SubstInertSineForTrigOfLinear[u] returns u with the trig functions replaced with the inert sin function. *)
 SubstInertSineForTrigOfLinear[u_,x_] :=
   If[AtomQ[u],
     u,
   If[TrigQ[u] && LinearQ[u[[1]],x],
     If[SinQ[u],
-      Sin[u[[1]]],
+      sin[u[[1]]],
     If[CosQ[u],
-      Sin[u[[1]]+Pi/2],
+      sin[u[[1]]+Pi/2],
     If[TanQ[u],
-      Sin[u[[1]]]/Sin[u[[1]]+Pi/2],
+      sin[u[[1]]]/sin[u[[1]]+Pi/2],
     If[CotQ[u],
-      Sin[u[[1]]+Pi/2]/Sin[u[[1]]],
+      sin[u[[1]]+Pi/2]/sin[u[[1]]],
     If[SecQ[u],
-      Sin[u[[1]]+Pi/2]^(-1),
-    Sin[u[[1]]]^(-1)]]]]],
+      sin[u[[1]]+Pi/2]^(-1),
+    sin[u[[1]]]^(-1)]]]]],
   Map[Function[SubstInertSineForTrigOfLinear[#,x]],u]]]
 
 
