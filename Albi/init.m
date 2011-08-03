@@ -1,10 +1,10 @@
 (* ::Package:: *)
 
-BeginPackage["Albi`"];
+(*BeginPackage["Albi`"];
 
 SIN::usage="SIN[f[x],x] returns the integral";
 
-Begin["`Private`"];
+Begin["`Private`"];*)
 
 SetDirectory[NotebookDirectory[]];
 
@@ -22,8 +22,8 @@ Get["intSubSqt.m"];
 Get["intSubTri.m"];
 Get["SIN.m"];
 Get["StageII.m"];
-End[];
-EndPackage[];
+(*End[];
+EndPackage[];*)
 
 
 (*Int[E^x,x]

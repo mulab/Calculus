@@ -21,13 +21,13 @@ intSubRat[f_,x_]:=Module[
 	If[Left!=0,Print["LEFT = ",left];
 		Print["If you see this, please report bug to ivan"]
 	];
-
 	If[inte==="CANNOT SOLVE",Return["NotMatch"],Return[Q1/r1+inte]]
 ]	
 (*Problem remaining:
 How to simplify expression like:
 Log[f[x]-b I]-Log[f[x]+b I]====into=====2 I(ArcTan[f[x]/b]-Pi/2]
 *)
+
 
 
 (*intSubRat[x/(x^3+1),x]
@@ -81,6 +81,7 @@ RothsteinTrager[q_,r_,x_]:=Module[(*Input parameter is Numerator, Denominator, V
 	roots = Roots[res==0,y]; (*get the roots ck or y and delete repeated ones*)
 	If[roots==False,Return["CANNOT SOLVE"]];
 	If[Head[roots]=!=Equal,roots = Union[roots];];   (*ATTENTION: Union often errors*)
+
 	If[!FreeQ[roots,Root],Return["CANNOT SOLVE"],
 		If[Head[roots]===Equal,len1=1,len1=Length[roots]](*len1 is the number of roots*)
 	];
@@ -113,3 +114,6 @@ Print["final ans=",RothsteinTrager[x,x^3+2,x]];*)
 
 
 (*RationalQ[(x^5+x^7+y^3)/(x^3+y^5),{x,y}]*)
+
+
+

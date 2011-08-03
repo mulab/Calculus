@@ -3,27 +3,44 @@
 times=0;
 ans=Null;
 rfs=Null;
-StageII[ff_,xx_]:=Module[
-	{tans,f=ff,x=xx,xt=xx},
+StageII[ff_,xx_,s2sdup_]:=Module[ (*s2sd: Stage II \:8c03\:7528\:6df1\:5ea6*)
+	{tans,f=ff,x=xx,xt=xx,s2sd=s2sdup+1,MainAns},
+	times = times + 1;
+	Print["debug, into stage II, f=",f,",  var=",x,", times=",times,", level=",s2sd];
 	SetDirectory[NotebookDirectory[]];(*Set Package Diretory*)
-	
+
 	If[(SubAns=intSubExp[f,x])=!="NotMatch",
 		f=SubAns[[1]];x=SubAns[[2]];xt=SubAns[[3]] /.x->xt;
-
-MainAnsExp=SIN[f,x];
-		If[True,(*(MainAnsExp=SIN[f,x])=!="NotMatch",*)
-			Return[{MainAnsExp/.x->xt}];
-			Print["Getting Main Answer"];
-		]
+		Print["intSubExp success, now ",x," = ",xt,", depth=",s2sd];
+		MainAns=StageII[f,x,s2sd];(*MainAns=SIN[f,x];*)(****************************)
+		If[MainAns=!="NotMatch",
+			Print["Getting Main Answer: success  ",s2sd];
+			Return[{MainAns/.x->xt}],
+			Print["Getting Main Answer: fail  ",s2sd];
+			Return["NotMatch"];(*which method should I take?*)
+		],
+		Print["intSubExp fail  ",s2sd];
 	];
 
-	Print[{"Now,f=",f,", x=",x,", xt=",xt}];
+	If[(SubAns=intSubFra[f,x])=!="NotMatch",
+		f=SubAns[[1]];x=SubAns[[2]];xt=SubAns[[3]] /.x->xt;
+		Print["intSubFra success, now ",x," = ",xt,", depth=",s2sd];
+		MainAns=StageII[f,x,s2sd];(*MainAns=SIN[f,x];*)(****************************)
+		If[MainAns=!="NotMatch",
+			Print["Getting Main Answer: success  ",s2sd];
+			Return[{MainAns/.x->xt}],
+			Print["Getting Main Answer: fail  ",s2sd];
+			Return["NotMatch"];(*which method should I take?*)
+		],
+		Print["intSubFra fail  ",s2sd];
+	];
+
+
+	Print[{"now,f=",f,", var=",x,", xt=",xt}];
 	Return["NotMatch"];
 ]
-
-
 Clear [x];
-StageII[Exp[x]/(2+3Exp[2x]),x]
+StageII[(Exp[x]/ (2+Exp[x+1]))*((Exp[x]/ (2+Exp[x+1]))+1)^(1/2),x,0]
 
 
 (*Elem (ai^(bi*xi+ci))*)

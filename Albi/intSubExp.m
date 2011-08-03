@@ -7,7 +7,7 @@ Subscript[a, i]^Subscript[c, i]*Subscript[a, 1]^(Subscript[b, i]x*Log[Subscript[
 (*the method 1 of SIN ( Symbolic INtegrator ) stage II*)
 (*Shao Qiming & Zhang Junlin*)
 intSubExp[f_,x_]:=Module[
-	{e=f,pos=Position[f,x],loc={},i,j,len,ptr,mp,a={},b={},c={},ans},
+	{e=f,pos=Position[f,x],loc={},i,j,len,ptr,mp,a={},b={},c={},y,ans},
 	If[Length[pos]==0,Return["NotMatch"]];
 	ans=Do[(*enumerate each occrurance of x to get Subscript[a, i], Subscript[b, i], Subscript[c, i] and the location*)
 		ptr=pos[[i]];
@@ -102,6 +102,5 @@ intSubExp[x/(1+x),x]
 intSubExp[1/1+x,x]*)
 (*intSubExp[x,x]*)
 (*\:8be5\:51fd\:6570\:53ea\:8981\:5b58\:5728a^(b x+c)\:ff0c\:5c31\:4f1a\:5904\:7406\:ff0c\:9664\:6b64\:4e4b\:5916\:ff0c\:4e0d\:4f1a\:5bf9\:5176\:5b83\:7c7b\:578b\:7684x\:6240\:7ed9\:7684\:4fe1\:606f\:7ed9\:51fa\:591a\:4f59\:7684\:5224\:65ad...*)
-(*intSubExp[E^x/(E^(x^2)+1),x]
-intSubExp[1/x,x]*)
-
+(*intSubExp[E^x/(E^(x)+1),x]
+intSubExp[E/x,x]*)

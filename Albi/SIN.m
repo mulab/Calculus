@@ -88,7 +88,6 @@ SIN[x^x,x]
 SIN[x a^x,x]*)
 
 
-
 (*NotebookDirectory[]*)
 
 

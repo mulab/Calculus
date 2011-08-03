@@ -68,7 +68,7 @@ substitute y=((a*x+b)/(c*x+d))^(1/k),k=least common multiple of the Subscript[m,
 (*the method 3 of SIN ( Symbolic INtegrator ) stage II*)
 (*Shao Qiming & Zhang Junlin*)
 intSubFra[f_,x_]:=Module[
-	{e=f,pos=Position[f,Power[a_,_]/;!FreeQ[a,x]],a=Null,b=Null,c=Null,d=Null,m={},n={},loc={},i,loci,fra,base,exponent,deno,nume,temp,k},
+	{e=f,y,pos=Position[f,Power[a_,_]/;!FreeQ[a,x]],a=Null,b=Null,c=Null,d=Null,m={},n={},loc={},i,loci,fra,base,exponent,deno,nume,temp,k},
 	If[pos==={},Return["NotMatch"]];
 	Do[
 		loci=pos[[i]];
