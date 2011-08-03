@@ -1,15 +1,13 @@
 (* ::Package:: *)
 
 BeginPackage["Rubi`"];
-
 Int::usage="Int[f[x],x] returns the integral";
+
 
 Begin["`Private`"];
 
 SetDirectory[NotebookDirectory[]];
 
-Get["TableInt.m"];
-Get["NoCloseInt.m"];
 Get["original\\RationalFunctions\\RationalFunctionsOfLinears.m"];
 Get["original\\RationalFunctions\\RationalFunctionsOfBinomials.m"];
 Get["original\\RationalFunctions\\RationalFunctionsOfTrinomials.m"];
@@ -75,6 +73,8 @@ Get["original\\GeneralIntegrationRules.m"];
 Get["original\\IntegrationUtilityFunctions.m"]; 
 
 End[];
+
+
 EndPackage[];
 
 

@@ -7,16 +7,6 @@ rischpoly[a_+b_,x_]:=rischpoly[a,x]+rischpoly[b,x]
 rischpoly[a_./x_,x_]:=a Log[x]/;FreeQ[a,x]
 
 
-ExtendedEuclidean[a_,b_,c_,x_]:=Module[
-	{g,t,s,q,r},
-	{g,{t,s}}=PolynomialExtendedGCD[a,b,x];
-	q=First[PolynomialQuotientRemainder[c,g,x]];
-	{t,s}=q*{t,s};
-	{q,r}=PolynomialQuotientRemainder[t,b,x];
-	{r,Together[s+q*a]}
-]
-
-
 (*Reference: Symbolic Integration 1, Manuel Bronstein, Springer, 2005.*)
 HermiteReduce[a_,d_,var_]:=Module[
 	{num=a,den=d,g=0, polyPart=0,Sn,Ss,Sn2,Sns,B,c},
@@ -36,6 +26,3 @@ HermiteReduce[a_,d_,var_]:=Module[
 	];
 	{polyPart+Cancel[g],Cancel[num/Ss]}
 ]
-
-
-
