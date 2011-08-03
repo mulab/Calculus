@@ -81,7 +81,9 @@ intSubRfs[x ArcSin[x^2],x]
 intSubRfs[Log[x^2+2x]/(x^2+2x+1),x]
 intSubRfs[x^2 ArcTan[x],x]*)
 
-intSubRfs[Log[x^2+2x]/(x^2+2x+1),x]
+
+
+
 
 
 

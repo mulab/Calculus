@@ -34,7 +34,8 @@ Log[f[x]-b I]-Log[f[x]+b I]====into=====2 I(ArcTan[f[x]/b]-Pi/2]
 intSubRat[1/(1+2x)/(1+x^2),x]
 intSubRat[(x-2)/(x^2+2x+3),x]
 intSubRat[(2x^3+2x^2+5x+5)/(x^4+5x^2+4),x]
-intSubRat[1/(x^4+1),x]*)
+intSubRat[1/(x^4+1),x]
+intSubRat[1/(1+2 x+x^2),x]*)
 
 
 (*mya=-(1/4) (-1)^(1/4) Log[(-1)^(1/4)-x]-1/4 (-1)^(3/4) Log[(-1)^(3/4)-x]+1/4 (-1)^(1/4) Log[(-1)^(1/4)+x]+1/4 (-1)^(3/4) Log[(-1)^(3/4)+x];
@@ -75,7 +76,7 @@ HorowitzOstrogradsky[x^7-24x^4-4x^2+8x-8,x^8+6x^6+12x^4+8x^2,x]*)
 
 RothsteinTrager[q_,r_,x_]:=Module[(*Input parameter is Numerator, Denominator, Variable*)
 	{len1,res,roots,ci,vi,y,inte=0},
-
+	If[FreeQ[r,x],Return[0]];
 	res = Resultant[q-y D[r,x],r,x];
 	roots = Roots[res==0,y]; (*get the roots ck or y and delete repeated ones*)
 	If[roots==False,Return["CANNOT SOLVE"]];
@@ -97,7 +98,6 @@ RothsteinTrager[q_,r_,x_]:=Module[(*Input parameter is Numerator, Denominator, V
 	];
 	Return[inte];
 ]
-
 
 
 (*RothsteinTrager[4x,x^2-4x+5,x]
