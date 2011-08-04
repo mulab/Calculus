@@ -1,6 +1,7 @@
 (* ::Package:: *)
 
 BeginPackage["Calculus`Risch`"];
+pmint::usage="pmint[f,x] returns integral of f";
 
 
 Begin["`Private`"];
