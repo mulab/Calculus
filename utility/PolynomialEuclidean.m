@@ -5,7 +5,7 @@ Euclidean[A_,B_,x_]:=Module[
 	While[b=!=0,
 		{q,r}=PolyDivide[a,b,x];
 		a=b;
-		b=r;
+		b=Simplify[r];
 	];
 	a
 ]
@@ -48,4 +48,5 @@ PartialFraction[A_,d_,x_]:=Module[
 
 
 (* PartialFraction[x^2+3x,{x+1,x^2-2x+1},x]
-ExtendedEuclidean[x^4-2x^3-6x^2+12x+15,x^3+x^2-4x-4,x] *)
+ExtendedEuclidean[x^4-2x^3-6x^2+12x+15,x^3+x^2-4x-4,x]
+Euclidean[x^4-2x^3-6x^2+12x+15,x^3+x^2-4x-4,x] *)
