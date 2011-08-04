@@ -15,7 +15,6 @@ Int[f_ + g_,x_] := Int[f,x]+Int[g,x]
 Int[x_^n_ Sqrt[a_ x_ + b_] x_] :=  (2 x^n)/((2 n + 3) a) (Sqrt[(a x + b)])^3 - (2 n b)/((2 n + 3) a) Int[x^(n - 1) Sqrt[a x + b] x] /; FreeQ[n, x] && FreeQ[a, x] && FreeQ[b, x] 
 
 
-
 Int[f_[a_ x_ + b_] x_] :=  Int[f[a x + b],a x + b] / a /; FreeQ[{a, b} ,x] 
 
 
