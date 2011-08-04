@@ -1,103 +1,43 @@
 (* ::Package:: *)
 
 SIN[f_,x_]:=Module[
-	{e=f,right,c=1,re},
-	SetDirectory[NotebookDirectory[]];
-(*	Import["StageII.m"];*)
-	Import["..\\Rubi\\IntTable.m"];
-	Import["..\\Rubi\\NoCloseTable.m"];
-	Import["intDDM.m"];
-	(*Is there any warning?*)
-	(*Stage I Method I*)
-	
-	(*\:5173\:4e8e\:52a0\:6cd5\:7684\:90e8\:5206\:ff0c\:9700\:8981\:8003\:8651\:4e24\:9879\:6216\:8005\:4e09\:9879\:5408\:5e76\:8003\:8651\:7684\:5fc5\:8981*)
-(*	If[ Head[e]==Plus,
-		If[ (SIN[e[[1]],x]=!="NotFound")&&(SIN[e[[2]],x]=!="NotFound"),
-			Return[SIN[e[[1]],x]+SIN[e[[2]],x]]
-		]
-	];*)
-	If[Head[e]===Plus,Return[SIN[e[[1]],x]+SIN[e-e[[1]],x]]];
+{e=f,InRe},
 
-(*the head of e is impossible to be Minus*)
-(*	If[ Head[e]==Minus,
-		If[ (SIN[e[[1]],x]=!="NotFound")&&(SIN[e[[2]],x]=!="NotFound"),
-			Return[SIN[e[[1]],x]-SIN[e[[2]],x]]
-		]
-	];*)
-	(*Get Constant*)
-	If[Head[e]===Times,
-		Do[
-			If[FreeQ[e[[i]],x],
-				c=c*e[[i]]
-			],
-			{i,Length[e]}
-		];
-		Return[c*SIN[e/c,x]];
-	];
-	 
-(*	If[ Head[e]==Times,
-		If[ (D[e[[1]],x]==0),
-			Return[e[[1]]*SIN[e[[2]],x]]
-		];
-		If[ (D[e[[2]],x]==0),
-			Return[e[[2]]*SIN[e[[1]],x]]
-		];
-	];*)
-	
-	(*\:7a81\:7136\:53d1\:73b0intDDM\:6709\:70b9\:4e07\:80fd\:ff0c\:6709\:70b9bug*)
-	re=intDDM[e,x];
-	rex=re/.re[[2]]->x;
-	If[re=!="NotMatch"&&re=!=rex,Return[SIN[ re[[1]],re[[2]] ]/.re[[2]]->re[[3]] ] ];
-	
-	(*Stage I Method II*)
-	If[ Head[e]==Power,
-		right=e[[2]];
-		If[ (Head[right]===Integer&&right>0)&&(MatchQ[e[[1]],Plus[_,__]]),
-			Return[SIN[Expand[e],x]]			
-		];
-	];
-	
-	(*If[ IntDDM[e,x]=!="NotMatch",
-		Return[IntDDM[e,x]]
-	];*)
-	
-	(*Check the table*)
-	
-	If[IntTable[e,x]=!="NotFound",
-		Return[IntTable[e,x]]
-	];
+InRe=Calculus`Rubi`Int[e,x];
+If[FreeQ[InRe,Calculus`Rubi`Int],Return[InRe]];
 
-	If[NoClose[e,x]==="NoClose",
-		Return["NoClose"]
-	];
+InRe=IintTable[e,x];
+If[InRe=!="NotFound",Return[InRe]];
 
-	Return["NOW CANNOT BE SOLVED"]
-	(*Return[StageII[e,x]]*)
+Return["NOW IT CAN NOT BE INTEGRATED"]
+
+]
+
+
+IntegrateList=
+{
+A[Sqrt[1+(2 x_)/(1+x_^2)]/(1+x_^2),x_] :> ((-1+x) Sqrt[1+(2 x)/(1+x^2)])/(1+x),
+A[1/((1+x_^4) Sqrt[-x_^2+Sqrt[1+x_^4]]),x_] :> ArcCot[Sqrt[-x^2+Sqrt[1+x^4]]/x],
+A[Sqrt[1+(2 x_)/(1+x_^2)],x_] :> (Sqrt[(1+x)^2/(1+x^2)] (1+x^2+Sqrt[1+x^2] ArcSinh[x]))/(1+x),
+A[1/Sqrt[1+(2 x_)/(1+x_^2)],x_] :> ((1+x) (Sqrt[1+x^2]-ArcSinh[x]+Sqrt[2] Log[1+x]-Sqrt[2] Log[1-x+Sqrt[2] Sqrt[1+x^2]]))/(Sqrt[(1+x)^2/(1+x^2)] Sqrt[1+x^2]),
+A[(x_^2+2 x_ Log[x_]+Log[x_]^2+(1+x_) Sqrt[x_+Log[x_]])/(x_^3+2 x_^2 Log[x_]+x_ Log[x_]^2),x_] :> Log[x]-2/Sqrt[x+Log[x]],
+A[(Cos[x_]+Sin[x_])/(E^-x_+Sin[x_]),x_] :> Log[1+E^x Sin[x]],
+A[E^Sin[x_] Sec[x_]^2 (x_ Cos[x_]^3-Sin[x_]),x_] :> E^Sin[x] (-1+x Cos[x]) Sec[x],
+A[E^x_^x_ x_^(2 x_) (1+Log[x_]),x_] :> E^x^x (-1+x^x),
+A[x_^(-2-1/x_) (1-Log[x_]),x_] :> -x^(-1/x),
+A[(x_ Cos[x_]-Sin[x_])/(x_-Sin[x_])^2,x_] :> -(x/(-x+Sin[x])),
+A[1/(Cos[x_]^(3/2) Sqrt[3 Cos[x_]+Sin[x_]]),x_] :> (2 Sqrt[3 Cos[x]+Sin[x]])/Sqrt[Cos[x]],
+A[(Csc[x_] Sqrt[Cos[x_]+Sin[x_]])/Cos[x_]^(3/2),x_] :> (2 (Cos[x]+Sin[x]-ArcCoth[Sqrt[Cos[x]+Sqrt[Sin[x]^2]]/Sqrt[Cos[x]]] Sqrt[Cos[x]] Sqrt[Cos[x]+Sqrt[Sin[x]^2]]))/(Sqrt[Cos[x]] Sqrt[Cos[x]+Sin[x]]),
+A[(-3+10 x_+4 x_^3-30 x_^5)/(3+x_+x_^4)^3-(3 (1+4 x_^3) (2-3 x_+5 x_^2+x_^4-5 x_^6))/(3+x_+x_^4)^4,x_] :> (2-3 x+5 x^2+x^4-5 x^6)/(3+x+x^4)^3,
+A[1/(x_ Log[E^x_]),x_] :> (-Log[x]+Log[Log[E^x]])/(x-Log[E^x]),
+A[Cot[x_]/Log[E^Sin[x_]],x_] :> (Log[Log[E^Sin[x]]]-Log[Sin[x]])/(-Log[E^Sin[x]]+Sin[x]),
+A[x_/(Sqrt[-1+x_] Sqrt[1+x_] ArcCosh[x_]),x_] :> CoshIntegral[ArcCosh[x]],
+A[(x_ Cosh[x_]-Sinh[x_])/(x_-Sinh[x_])^2,x_] :> -(x/(-x+Sinh[x]))
+};
+
+IintTable[f_,x_]:=Module[
+    {},
+    ret=A[f,x]//.IntegrateList;
+    If[Head[ret]===A,Return["NotFound"],Return[ret]];
+	Return["NotFound"]
 ];
-
-
-(*SIN[1,x]
-SIN[5/(x^2),x]
-SIN[Sin[x^2],x]
-SIN[e^x,x]
-SIN[Sqrt[a x+b],x]
-SIN[Sqrt[a x^2 +b x +c]+Sqrt[a x +b],x]
-SIN[Sqrt[x^2+1],x]
-SIN[a^x+a x,x]
-SIN[x^x,x]
-SIN[x a^x,x]*)
-
-
-(*NotebookDirectory[]*)
-
-
-(*IntTable[x^2,x]
-NoClose[E^(x^2),x]
-SIN[x^2,x]
-SIN[(x+1)^2,x]
-(*SIN[(5x+2)/(3x+1),x]*)
-intDDM[(x+1)^2,x]
-*)
-
-
-

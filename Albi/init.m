@@ -1,12 +1,17 @@
 (* ::Package:: *)
 
-(*BeginPackage["Calculus`Albi`"];
+BeginPackage["Calculus`Albi`"];
 
-SIN::usage="SIN[f[x],x] returns the integral"; *)
+SIN::usage="SIN[f[x],x] returns the integral"; 
 
 
-(*Begin["`Private`"];*)
-SetDirectory[NotebookDirectory[]];
+Begin["`Private`"];
+If[Head[Calculus`CWD]===String,
+	SINDirectory=Calculus`CWD<>"Albi\\",
+	SINDirectory=NotebookDirectory[]
+];
+(*Print[{Calculus`CWD,SINDirectory}];*)
+SetDirectory[SINDirectory];
 Get["intDDM.m"];
 Get["intSubBin.m"];
 Get["intSubEps.m"];
@@ -14,18 +19,20 @@ Get["intSubExp.m"];
 Get["intSubFra.m"];
 Get["intSubLog.m"];
 Get["intSubPow.m"];
-Get["Rational\\init.m"];
-Get["intSubRat.m"];
+(*Get["Rational\\init.m"];*)
+(*Get["intSubRat.m"];*)
 Get["intSubRep.m"];
 (*Get["intSubRfs.m"];*)
 Get["intSubSqt.m"];
 Get["intSubTri.m"];
 Get["SIN.m"];
-Get["StageII.m"];
-(*End[];*)
+(*\:6709\:95ee\:9898\:7684\:51e0\:4e2a\:51fd\:6570\:90fd\:88ab\:6211\:6ce8\:91ca\:4e86*)
+(*Get["StageII.m"];*)
+End[];
 
 
-(*EndPackage[];*)
+
+EndPackage[];
 
 
 (*Int[E^x,x]
