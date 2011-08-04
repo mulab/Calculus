@@ -1,13 +1,14 @@
 (* ::Package:: *)
 
 (* Method 8 in Stage II, (8)Rational functions *)
-(* Last revised by ivan on 17:35 Aug 1, 2011. Email: ma_wan _li .6209@163.com *)
+(* Last revised by ivan on 17:35 Aug 4, 2011. Email: ma_wan _li .6209@163.com *)
 (* Now, it calls Horowitz-Ostrogradsky method to part the integrand into rational
-	part and log part, then use Rothstein-Trager method to integrate the logpart*)
+	part and log part, then use Rothstein-Trager method to integrate the logpart,
+	and then use Log2Arctan to transform the result into usual format. *)
 (* When the kernal realized function Apart and ApartSquareFree, this part
  should be reivsed (may be Hermite method?)*)
 intSubRat[f_,x_]:=Module[
-	{e=f,q,r,inte},	
+	{e=f,q,r,inte,inteatan},	
 	e=Simplify[e]; e=Together[e];
 	r=Denominator[e];q=Numerator[e];
 	If[!(PolynomialQ[r,x]&&PolynomialQ[q,x]),Return["NotMatch"];];
@@ -18,6 +19,8 @@ intSubRat[f_,x_]:=Module[
 	inte=RothsteinTrager[Q2,r2,x];
 (*Print["D=",D[inte,x]];	*)
 	left = Simplify[f-Q1/r1-D[inte,x]];
+	inteatan  = Log2ArcTan[inte,x];
+	If[inte_atan=!="NotMatch",inte = inteatan];
 	If[Left!=0,Print["LEFT = ",left];
 		Print["If you see this, please report bug to ivan"]
 	];
@@ -25,7 +28,9 @@ intSubRat[f_,x_]:=Module[
 ]	
 (*Problem remaining:
 How to simplify expression like:
-Log[f[x]-b I]-Log[f[x]+b I]====into=====2 I(ArcTan[f[x]/b]-Pi/2]
+1 Log[f[x]-b I]-Log[f[x]+b I]====into=====2 I(ArcTan[f[x]/b]-Pi/2]? See Bronstein's book
+2 in RothsteinTrager, the PolynomialGCD sometimes returns expr. with "Root". Why does
+	PolynomialGCD need Root?-
 *)
 
 
@@ -36,6 +41,9 @@ intSubRat[(x-2)/(x^2+2x+3),x]
 intSubRat[(2x^3+2x^2+5x+5)/(x^4+5x^2+4),x]
 intSubRat[1/(x^4+1),x]
 intSubRat[1/(1+2 x+x^2),x]*)
+(*
+ans = intSubRat[f,x]
+N[(D[ans,x]-f)/.x->6]*)
 
 
 (*mya=-(1/4) (-1)^(1/4) Log[(-1)^(1/4)-x]-1/4 (-1)^(3/4) Log[(-1)^(3/4)-x]+1/4 (-1)^(1/4) Log[(-1)^(1/4)+x]+1/4 (-1)^(3/4) Log[(-1)^(3/4)+x];
@@ -102,7 +110,9 @@ RothsteinTrager[q_,r_,x_]:=Module[(*Input parameter is Numerator, Denominator, V
 
 
 (*RothsteinTrager[4x,x^2-4x+5,x]
-RothsteinTrager[x,x+1,x]*)
+RothsteinTrager[x,x+1,x]
+RothsteinTrager[3x+5,x^5-1,x]
+RothsteinTrager[4x,x^2-4x+5,x]*)
 
 
 (*Print["final ans=",RothsteinTrager[3x^2+1,x^3+x+1,x]];
@@ -113,7 +123,49 @@ Print["final ans=",RothsteinTrager[x,x^3+2,x]];*)
 
 
 
-(*RationalQ[(x^5+x^7+y^3)/(x^3+y^5),{x,y}]*)
+(* See page 75 of Symbolic integration by Bronstein*)
+(* This part change the output of RothsteinTrager from Log form to ArcTan form:
+	I Log[(A + B I)/(A - B I)] --> 2ArcTan(A/B)   *)
+Log2ArcTan[f_,x_]:=Module[
+	{},
+	If[Head[f]=!=Plus,Print["Log2ArcTan NotMatch"];Return[f];];
+	pos = Position[f,Log[_]]; (* Log[vi_] *)
+	pos = Map[Append[#,1]&,pos];(* vi_ *)
+	vi=Extract[f,pos];
+	ci = Level[f,1]/Log[vi];
+
+	todelete={};(*This part delete ci Log[vi] in which vi=Real *)
+	For[i=1,i<=Length[pos],i++,
+		If[FreeQ[Extract[f,pos[[i]]],Complex],
+			AppendTo[todelete,{i}];
+		];
+	];
+	pos= Delete[pos,todelete];
+	vi = Delete[vi,todelete];
+	ci = Delete[ci,todelete];
+
+
+	viconj = vi/.(Complex[re_,im_]->Complex[re,-im]);
+	vireal = Simplify[(vi+viconj)/2];
+	viimag = Simplify[(vi-viconj)/2/I];
+
+	ciconj = ci/.(Complex[re_,im_]->Complex[re,-im]);
+	cireal = Simplify[(ci+ciconj)/2];
+	ciimag = Simplify[(ci-ciconj)/2/I];
+	ans = cireal/2 Log[vireal^2+viimag^2]+ ciimag ArcTan[vireal/ viimag];
+			(* generate answer with ArcTan form*)
+	ans[[0]]=Plus;
+	dealed = ci Log[vi];  (* this part from f has been transformed into ArcTan form*)
+	dealed[[0]]=Plus;
+
+	Return[ans+f-dealed];
+
+]
 
 
 
+(*f=-(1/3) (-1)^(2/3) Log[(-1)^(1/3)-x]-1/3 Log[1+x]+1/3 (-1)^(1/3) Log[-1+(-1)^(1/3)+x]
+f=(-(1/5)+I/10) Log[(-(2/5)+I/5)+(1/5+(2 I)/5) x]+2/5 Log[1/5+(2 x)/5]-(1/5+I/10) Log[(1/5-(2 I)/5)+(2/5+I/5) x]
+
+ans=Log2ArcTan[f,x]
+N[(ans-f)/.x->9]*)
