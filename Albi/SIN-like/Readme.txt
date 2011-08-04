@@ -1,0 +1,1 @@
+本文件夹的代码基于Moses于1967年出版的《Symbolic Integration》一书，本系统与书中的SIN(Symbolic INtegrator)系统相仿。由于出版年限太早，其中很多算法被包含于Rubi3（Rules Based Integration）中，所以已经基本弃用（注：包含了张俊琳，邵启明，马万里的心血，故留做纪念，其中intSubRat可以化简log虚函数为Atan，移至Rational文件夹）。
