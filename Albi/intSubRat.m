@@ -1,5 +1,17 @@
 (* ::Package:: *)
 
+(* Method 8 in Stage II, (8)Rational functions *)
+(* Last revised by ivan on 17:50 Aug 4, 2011. Email: ma_wan _li .6209@163.com *)
+(* Now, it calls Horowitz-Ostrogradsky method to part the integrand into rational
+	part and log part, then use Rothstein-Trager method to integrate the logpart,
+	and then use Log2Arctan to transform the result into usual format. *)
+(* When the kernal realized function Apart and ApartSquareFree, this part
+ might be improved (may be Hermite method?)*)
+(* Problem remaining: 
+	a) Temporarily cannot handle such form as (-1)^(1/4);
+	b)	*)
+
+
 (*Horowitz-Ostrogradsky method for rational function integration*)
 
 HorowitzOstrogradsky[q_,r_,x_]:=Module[(*Input parameter is Numerator, Denominator, Variable*)
@@ -25,10 +37,6 @@ HorowitzOstrogradsky[q_,r_,x_]:=Module[(*Input parameter is Numerator, Denominat
 
 (*HorowitzOstrogradsky[7(x)*(3x^2-2x),(x^6-4x^5+7)*(x-3)^3,x]
 HorowitzOstrogradsky[x^7-24x^4-4x^2+8x-8,x^8+6x^6+12x^4+8x^2,x]*)
-
-
-(* This function deserves more consideration *)
-(* Pay attention to ArcTan*)
 
 
 RothsteinTrager[q_,r_,x_]:=Module[(*Input parameter is Numerator, Denominator, Variable*)
@@ -77,17 +85,88 @@ Print["final ans=",RothsteinTrager[x,x^3+2,x]];*)
 	I Log[(A + B I)/(A - B I)] --> 2ArcTan(A/B)   *)
 (* This part need package .\\Rational \\ Rioboo.m*)
 Log2ArcTan[f_,x_]:=Module[
-	{pos,re,im,vi,viconj,vireal,viimag,ci,ciconj,cireal,ciimag,ifvieqreal,todelete,ans,dealed},
+	{e=f,pos,re,im,vi,jj,kk,viconj,ci,ciconj,A,B,ifvieqreal,todelete,ans},
 	If[Head[f]=!=Plus,Print["Log2ArcTan NotMatch"];Return[f];];
 	pos = Position[f,Log[_]]; (* Log[vi_] *)
 	pos = Map[Append[#,1]&,pos];(* vi_ *)
+
 	vi=Extract[f,pos];
 	ci = Level[f,1]/Log[vi];
 
 	ifvieqreal = Map[FreeQ[Extract[f,#],Complex]&,pos];
 	todelete = Position[ifvieqreal,True];
-	
-	(* Another to find the todelete matrix
+	(*
+	 Another to find the todelete matrix
+	todelete={};(*This part delete ci Log[vi] in which vi=Real *)
+	For[i=1,i<=Length[pos],i++,
+		If[FreeQ[Extract[f,pos[[i]]],Complex],
+			AppendTo[todelete,{i}];
+		];
+	];
+    *)
+
+	pos= Delete[pos,todelete];
+	vi = Delete[vi,todelete];
+	ci = Delete[ci,todelete];
+(*Print["vi = ",vi];
+Print["ci = ",ci];*)
+	(*viconj = vi/.(Complex[re_,im_]->Complex[re,-im]);*)
+	ciconj = ci/.(Complex[re_,im_]->Complex[re,-im]);
+
+	ans = 0;
+	For[jj=1,jj<=Length[vi],jj++,
+		For[kk=1,kk<=Length[vi],kk++,
+			If[ci[[jj]]==ciconj[[kk]],
+
+				A = (vi[[jj]]+vi[[kk]])/2;
+				B = (vi[[jj]]-vi[[kk]])/2/I;
+				Arctanpart = Calculus`Albi`Rational`LogToAtan[A,B,x];
+				Cp = Simplify[ci[[jj]]+ciconj[[jj]]];
+				Cn = Simplify[ci[[jj]]-ciconj[[jj]]];
+				Logpart = Simplify[A^2+B^2];
+				
+(*Print["A=",A];
+Print["B=",B];
+Print["A+B I=",Simplify[A+B I]];
+Print["A-B I=",Simplify[A-B I]];
+Print["Logpart",Logpart];
+Print["Arctanpart",Arctanpart];
+Print["c+=",Cp];
+Print["c-=",Cn];*)
+				ans = ans + Cp/4 Log[Logpart] + Cn/4/I Arctanpart;
+				e = e-ci[[jj]] Log[vi[[jj]]];
+			];
+		];
+	];
+(*Print["left = ",e];			
+Print["new  = ",ans];*)
+	Return[ans+e];
+]
+(*
+Clear [x];
+Log2ArcTan[(-(1/5)+I/10) Log[(-(2/5)+I/5)+(1/5+(2 I)/5) x]+2/5 Log[1/5+(2 x)/5]-(1/5+I/10) Log[(1/5-(2 I)/5)+(2/5+I/5) x],x]
+SequenceForm["Standard Answer = ", Rational[1, 5] ArcTan[x] + Rational[2, 5] Log[1 + 2 x] + Rational[-1, 5] Log[1 + x^2]]*)
+
+
+(*
+(*BUG!*)
+(* See page 75 of Symbolic integration by Bronstein*)
+(* This part change the output of RothsteinTrager from Log form to ArcTan form:
+	I Log[(A + B I)/(A - B I)] --> 2ArcTan(A/B)   *)
+(* This part need package .\\Rational \\ Rioboo.m*)
+Log2ArcTan[f_,x_]:=Module[
+	{pos,re,im,vi,viconj,vireal,viimag,ci,ciconj,cireal,ciimag,ifvieqreal,todelete,ans,dealed},
+	If[Head[f]=!=Plus,Print["Log2ArcTan NotMatch"];Return[f];];
+	pos = Position[f,Log[_]]; (* Log[vi_] *)
+	pos = Map[Append[#,1]&,pos];(* vi_ *)
+Print["f=",f];
+	vi=Extract[f,pos];
+	ci = Level[f,1]/Log[vi];
+
+	ifvieqreal = Map[FreeQ[Extract[f,#],Complex]&,pos];
+	todelete = Position[ifvieqreal,True];
+	(*
+	 Another to find the todelete matrix
 	todelete={};(*This part delete ci Log[vi] in which vi=Real *)
 	For[i=1,i<=Length[pos],i++,
 		If[FreeQ[Extract[f,pos[[i]]],Complex],
@@ -107,23 +186,15 @@ Log2ArcTan[f_,x_]:=Module[
 	ciconj = ci/.(Complex[re_,im_]->Complex[re,-im]);
 	cireal = Simplify[(ci+ciconj)/2];
 	ciimag = Simplify[(ci-ciconj)/2/I];
-	(*ans = cireal/2 Log[vireal^2+viimag^2]+ ciimag ArcTan[vireal/ viimag];
+
+	ans = cireal/2 Log[vireal^2+viimag^2]+ ciimag ArcTan[vireal/ viimag];
 	ans[[0]]=Plus; 
 	dealed = ci Log[vi];  (* this part from f has been transformed into ArcTan form*)
 	dealed[[0]]=Plus;
-
+Print[dealed];
 	Return[ans+f-dealed];
 			(* generate answer with ArcTan form*)
-	*)
-	ans = 0;
-	For[jj=1,jj<=Length[vi],jj++,
-		ans = ans + cireal[[jj]]/2 Log[vireal[[jj]]^2+viimag[[jj]]^2]+
-			 ciimag[[jj]]/2 Calculus`Albi`Rational`LogToAtan[vireal[[jj]],viimag[[jj]],x];
-	];
-	dealed = ci Log[vi];  (* this part from f has been transformed into ArcTan form*)
-	dealed[[0]]=Plus;
-	Return[ans+f-dealed];
-]
+]*)
 
 
 (*f=(-(1/5)+I/10) Log[(-(2/5)+I/5)+(1/5+(2 I)/5) x]+2/5 Log[1/5+(2 x)/5]-(1/5+I/10) Log[(1/5-(2 I)/5)+(2/5+I/5) x];
@@ -136,12 +207,6 @@ N[(ans-f)/.x->1]*)
 
 
 (* Method 8 in Stage II, (8)Rational functions *)
-(* Last revised by ivan on 13:16 Aug 4, 2011. Email: ma_wan _li .6209@163.com *)
-(* Now, it calls Horowitz-Ostrogradsky method to part the integrand into rational
-	part and log part, then use Rothstein-Trager method to integrate the logpart,
-	and then use Log2Arctan to transform the result into usual format. *)
-(* When the kernal realized function Apart and ApartSquareFree, this part
- should be reivsed (may be Hermite method?)*)
 intSubRat[f_,x_]:=Module[
 	{e=f,q,r,inte,inteatan},	
 	e=Simplify[e]; e=Together[e];
@@ -176,11 +241,16 @@ intSubRat[(x-2)/(x^2+2x+3),x]
 intSubRat[(2x^3+2x^2+5x+5)/(x^4+5x^2+4),x]
 intSubRat[1/(x^4+1),x]
 intSubRat[1/(1+2 x+x^2),x]*)
-(*Print[f=1/(1+2x)/(1+x^2)];
-Print[ans = intSubRat[f,x]];
-Print[N[(D[ans,x]-f)/.x->8]];*)
+(*
+(* test script*)
+f=x/(x^3+1)
+std = Integrate[f,x];
+Print["Standard Answer = ",std];
+ans = intSubRat[f,x];
+Print["ans = ",ans];
+Print["N=",Abs[N[(D[ans,x]-f)/.x->3]]];
+Print["error to std=", FullSimplify[std-ans]];*)
 
 
-(*mya=-(1/4) (-1)^(1/4) Log[(-1)^(1/4)-x]-1/4 (-1)^(3/4) Log[(-1)^(3/4)-x]+1/4 (-1)^(1/4) Log[(-1)^(1/4)+x]+1/4 (-1)^(3/4) Log[(-1)^(3/4)+x];
-sta=ArcTan[(-1+x^2)/(Sqrt[2] x)]/(2 Sqrt[2])-Log[(1-Sqrt[2] x+x^2)/(1+Sqrt[2] x+x^2)]/(4 Sqrt[2]);
-N[mya-sta/.x->10](*0.55536` -3.33067`*^-16 I left, do not change with x*)*)
+
+
