@@ -7,7 +7,7 @@ LogToAtan[A_,B_,x_]:=Module[
 	{q,r,D,C,G},
 	{q,r}=PolyDivide[A,B,x];
 	If[Simplify[r]==0,Return[2*ArcTan[q]]];
-	If[Exponent[A,x]<Exponent[B,x],Return[LogToAtan[-B,A]]];
+	If[Exponent[A,x]<Exponent[B,x],Return[LogToAtan[-B,A,x]]];
 	{D,C,G}=ExtendedEuclidean[B,-A,x];
 	2*ArcTan[First[PolyDivide[(A*D+B*C),G,x]]]+LogToAtan[D,C,x]
 ]
@@ -33,3 +33,6 @@ LogToReal[R_,S_,t_,x_]:=Module[
 B=x^2-2;
 f=LogToAtan[A,B,x]
 Simplify[D[f,x]==D[I*Log[(A+I*B)/(A-I*B)],x]] *)
+
+
+
