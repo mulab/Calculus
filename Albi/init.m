@@ -1,7 +1,6 @@
 (* ::Package:: *)
 
 BeginPackage["Calculus`Albi`"];
-
 SIN::usage="SIN[f[x],x] returns the integral"; 
 
 
@@ -19,8 +18,8 @@ Get["intSubExp.m"];
 Get["intSubFra.m"];
 Get["intSubLog.m"];
 Get["intSubPow.m"];
-(*Get["Rational\\init.m"];*)
-(*Get["intSubRat.m"];*)
+Get["Rational\\init.m"];
+Get["intSubRat.m"];
 Get["intSubRep.m"];
 (*Get["intSubRfs.m"];*)
 Get["intSubSqt.m"];

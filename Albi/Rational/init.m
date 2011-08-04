@@ -1,13 +1,16 @@
 (* ::Package:: *)
 
-BeginPackage["Calculus`Albi`Rational"];
+BeginPackage["Calculus`Albi`Rational`"];
 HermiteReduce::usage="";
-LogToReal::usage="";
+LogToAtan::usage="";
 
 
-Begin["`Private"];
-CWD=NotebookDirectory[];
-Get[CWD<>"Rioboo.m"];
+Begin["`Private`"];
+If[Head[Calculus`CWD]===String,
+	RatDirectory=Calculus`CWD<>"Albi\\Rational\\",
+	RatDirectory=NotebookDirectory[]
+];
+Get[RatDirectory<>"Rioboo.m"];
 End[];
 
 
