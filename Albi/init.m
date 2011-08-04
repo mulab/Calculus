@@ -2,12 +2,11 @@
 
 (*BeginPackage["Calculus`Albi`"];
 
-SIN::usage="SIN[f[x],x] returns the integral";
+SIN::usage="SIN[f[x],x] returns the integral"; *)
 
-Begin["`Private`"];*)
 
+(*Begin["`Private`"];*)
 SetDirectory[NotebookDirectory[]];
-
 Get["intDDM.m"];
 Get["intSubBin.m"];
 Get["intSubEps.m"];
@@ -15,6 +14,7 @@ Get["intSubExp.m"];
 Get["intSubFra.m"];
 Get["intSubLog.m"];
 Get["intSubPow.m"];
+Get["Rational.m\\init.m"];
 Get["intSubRat.m"];
 Get["intSubRep.m"];
 (*Get["intSubRfs.m"];*)
@@ -22,8 +22,10 @@ Get["intSubSqt.m"];
 Get["intSubTri.m"];
 Get["SIN.m"];
 Get["StageII.m"];
-(*End[];
-EndPackage[];*)
+(*End[];*)
+
+
+(*EndPackage[];*)
 
 
 (*Int[E^x,x]

@@ -14,9 +14,18 @@ LogToAtan[A_,B_,x_]:=Module[
 
 
 (* Rioboo's conversion of sums of complex logarithms to real functions *)
-LogToReal[R_,S_,x_]:=Module[
-	{},
-	;
+(* Reference: Bronstern05 P69 *)
+LogToReal::usage="Given a real field \[ScriptCapitalK], R\[Element]\[ScriptCapitalK][t] and S\[Element]\[ScriptCapitalK][t,x], return a real function f such that \!\(\*FractionBox[\(\[DifferentialD]f\), \(\[DifferentialD]x\)]\)=\!\(\*FractionBox[\(\[DifferentialD]\), \(\[DifferentialD]x\)]\)\!\(\*UnderscriptBox[\(\[Sum]\), \(\[Alpha] | R[\[Alpha]] = 0\)]\)\[Alpha]*Log[S[\[Alpha],x]].";
+LogToReal[R_,S_,t_,x_]:=Module[
+	{P,Q,A,B,tmp,u,v,ans},
+	tmp=R/.x->u+I*v;
+	P=Re[tmp];
+	Q=Im[tmp];
+	tmp=S/.t->u+I*v;
+	A=Re[tmp];
+	B=Im[tmp];
+	tmp=SolveAlways[v>0&&P==0&&Q==0,{u,v}];
+	ans
 ]
 
 
