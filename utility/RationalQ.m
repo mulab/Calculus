@@ -50,6 +50,7 @@ RationalQ[f_,L_]:=Module[
 {e=f,pos,i,temp,nume,deno,bo},
 bo=True;
 pos=Position[e,_Symbol];
+If[Length[e]<2&&Head[e]=!=Rational&&Head[e]=!=Symbol,Return[False]];
 Do[temp=Extract[e,pos[[i]]];If[temp=!=Plus&&temp=!=Times&&temp=!=Power&&temp=!=Rational&&FreeQ[L,temp],
 	Return[False]],
 	{i,Length[pos]}];(*\:8fd9\:4e00\:6b65\:7528\:6765\:6392\:9664Sin[]\:7b49\:5176\:5b83\:975e\:6709\:7406\:5f0f\:7684\:51fd\:6570\:ff0c\:4f46\:662f\:8be5\:6b65\:5728\:5904\:7406\:6709\:7406\:7cfb\:6570\:65f6\:5b58\:5728Bug*)
