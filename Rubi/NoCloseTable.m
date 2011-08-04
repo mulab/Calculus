@@ -5,6 +5,7 @@
 (*Shao Qiming*)
 NoCloseList=
 {
+  A[x_^x_,x_]:="NoClose",
   A[E^(x_^2),x_]:="NoClose",
   A[E^(-x_^2),x_]:="NoClose",
   A[E^x_/x_,x_]:="NoClose",
@@ -48,3 +49,4 @@ If[Head[r] === A, Return["NotMatch"], Return["NoClose"]]
 NoClose[x/ArcCsc[x],x]
 NoClose[Sec[x^2],x]
 NoClose[x E^x,x]*)
+NoClose[x^x,x]

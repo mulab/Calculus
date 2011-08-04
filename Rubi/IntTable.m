@@ -130,6 +130,8 @@ IntegrateList=
   A[Sqrt[a_^2 -x_^2],x_] /;FreeQ[{a},x]:> (x Sqrt[a^2 - x^2] + a^2 ArcTan[x/Sqrt[a^2 - x^2]])/2,
   A[Sqrt[x_^2 +a_^2],x_]/;FreeQ[{a},x] :> (x Sqrt[a^2 + x^2])/2 + (a^2 Log[2 (x + Sqrt[a^2 + x^2])])/2,
   A[Sqrt[x_^2 -a_^2],x_] /;FreeQ[{a},x]:> (x Sqrt[-a^2 + x^2])/2 - (a^2 Log[2 (x + Sqrt[-a^2 + x^2])])/2,
+  A[Sqrt[x_^2 + a_],x_] /;FreeQ[{a},x]:> x/2 Sqrt[x^2+a]+a/2 Log[x+Sqrt[x^2+a]],
+  A[Sqrt[a_ x_^2 +b_ x_ +c_],x_]/;FreeQ[{a},x]&&FreeQ[{b},x]&&FreeQ[{c},x]:>(2 Sqrt[a] (b+2 a x) Sqrt[c+x (b+a x)]-(b^2-4 a c) Log[b+2 a x+2 Sqrt[a] Sqrt[c+x (b+a x)]])/(8 a^(3/2)),
   A[(x_^2 +a_)^(3/2),x_]/;FreeQ[{a},x] :> Sqrt[a + x^2] ((5 a x)/8 + x^3/4) + (3 a^2 Log[2 (x + Sqrt[a + x^2])])/8,
   A[(x_^2 -a_)^(3/2),x_] /;FreeQ[{a},x]:> Sqrt[-a + x^2] ((-5 a x)/8 + x^3/4) + (3 a^2 Log[2 (x + Sqrt[-a + x^2])])/8,
   A[1/(x_^2 +a_^2)^(3/2),x_]/;FreeQ[{a},x] :> x/(a^2 Sqrt[a^2 + x^2]),
@@ -184,3 +186,4 @@ IntTable[f_,x_]:=Module[
 IntTable[2,x]
 IntTable[x,x]
 IntTable[Sin[x],x]*)
+IntTable[Sqrt[a x^2+b x+c],x]
