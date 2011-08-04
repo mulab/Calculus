@@ -1,6 +1,7 @@
 (* ::Package:: *)
 
-(*\:7279\:6b8a\:51fd\:6570*)
+(*\:7279\:6b8a\:51fd\:6570in Rubi3*)
+CoshIntegral
 Erf
 Erfc
 Erfi
@@ -9,12 +10,11 @@ ExpIntegralEi
 FresnelS
 FresnelC
 Gamma
-PolyGamma
 LogGamma
-SinhIntegral
-CoshIntegral
 LogIntegral
-ExpIntegralEi
+PolyGamma
 PolyLog
 ProductLog
+SinhIntegral
 Zeta
+(*MORE Systematically listed in: tutorial/SpecialFunctions*)
