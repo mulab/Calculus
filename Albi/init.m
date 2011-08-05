@@ -1,7 +1,6 @@
 (* ::Package:: *)
 
 BeginPackage["Calculus`Albi`"];
-SIN::usage="SIN[f[x],x] returns the integral"; 
 
 
 Begin["`Private`"];
@@ -9,26 +8,10 @@ If[Head[Calculus`CWD]===String,
 	SINDirectory=Calculus`CWD<>"Albi\\",
 	SINDirectory=NotebookDirectory[]
 ];
-(*Print[{Calculus`CWD,SINDirectory}];*)
-SetDirectory[SINDirectory];
-Get["intDDM.m"];
-Get["intSubBin.m"];
-Get["intSubEps.m"];
-Get["intSubExp.m"];
-Get["intSubFra.m"];
-Get["intSubLog.m"];
-Get["intSubPow.m"];
-Get["Rational\\init.m"];
-Get["intSubRat.m"];
-Get["intSubRep.m"];
-(*Get["intSubRfs.m"];*)
-Get["intSubSqt.m"];
-Get["intSubTri.m"];
-Get["SIN.m"];
-(*\:6709\:95ee\:9898\:7684\:51e0\:4e2a\:51fd\:6570\:90fd\:88ab\:6211\:6ce8\:91ca\:4e86*)
-(*Get["StageII.m"];*)
+Get[SINDirectory<>"Rational\\init.m"];
+Get[SINDirectory<>"Risch\\init.m"];
+(*Get[SINDirectory<>"SIN-like\\init.m"];*)
 End[];
-
 
 
 EndPackage[];
@@ -43,4 +26,3 @@ Int[x E^x]*)
 
 (*Int[(a+b*Sqrt[x])^20/Sqrt[x],x]*)
 (*Int[(1-2 Sqrt[x])^20/Sqrt[x],x]*)
-

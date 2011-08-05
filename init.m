@@ -18,3 +18,7 @@ End[];
 
 
 EndPackage[];
+
+
+IntegrateU[x,x]
+IntegrateU[Sqrt[1+(2 x)/(1+x^2)],x]

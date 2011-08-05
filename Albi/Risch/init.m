@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
 BeginPackage["Calculus`Albi`Risch`"];
-pmint::usage="pmint[f,x] returns integral of f";
+pmint;
 
 
 Begin["`Private`"];
