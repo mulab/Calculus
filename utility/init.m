@@ -9,8 +9,8 @@ PartialFraction::usage="Given a Euclidean domain \[CapitalDifferentialD], a posi
 
 Begin["`Private`"];
 If[Head[Calculus`CWD]===String,
-	UtilityDIR=Calculus`CWD<>"Rubi\\original\\",
-	UtilityDIR=NotebookDirectory[]<>"original\\"
+	UtilityDIR=Calculus`CWD<>"utility\\",
+	UtilityDIR=NotebookDirectory[]
 ];
 Get[UtilityDIR<>"RationalQ.m"];
 Get[UtilityDIR<>"PolyDivide.m"];
