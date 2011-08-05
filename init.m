@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
 BeginPackage["Calculus`"];
-D::usage="";
+D`usage="";
 CWD::usage="Current Work Directory";
 IntegrateU::usage="IntegrateU[f[x],x] returns the integral";
 

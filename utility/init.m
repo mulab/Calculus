@@ -8,10 +8,13 @@ PartialFraction::usage="Given a Euclidean domain \[CapitalDifferentialD], a posi
 
 
 Begin["`Private`"];
-SetDirectory[NotebookDirectory[]];
-Get["RationalQ.m"];
-Get["PolyDivide.m"];
-Get["PolynomialEuclidean.m"];
+If[Head[Calculus`CWD]===String,
+	UtilityDIR=Calculus`CWD<>"Rubi\\original\\",
+	UtilityDIR=NotebookDirectory[]<>"original\\"
+];
+Get[UtilityDIR<>"RationalQ.m"];
+Get[UtilityDIR<>"PolyDivide.m"];
+Get[UtilityDIR<>"PolynomialEuclidean.m"];
 (*Get[NotebookDirectory[]<>"Simplify.u"];*)
 End[];
 
