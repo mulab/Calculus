@@ -130,9 +130,9 @@ DebugRisch=True;
    		ans = g + PolyInt[Q, x];,
    		ans = g + LazardRiobooTrager[R, Denominator[h], x];
    	];
-	Get[NotebookDirectory[]<>"..\\Rational\\intSubRat.m"];
+	(*Get[NotebookDirectory[]<>"\\Albi\\Rational\\intSubRat.m"];*)
 		DRPrint["ans(not simplified) = ",ans];
-	Log2ArcTan[ans,x]
+	Calculus`Albi`Rational`Log2ArcTan[ans,x]
 	
 ]
 

@@ -3,6 +3,7 @@
 BeginPackage["Calculus`Albi`Rational`"];
 HermiteReduce::usage="";
 LogToAtan::usage="";
+Log2ArcTan::usage="";
 
 
 Begin["`Private`"];
@@ -11,6 +12,7 @@ If[Head[Calculus`CWD]===String,
 	RatDirectory=NotebookDirectory[]
 ];
 Get[RatDirectory<>"Rioboo.m"];
+Get[RatDirectory<>"intSubRat.m"]
 End[];
 
 
