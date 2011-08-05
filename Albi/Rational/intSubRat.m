@@ -86,7 +86,7 @@ Print["final ans=",RothsteinTrager[x,x^3+2,x]];*)
 (* This part need package .\\Rational \\ Rioboo.m*)
 Log2ArcTan[f_,x_]:=Module[
 	{e=f,pos,re,im,vi,jj,kk,viconj,ci,ciconj,A,B,ifvieqreal,todelete,ans,Arctanpart,Logpart,Cp,Cn},
-	If[Head[f]=!=Plus,Print["Log2ArcTan NotMatch"];Return[f];];
+	If[Head[f]=!=Plus,(*Print["Log2ArcTan NotMatch"];*)Return[f];];
 	pos = Position[f,Log[_]]; (* Log[vi_] *)
 	pos = Map[Append[#,1]&,pos];(* vi_ *)
 	vi=Extract[f,pos];
@@ -209,7 +209,7 @@ N[(ans-f)/.x->1]*)
 
 (* Method 8 in Stage II, (8)Rational functions *)
 intSubRat[f_,x_]:=Module[
-	{e=f,q,r,inte,inteatan},	
+	{e=f,q,r,inte,inteatan,left},	
 	e=Simplify[e]; e=Together[e];
 	r=Denominator[e];q=Numerator[e];
 	If[!(PolynomialQ[r,x]&&PolynomialQ[q,x]),Return["NotMatch"];];
@@ -244,14 +244,17 @@ intSubRat[1/(x^4+1),x]
 intSubRat[1/(1+2 x+x^2),x]*)
 (*
 (* test script*)
-f=1/(x^4+1)
+f=(x-5)/(x^4+2x+3)
 std = Integrate[f,x];
 Print["Standard Answer = ",std];
 ans = intSubRat[f,x];
 Print["ans = ",ans];
 Print["N=",Abs[N[(D[ans,x]-f)/.x->3]]];
 Print["error to std=", FullSimplify[std-ans]];
+
 *)
+
+
 
 
 
