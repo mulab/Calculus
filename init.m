@@ -18,3 +18,11 @@ End[];
 
 
 EndPackage[];
+
+
+(*IntegrateU[x,x]
+IntegrateU[Sqrt[1+(2 x)/(1+x^2)],x]*)
+
+
+(*\:4e0d\:501f\:52a9Rubi\:53ef\:4ee5\:8ba1\:7b97\:51fa\:6765\:7684\:79ef\:5206*)
+(*IntegrateU[(x^4- 3 x^2 + 6)/(x^6 - 5 x^4 + 5 x^2 + 4),x]*)
