@@ -302,4 +302,4 @@ deflation[p_,lv_List,ld_List]:=Module[{theT, c, q, DD},
 ] 
 
 
-?Mensaje;
+(*?Mensaje;*)
