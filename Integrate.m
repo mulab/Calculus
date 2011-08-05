@@ -10,7 +10,7 @@ IntegrateU[f_,x_]:=Module[
 	];
 	If[StringMatchQ[ToString[ans],"*Calculus`Albi`Risch*"],
 		Print["Albi Failed!"];
-		$Failed,
+		Return[$Failed],
 		Return[ans]
 	];
 ]
