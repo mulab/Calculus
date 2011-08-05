@@ -1,13 +1,13 @@
 (* ::Package:: *)
 
 PolyDivide[A_,B_,x_]:=Module[
-	{Q=0,R=A,\[Delta],T,nR,nB},
+	{Q=0,R=Simplify[A],\[Delta],T,nR,nB},
 	nR=Exponent[R,x];
 	nB=Exponent[B,x];
 	While[R=!=0&&(\[Delta]=nR-nB)>=0,
 		T=(Coefficient[R,x,nR]/Coefficient[B,x,nB])*x^\[Delta];
 		Q=Q+T;
-		R=R-B*T;
+		R=Simplify[R-B*T];
 		nR=Exponent[R,x];
 	];
 	{Q,R}
@@ -15,7 +15,7 @@ PolyDivide[A_,B_,x_]:=Module[
 
 
 PolyPseudoDivide[A_,B_,x_]:=Module[
-	{Q=0,R=A,T,b,nR,nB,N,\[Delta]},
+	{Q=0,R=Simplify[A],T,b,nR,nB,N,\[Delta]},
 	nR=Exponent[R,x];
 	nB=Exponent[B,x];
 	b=Coefficient[B,x,nB];
@@ -24,7 +24,7 @@ PolyPseudoDivide[A_,B_,x_]:=Module[
 		T=Coefficient[R,x,nR]*x^\[Delta];
 		N--;
 		Q=b*Q+T;
-		R=b*R-T*B;
+		R=Simplify[b*R-T*B];
 		nR=Exponent[R,x];
 	];
 	{b^N*Q,b^N*R}
