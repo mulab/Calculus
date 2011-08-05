@@ -1,7 +1,7 @@
 (* ::Package:: *)
 
-PolyDivide[A_,B_,x_]:=Module[
-	{Q=0,R=Simplify[A],\[Delta],T,nR,nB},
+PolyDivide[a_,b_,x_]:=Module[
+	{Q=0,R=Simplify[a],B=Simplify[b],\[Delta],T,nR,nB},
 	nR=Exponent[R,x];
 	nB=Exponent[B,x];
 	While[R=!=0&&(\[Delta]=nR-nB)>=0,
