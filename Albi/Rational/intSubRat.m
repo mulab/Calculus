@@ -85,13 +85,12 @@ Print["final ans=",RothsteinTrager[x,x^3+2,x]];*)
 	I Log[(A + B I)/(A - B I)] --> 2ArcTan(A/B)   *)
 (* This part need package .\\Rational \\ Rioboo.m*)
 Log2ArcTan[f_,x_]:=Module[
-	{e=f,pos,re,im,vi,jj,kk,viconj,ci,ciconj,A,B,ifvieqreal,todelete,ans},
+	{e=f,pos,re,im,vi,jj,kk,viconj,ci,ciconj,A,B,ifvieqreal,todelete,ans,Arctanpart,Logpart,Cp,Cn},
 	If[Head[f]=!=Plus,Print["Log2ArcTan NotMatch"];Return[f];];
 	pos = Position[f,Log[_]]; (* Log[vi_] *)
 	pos = Map[Append[#,1]&,pos];(* vi_ *)
-
 	vi=Extract[f,pos];
-	ci = Level[f,1]/Log[vi];
+	ci = Select[Level[f,1],!FreeQ[#,Log]&] /Log[vi];
 
 	ifvieqreal = Map[FreeQ[Extract[f,#],Complex]&,pos];
 	todelete = Position[ifvieqreal,True];
@@ -104,7 +103,6 @@ Log2ArcTan[f_,x_]:=Module[
 		];
 	];
     *)
-
 	pos= Delete[pos,todelete];
 	vi = Delete[vi,todelete];
 	ci = Delete[ci,todelete];
@@ -112,7 +110,6 @@ Log2ArcTan[f_,x_]:=Module[
 Print["ci = ",ci];*)
 	(*viconj = vi/.(Complex[re_,im_]->Complex[re,-im]);*)
 	ciconj = ci/.(Complex[re_,im_]->Complex[re,-im]);
-
 	ans = 0;
 	For[jj=1,jj<=Length[vi],jj++,
 		For[kk=1,kk<=Length[vi],kk++,
@@ -146,6 +143,10 @@ Print["new  = ",ans];*)
 Clear [x];
 Log2ArcTan[(-(1/5)+I/10) Log[(-(2/5)+I/5)+(1/5+(2 I)/5) x]+2/5 Log[1/5+(2 x)/5]-(1/5+I/10) Log[(1/5-(2 I)/5)+(2/5+I/5) x],x]
 SequenceForm["Standard Answer = ", Rational[1, 5] ArcTan[x] + Rational[2, 5] Log[1 + 2 x] + Rational[-1, 5] Log[1 + x^2]]*)
+
+
+(*f=1/4 (2+3 I Sqrt[2]) Log[-2 (1+1/4 (2+3 I Sqrt[2]))+(1+1/2 (-2-3 I Sqrt[2])) x]+1/4 (2-3 I Sqrt[2]) Log[-2 (1+1/4 (2-3 I Sqrt[2]))+(1+1/2 (-2+3 I Sqrt[2])) x]
+Log2ArcTan[f,x]*)
 
 
 (*
@@ -243,14 +244,14 @@ intSubRat[1/(x^4+1),x]
 intSubRat[1/(1+2 x+x^2),x]*)
 (*
 (* test script*)
-f=x/(x^3+1)
+f=1/(x^4+1)
 std = Integrate[f,x];
 Print["Standard Answer = ",std];
 ans = intSubRat[f,x];
 Print["ans = ",ans];
 Print["N=",Abs[N[(D[ans,x]-f)/.x->3]]];
-Print["error to std=", FullSimplify[std-ans]];*)
-
+Print["error to std=", FullSimplify[std-ans]];
+*)
 
 
 

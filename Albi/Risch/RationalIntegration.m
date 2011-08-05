@@ -119,16 +119,21 @@ IntegrateRationalFunction[f_,x_]:=
 (* Rational function integration 
    
    Given f in Q (x) returns its integral. *)
-Module[{g, h, Q, R, num, den, P},
+Module[{g, h, Q, R, num, ans, den, P},
+DebugRisch=True;
 	DRPrint["Visit IntegrateRationalFunction"];
    	DRPrint["	Entries: f = ", f, ", variable = " ,x];
    	{num, den} = NumeratorDenominator[f];
-   	{g, h} = HermiteReduce[num, den, x];	
+   	{g, h} = HermiteReduce[num, den, x];		
 	{Q, R} = PolyDivide[Numerator[h], Denominator[h], x];
    	If[ZeroPolynomialQ[R, x],
-   		g + PolyInt[Q, x],
-   		g + LazardRiobooTrager[R, Denominator[h], x]
-   	]
+   		ans = g + PolyInt[Q, x];,
+   		ans = g + LazardRiobooTrager[R, Denominator[h], x];
+   	];
+	Get[NotebookDirectory[]<>"..\\Rational\\intSubRat.m"];
+		DRPrint["ans(not simplified) = ",ans];
+	Log2ArcTan[ans,x]
+	
 ]
 
 LaurentSeries[a_,d_,F_,n_,x_]:=Module[{u,EE,h,B,G,CC,P,v,Q,Fs,H,sigma,j},
