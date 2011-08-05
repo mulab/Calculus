@@ -5,15 +5,18 @@ pmint::usage="pmint[f,x] returns integral of f";
 
 
 Begin["`Private`"];
-SetDirectory[NotebookDirectory[]];
-Get["AlgebraicPrelim.m"];
-Get["Misc.m"];
-Get["RationalIntegration.m"];
-Get["RischDE.m"];
-Get["ParametricProblems.m"];
-Get["CoupledDESystem.m"];
-Get["SymbolicIntBook.m"];
-Get["pmint.m"];
+If[Head[Calculus`CWD]===String,
+	RischDIR=Calculus`CWD<>"Albi\\Risch\\",
+	RischDIR=NotebookDirectory[]
+];
+Get[RischDIR<>"AlgebraicPrelim.m"];
+Get[RischDIR<>"Misc.m"];
+Get[RischDIR<>"RationalIntegration.m"];
+Get[RischDIR<>"RischDE.m"];
+Get[RischDIR<>"ParametricProblems.m"];
+Get[RischDIR<>"CoupledDESystem.m"];
+Get[RischDIR<>"SymbolicIntBook.m"];
+Get[RischDIR<>"pmint.m"];
 End[];
 
 
