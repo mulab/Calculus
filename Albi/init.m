@@ -1,9 +1,9 @@
 (* ::Package:: *)
 
-BeginPackage["Calculus`Albi`"];
+BeginPackage["Calculus`Albi`"]
 
 
-Begin["`Private`"];
+Begin["`Private`"]
 If[Head[Calculus`CWD]===String,
 	SINDirectory=Calculus`CWD<>"Albi\\",
 	SINDirectory=NotebookDirectory[]

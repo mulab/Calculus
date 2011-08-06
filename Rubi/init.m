@@ -1,10 +1,10 @@
 (* ::Package:: *)
 
-BeginPackage["Calculus`Rubi`"];
+BeginPackage["Calculus`Rubi`"]
 Int::usage="Int[f[x],x] returns the integral";
 
 
-Begin["`Private`"];
+Begin["`Private`"]
 (* Edit ShowSteps and SimplifyFlag in ShowStep.m *)
 If[Head[Calculus`CWD]===String,
 	RulesDirectory=Calculus`CWD<>"Rubi\\original\\",

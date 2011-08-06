@@ -1,10 +1,10 @@
 (* ::Package:: *)
 
-BeginPackage["Calculus`Albi`Risch`"];
+BeginPackage["Calculus`Albi`Risch`"]
 pmint;
 
 
-Begin["`Private`"];
+Begin["`Private`"]
 If[Head[Calculus`CWD]===String,
 	RischDIR=Calculus`CWD<>"Albi\\Risch\\",
 	RischDIR=NotebookDirectory[]

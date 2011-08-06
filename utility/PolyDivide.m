@@ -1,13 +1,10 @@
 (* ::Package:: *)
 
-(*Simplify[x_]:=Expand[x]*)
 PolyDivide[a_,b_,x_]:=Module[
 	{Q=0,R=Simplify[a],B=Simplify[b],\[Delta],T,nR,nB},
 	nR=Exponent[R,x];
 	nB=Exponent[B,x];
 	While[R=!=0&&(\[Delta]=nR-nB)>=0,
-		Print[R];
-		Print[\[Delta]];
 		T=(Coefficient[R,x,nR]/Coefficient[B,x,nB])*x^\[Delta];
 		Q=Q+T;
 		R=Simplify[R-B*T];

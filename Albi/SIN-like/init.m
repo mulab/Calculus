@@ -1,10 +1,10 @@
 (* ::Package:: *)
 
-BeginPackage["Calculus`Albi`SIN"];
+BeginPackage["Calculus`Albi`SIN"]
 SIN::usage="SIN[f[x],x] returns the integral"; 
 
 
-Begin["`Private`"];
+Begin["`Private`"]
 If[Head[Calculus`CWD]===String,
 	SINDirectory=Calculus`CWD<>"Albi\\",
 	SINDirectory=NotebookDirectory[]
