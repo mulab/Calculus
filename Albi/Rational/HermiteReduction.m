@@ -19,7 +19,7 @@ HermiteReduce[a_,d_,var_]:=Module[
 	While[Exponent[Sn,var]>0,
 		Sn2=PolynomialGCD[Sn,D[Sn,var]];
 		Sns=Cancel[Sn/Sn2];
-		{B,c}=Calculus`Utility`ExtendedEuclidean[-Cancel[(Ss D[Sn,var])/Sn],Sns,num,var];
+		{B,c}=PolynomialExtendedGCD[-Cancel[(Ss D[Sn,var])/Sn],Sns,num,var];
 		num=c-Cancel[(D[B,var] Ss)/Sns];
 		g=g+B/Sn;
 		Sn=Sn2;
