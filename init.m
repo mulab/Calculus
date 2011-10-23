@@ -43,7 +43,6 @@ Attributes[FresnelC] = {Listable, NumericFunction, ReadProtected};
 Protect[SinIntegral, CosIntegral, SinhIntegral, CoshIntegral, FresnelS, FresnelC];
 
 
-Remove[CWD];
 EndPackage[];
 
 
