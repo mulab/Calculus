@@ -1,5 +1,7 @@
 (* ::Package:: *)
 
+Unprotect[SinIntegral, CosIntegral, SinhIntegral, CoshIntegral, FresnelS, FresnelC];
+
 (* evaluated for inexact z. *)
 SinIntegral[z_] := Module[
 	{x, y},
@@ -112,12 +114,27 @@ FresnelC[DirectedInfinity[d_]] :=
 	] /; MemberQ[{1, I, -1, -I}, d]
 
 (* rules for Derivative *)
-SinIntegral/: SinIntegral' := Sin[#]/# &
+(*SinIntegral/: SinIntegral' := Sin[#]/# &
 CosIntegral/: CosIntegral' := Cos[#]/# &
 SinhIntegral/: SinhIntegral' := Sinh[#]/# &
 CoshIntegral/: CoshIntegral' := Cosh[#]/# &
 FresnelS/: FresnelS' := Sin[Pi/2 #^2]&
-FresnelC/: FresnelC' := Cos[Pi/2 #^2]&
+FresnelC/: FresnelC' := Cos[Pi/2 #^2]&*)
+SinIntegral' := Sin[#]/# &
+CosIntegral' := Cos[#]/# &
+SinhIntegral' := Sinh[#]/# &
+CoshIntegral' := Cosh[#]/# &
+FresnelS' := Sin[Pi/2 #^2]&
+FresnelC' := Cos[Pi/2 #^2]&
+
+Attributes[SinIntegral] = {Listable, NumericFunction, ReadProtected};
+Attributes[CosIntegral] = {Listable, NumericFunction, ReadProtected};
+Attributes[SinhIntegral] = {Listable, NumericFunction, ReadProtected};
+Attributes[CoshIntegral] = {Listable, NumericFunction, ReadProtected};
+Attributes[FresnelS] = {Listable, NumericFunction, ReadProtected};
+Attributes[FresnelC] = {Listable, NumericFunction, ReadProtected};
+
+Protect[SinIntegral, CosIntegral, SinhIntegral, CoshIntegral, FresnelS, FresnelC];
 
 
 (* :Tests:
@@ -142,6 +159,4 @@ Do[zz = Random[Complex, {-20-20I, 20+20I}];
 Do[zz = Random[Real, {-20, 20}];
 	Print[{zz, d1[zz], d2[zz], d3[zz], d4[zz], d5[zz], d6[zz]}], {20}];
 Do[zz = Random[Real, {-20, 20}]I;
-	Print[{zz, d1[zz], d2[zz], d3[zz], d4[zz], d5[zz], d6[zz]}], {20}];
-
-*)
+	Print[{zz, d1[zz], d2[zz], d3[zz], d4[zz], d5[zz], d6[zz]}], {20}];*)

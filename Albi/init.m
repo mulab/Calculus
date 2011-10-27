@@ -8,9 +8,8 @@ If[Head[Calculus`CWD]===String,
 	SINDirectory=Calculus`CWD<>"Albi\\",
 	SINDirectory=NotebookDirectory[]
 ];
-Get[SINDirectory<>"Rational\\init.m"];
+Get[SINDirectory<>"Rioboo.m"];
 Get[SINDirectory<>"Risch\\init.m"];
-(*Get[SINDirectory<>"SIN-like\\init.m"];*)
 End[];
 
 

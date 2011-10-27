@@ -1,26 +1,42 @@
 (* ::Package:: *)
 
+RubiNotLoaded = True
+AlbiNotLoaded = True
+
 (* Mathematica Raw Program *)
 IntegrateU[f_,x_]:=Module[
 	{e=f,ans},
-	ans=Calculus`Rubi`Int[e,x];
+
+	(*Get[CWD<>"/IntegralFunctions.m"];
+	Get[CWD<>"/Rubi/init.m"];
+	Get[CWD<>"/Albi/init.m"];*)
+
+	If[RubiNotLoaded,
+		Get[Calculus`CWD <> "Rubi/init.m"];
+		RubiNotLoaded = False
+	];
+	ans = Calculus`Rubi`Int[e,x];
 
 	If[FreeQ[ans,Calculus`Rubi`Int], Return[ans],
-		Print["Rubi Failed!"];
-		ans=Calculus`Albi`Risch`pmint[e,x]
-	];
-
-	If[StringMatchQ[ToString[ans],"*Calculus`Albi`Risch*"],
-		Print["Albi Failed!"];
-		ans=IintTable[e,x],
-		Return[ans]
-	];
-	If[ans=!="NotMatch",Return[ans],Return[$Failed]];
+		(*Print["Rubi Failed!"];*)
+		If[AlbiNotLoaded,
+			Get[Calculus`CWD <> "Albi/init.m"];
+			AlbiNotLoaded = False
+		];
+		ans = Calculus`Albi`Risch`pmint[e,x];
+		If[FreeQ[ans,Calculus`Albi`Risch], Return[ans],
+			Print["Albi Failed!"];
+			ans = ConstIntTable[e,x];
+			If[ans =!= "NotMatch",
+				Return[ans],
+				Return[$Failed]
+			]
+		]
+	]
 ]
 
 
-IntegrateList=
-{
+IntegrateList = {
 A[Sqrt[1+(2 x_)/(1+x_^2)]/(1+x_^2),x_] :> ((-1+x) Sqrt[1+(2 x)/(1+x^2)])/(1+x),
 A[1/((1+x_^4) Sqrt[-x_^2+Sqrt[1+x_^4]]),x_] :> ArcCot[Sqrt[-x^2+Sqrt[1+x^4]]/x],
 A[Sqrt[1+(2 x_)/(1+x_^2)],x_] :> (Sqrt[(1+x)^2/(1+x^2)] (1+x^2+Sqrt[1+x^2] ArcSinh[x]))/(1+x),
@@ -40,7 +56,7 @@ A[x_/(Sqrt[-1+x_] Sqrt[1+x_] ArcCosh[x_]),x_] :> CoshIntegral[ArcCosh[x]],
 A[(x_ Cosh[x_]-Sinh[x_])/(x_-Sinh[x_])^2,x_] :> -(x/(-x+Sinh[x]))
 };
 
-IintTable[f_,x_]:=Module[
+ConstIntTable[f_,x_]:=Module[
     {},
     ret=A[f,x]//.IntegrateList;
     If[Head[ret]===A,Return["NotMatch"],Return[ret]];
