@@ -7,7 +7,7 @@ pmint;
 Begin["`Private`"]
 If[Head[Calculus`CWD]===String,
 	RischDIR=Calculus`CWD<>"Albi\\Risch\\",
-	RischDIR=NotebookDirectory[]
+	If[Head[Calculus`Albi`SINDirectory]===String,RischDIR=Calculus`Albi`SINDirectory<>"Risch\\",RischDIR=NotebookDirectory[]]
 ];
 Get[RischDIR<>"AlgebraicPrelim.m"];
 Get[RischDIR<>"Misc.m"];
