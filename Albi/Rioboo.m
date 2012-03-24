@@ -48,8 +48,7 @@ Simplify[D[f,x]==D[I*Log[(A+I*B)/(A-I*B)],x]] *)
 	I Log[(A + B I)/(A - B I)] --> 2ArcTan(A/B)   *)
 Log2ArcTan[f_,x_]:=Module[
 	{e},
-	e = f//.ci1_ Log[vi1_]+ci2_ Log[vi2_]/;FreeQ[Simplify[ci1+ci2],Complex]
-		->(Simplify[ci1+ci2])/2 Log[Simplify[((vi1+vi2)/2)^2+((vi1-vi2)/2/I)^2]] + Simplify[ci1-ci2]/2/I LogToAtan[((vi1+vi2)/2),((vi1-vi2)/2/I),x];
+	e = f//.ci1_ Log[vi1_]+ci2_ Log[vi2_]/;FreeQ[Simplify[ci1+ci2],Complex]->(Simplify[ci1+ci2])/2 Log[Simplify[((vi1+vi2)/2)^2+((vi1-vi2)/2/I)^2]] + Simplify[ci1-ci2]/2/I LogToAtan[((vi1+vi2)/2),((vi1-vi2)/2/I),x];
 	e = FullSimplify[e];
 	Return[e];
 ]
