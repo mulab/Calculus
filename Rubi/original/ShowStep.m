@@ -2,7 +2,7 @@
 
 (* ShowSteps controls both the use of special definitions when defining rules AND the display of
 	steps when simplify expressions. *) 
-ShowSteps=False;
+ShowSteps=True;
 SimplifyFlag=True;
 
 
@@ -227,7 +227,7 @@ ShowStep[num_,condStrg_,lhsStrg_,rhsStrg_,rhs_] := (
   If[ShowSteps,
     Print["Rule ",num,": ",condStrg];
     Print["  ",ToExpression["Defer["<>lhsStrg<>"]"]," \[LongRightArrow] ",ToExpression["Defer["<>rhsStrg<>"]"]];
-    Block[{SimplifyFlag=False},
+    Block[{(*SimplifyFlag=False*)},
     ReleaseHold[rhs]],
   ReleaseHold[rhs]] )
 
