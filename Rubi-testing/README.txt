@@ -1,1 +1,0 @@
-init.m初始化，载入original目录下的Rubi3包，运行init.m之后，就可以使用Int[f,x]来查询积分表了。
