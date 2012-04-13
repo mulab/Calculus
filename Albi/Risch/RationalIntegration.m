@@ -132,7 +132,8 @@ DebugRisch=True;
    	];
 	(*Get[NotebookDirectory[]<>"\\Albi\\Rational\\intSubRat.m"];*)
 		DRPrint["ans(not simplified) = ",ans];
-	Calculus`Albi`Rational`Log2ArcTan[ans,x]
+	(*Calculus`Albi`Rational`Log2ArcTan[ans,x]*)
+	ans
 	
 ]
 

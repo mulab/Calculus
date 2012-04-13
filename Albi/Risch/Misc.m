@@ -108,14 +108,44 @@ TrigToTan[ee_] := Module[{ToTan,e=ee/.Sec[x_]^2->1+Tan[x]^2},
 
 Derivative[1][tan]=Function[1 + tan[#]^2]
 
-TanToTrig[tan[y_]/(1 + tan[y_]^2)] := (1/2) Sin[2y];
+(*TanToTrig[tan[y_]/(1 + tan[y_]^2)] := (1/2) Sin[2y];
 TanToTrig[2 tan[y_]/(1 + tan[y_]^2)] := Sin[2y];
 TanToTrig[(1 - tan[y_]^2)/(1 + tan[y_]^2)]:= Cos[2y];
 TanToTrig[1+tan[x_]^2]:= Sec[x]^2;
 TanToTrig[(1 + tan[y_]^2)/(1 - tan[y_]^2)]:=Sec[2y];
 TanToTrig[(1 + tan[y_]^2)/(2 tan[y_])]:=Csc[2y];
 TanToTrig[(1 - tan[y_]^2)/(2 tan[y_])]:= Cot[2y];
-TanToTrig[e_]:=e
+TanToTrig[e_]:=e*)
+TanToTrig[1+tan[x_]^2]:= Sec[x]^2;
+TanToTrig[z_] := Module[{y,numerator,denominator},
+	numerator=Numerator[z];
+	denominator=Denominator[z];
+	If[Head[numerator]==tan,
+		y=First[numerator];
+		If[denominator==(1+tan[y]^2),
+			Return[(1/2) Sin[2y]]]];
+	If[Head[numerator/2]==tan,
+		y=First[numerator/2];
+		If[denominator==(1+tan[y]^2),
+			Return[Sin[2y]]]];
+	If[(Head[1-numerator]==Power)&&(Head[First[1-numerator]]==tan)&&(Rest[1-numerator]==2),
+		y=First[First[1-numerator]];
+		If[denominator==(1+tan[y]^2),
+			Return[Cos[2y]]]];
+	If[(Head[1-denominator]==Power)&&(Head[First[1-denominator]]==tan)&&(Rest[1-denominator]==2),
+		y=First[First[1-denominator]];
+		If[numerator==(1+tan[y]^2),
+			Return[Sec[2y]]]];
+	If[Head[denominator/2]==tan,
+		y=First[denominator/2];
+		If[numerator==(1+tan[y]^2),
+			Return[Csc[2y]]]];
+	If[Head[denominator/2]==tan,
+		y=First[denominator/2];
+		If[numerator==(1-tan[y]^2),
+			Return[Cot[2y]]]];
+	Return[z]]
+		
 
 myVariables[e : (_Plus | _Times)] := Union[Flatten[myVariables/@Apply[List, e]]];
 myVariables[HoldPattern[Power][e_, a_Integer]] := myVariables[e];

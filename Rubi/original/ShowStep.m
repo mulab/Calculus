@@ -2,7 +2,7 @@
 
 (* ShowSteps controls both the use of special definitions when defining rules AND the display of
 	steps when simplify expressions. *) 
-ShowSteps=True;
+ShowSteps=False;
 SimplifyFlag=True;
 
 
