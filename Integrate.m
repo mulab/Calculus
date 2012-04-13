@@ -10,14 +10,18 @@ IntegrateU[f_,x_]:=Module[
 	(*Get[CWD<>"/IntegralFunctions.m"];
 	Get[CWD<>"/Rubi/init.m"];
 	Get[CWD<>"/Albi/init.m"];*)
-	If[Head[f]==Plus,
+Catch[
+	If[Head[f]===Plus,
 		For[i=1,i<=Length[f],i++,
+			Print["Integrating : ",f[[i]]];
 			subans=IntegrateAR[f[[i]],x];
-			If[subans==$Failed,ans=$Failed;Break[]];
+			If[subans==$Failed,ans=$Failed;Break[];];
 			ans=ans+subans;];
-			If[(ans==$Failed)||(IntLength[ans]>2*IntLength[f]),Print["seperate failed or too long"];anoans=IntegrateAR[f,x]];
-			If[IntLength[ans]<=IntLength[anoans],Return[ans],Return[anoans]],
-		Return[IntegrateAR[f,x]];]
+			Print["seperate end",ans];
+			If[(ans!=$Failed)&&(IntLength[ans]<2*IntLength[f]),Throw[ans];];
+			anoans=IntegrateAR[f,x];
+			If[(IntLength[ans]<=IntLength[anoans])||(anoans==$Failed),Throw[ans];,Print["anoans",anoans];Throw[anoans];],
+		Return[IntegrateAR[f,x]];]]
 	
 (*	If[RubiNotLoaded,
 		Get[Calculus`CWD <> "Rubi/init.m"];
@@ -43,14 +47,16 @@ IntegrateU[f_,x_]:=Module[
 	]*)
 ]
 IntegrateAR[f_,x_]:=Module[{e=f,ans},
+	Print["AR Integrating : ",f];
 	If[CheckAlbi[f],
 		LoadAlbi[];
 		ans = Calculus`Albi`Risch`pmint[e,x];
-		If[FreeQ[ans,Calculus`Albi`Risch`Private`INT], Return[ans],
+		Print[ans];
+		If[FreeQ[ans,Calculus`Albi`Risch`Private`INT], Return[ans];];];
 			Print["Albi failed"];
 			LoadRubi[];
 			ans = Calculus`Rubi`Int[e,x];
-			If[FreeQ[ans,Calculus`Rubi`Int], Return[ans],Print["Albi failed"];Return[$Failed]]]]]
+			If[FreeQ[ans,Calculus`Rubi`Int], Print[ans];Return[ans],Print["Rubi failed"];Return[$Failed]]]
 IntLength[f_]:=Length[Level[f,15]];
 	
 LoadAlbi[]:=If[AlbiNotLoaded,
@@ -65,7 +71,7 @@ LoadRubi[]:=If[RubiNotLoaded,
 CheckHead[f_]:=Module[
 	{e,flag=False},
 	e=Head[f];
-	If[(e==Plus)||(e==Times)||((e==Power)&&(Quiet[IntegerQ[f[[2]]]]))(e==Sin)||(e==Cos)||(e==Tan)||(e==Cot)||(e==Sec)||(e==Csc)||(e==Log),flag=True;];
+	If[(e===Plus)||(e===Times)||((e===Power)&&(Quiet[IntegerQ[f[[2]]]]))||(e===Sin)||(e===Cos)||(e===Tan)||(e===Cot)||(e===Sec)||(e===Csc)||(e===Log),flag=True;];
 flag
 ];
 CheckAlbi[_Symbol | _Integer | _Rational | _Real | _Complex] := True;
@@ -82,7 +88,7 @@ CheckAlbi[f_]:=Module[
 ];
 
 
-IntegrateU[(-3+10x+4x^3-30x^5)/(3+x+x^4)^3-3(1+4x^3)(2-3x+5x^2+x^4-5x^6)/(3+x+x^4)^4,x]
+
 
 
 IntegrateList = {
