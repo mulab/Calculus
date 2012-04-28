@@ -218,7 +218,7 @@ ShowStep[condStrg_,lhsStrg_,rhsStrg_,rhs_] := (
   If[ShowSteps,
     Print["Rule: ",condStrg];
     Print["  ",ToExpression["Defer["<>lhsStrg<>"]"]," \[LongRightArrow] ",ToExpression["Defer["<>rhsStrg<>"]"]];
-    Block[{SimplifyFlag=False},
+    Block[{(*SimplifyFlag=False*)},
     ReleaseHold[rhs]],
   ReleaseHold[rhs]] )
 
