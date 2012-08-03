@@ -25,15 +25,17 @@ public class InsertPrintInfo {
 		return new String(buffer);
 	}
 	
-	static void writeFile(String file, String txt) {
-		;
+	static void writeFile(String file, String txt) throws IOException {
+		FileWriter writer = new FileWriter(file);
+		writer.write(txt);
+		writer.close();
 	}
 	
 	public static void main(String[] args) throws IOException {
 		String filePath = args[0]+System.getProperty("file.separator")+args[1];
 		String str = readFile(filePath);
 		
-		Pattern p_set = Pattern.compile("Int\\[.*?\\] :=\\r\\n\\W+(?<def>.*?)\\r\\n(?:(?:\\r\\n)|$)", Pattern.DOTALL);
+		Pattern p_set = Pattern.compile("Int\\[.*?\\] :=\\r\\n(?<def>.*?)\\r\\n(?:(?:\\r\\n)|$)", Pattern.DOTALL);
 		Pattern p_def = Pattern.compile("(?<act>.*) /;\\r\\n", Pattern.DOTALL);
 		Matcher m_set = p_set.matcher(str);
 		int cnt = 0;
@@ -45,7 +47,7 @@ public class InsertPrintInfo {
 			if (m_def.find()) {
 				String act = m_def.group("act"), tmp;
 				//System.out.println(act);
-				tmp = "(Print[\"Int@\"];\n"+act+")";
+				tmp = "(Print[\"Int("+cnt+"th)@"+args[1]+"\"];\n"+act+")";
 				tmp = def.replace(act, tmp);
 				tmp = set.replace(def, tmp);
 				System.out.println(tmp);
@@ -54,9 +56,10 @@ public class InsertPrintInfo {
 			else System.out.println("!!!");
 			m_set.region(m_set.end(), m_set.regionEnd());
 		}
-		//TODO: add line number and filename
 		
-		//TODO: write str back to the file
+		str = str.replaceAll("\\(\\*.*?\\*\\)", "");
+		str = str.replaceAll("(\\r\\n){3,}", "\r\n\r\n");
+		
 		writeFile(filePath, str);
 	}
 }
