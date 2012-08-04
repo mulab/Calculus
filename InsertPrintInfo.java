@@ -31,6 +31,10 @@ public class InsertPrintInfo {
 		writer.close();
 	}
 	
+	static int bracketDisMatch(String str) {
+		return -1;
+	}
+	
 	public static void main(String[] args) throws IOException {
 		String filePath = args[0]+System.getProperty("file.separator")+args[1];
 		String str = readFile(filePath);
@@ -46,9 +50,22 @@ public class InsertPrintInfo {
 			Matcher m_def = p_def.matcher(def);
 			if (m_def.find()) {
 				String act = m_def.group("act"), tmp;
-				//System.out.println(act);
-				tmp = "(Print[\"Int("+cnt+"th)@"+args[1]+"\"];\n"+act+")";
-				tmp = def.replace(act, tmp);
+				if (bracketDisMatch(act) == -1) {
+					tmp = "(Print[\"Int("+cnt+"th)@"+args[1]+"\"];\r\n"+act+")";
+					tmp = def.replace(act, tmp);
+				}
+				else {
+					if (def.endsWith(";"))
+						tmp = "(Print[\"Int("+cnt+"th)@"+args[1]+"\"];\r\n"+def.substring(0, def.length()-1)+");";
+					else
+						tmp = "(Print[\"Int("+cnt+"th)@"+args[1]+"\"];\r\n"+def+")";
+					int pos = bracketDisMatch(tmp);
+					if (pos != -1) {
+						System.out.print("Need to modify manually[Enter]");
+						BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
+						stdin.readLine();
+					}
+				}
 				tmp = set.replace(def, tmp);
 				System.out.println(tmp);
 				str = str.replace(set, tmp);
@@ -57,7 +74,7 @@ public class InsertPrintInfo {
 			m_set.region(m_set.end(), m_set.regionEnd());
 		}
 		
-		str = str.replaceAll("\\(\\*.*?\\*\\)", "");
+		str = str.replaceAll("\\(\\*.{14,}?\\*\\)", "");
 		str = str.replaceAll("(\\r\\n){3,}", "\r\n\r\n");
 		
 		writeFile(filePath, str);
