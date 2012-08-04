@@ -13,6 +13,7 @@
 
 import java.io.*;
 import java.util.regex.*;
+import java.util.Stack;
 
 public class InsertPrintInfo {
 	
@@ -32,7 +33,35 @@ public class InsertPrintInfo {
 	}
 	
 	static int bracketDisMatch(String str) {
-		return -1;
+		Stack<String> stack = new Stack<String>();
+		for (int i = 0; i < str.length(); i++)
+			switch (str.charAt(i)) {
+			case '{':
+				stack.push("{");
+				break;
+			case '}':
+				if (!stack.empty() && stack.peek().equals("{"))
+					stack.pop();
+				else return i;
+				break;
+			case '(':
+				stack.push("(");
+				break;
+			case ')':
+				if (!stack.empty() && stack.peek().equals("("))
+					stack.pop();
+				else return i;
+				break;
+			case '[':
+				stack.push("[");
+				break;
+			case ']':
+				if (!stack.empty() && stack.peek().equals("["))
+					stack.pop();
+				else return i;
+				break;
+			}
+		return (stack.empty() ? -1 : str.length());
 	}
 	
 	public static void main(String[] args) throws IOException {
