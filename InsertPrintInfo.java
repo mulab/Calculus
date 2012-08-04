@@ -42,7 +42,7 @@ public class InsertPrintInfo {
 			case '}':
 				if (!stack.empty() && stack.peek().equals("{"))
 					stack.pop();
-				else return i;
+				else return (!stack.empty() && stack.peek().equals("(") ? i : -i);
 				break;
 			case '(':
 				stack.push("(");
@@ -50,7 +50,7 @@ public class InsertPrintInfo {
 			case ')':
 				if (!stack.empty() && stack.peek().equals("("))
 					stack.pop();
-				else return i;
+				else return (!stack.empty() && stack.peek().equals("(") ? i : -i);
 				break;
 			case '[':
 				stack.push("[");
@@ -58,10 +58,16 @@ public class InsertPrintInfo {
 			case ']':
 				if (!stack.empty() && stack.peek().equals("["))
 					stack.pop();
-				else return i;
+				else return (!stack.empty() && stack.peek().equals("(") ? i : -i);
 				break;
 			}
-		return (stack.empty() ? -1 : str.length());
+		return (stack.empty() ? 0 : (stack.peek().equals("(") ? str.length() : -str.length()));
+	}
+	
+	static String replace(String str, String src, String dst) {
+		int idx = str.indexOf(src);
+		int end = idx+src.length();
+		return str.substring(0,idx)+dst+str.substring(end);
 	}
 	
 	public static void main(String[] args) throws IOException {
@@ -79,9 +85,9 @@ public class InsertPrintInfo {
 			Matcher m_def = p_def.matcher(def);
 			if (m_def.find()) {
 				String act = m_def.group("act"), tmp;
-				if (bracketDisMatch(act) == -1) {
+				if (bracketDisMatch(act) == 0) {
 					tmp = "(Print[\"Int("+cnt+"th)@"+args[1]+"\"];\r\n"+act+")";
-					tmp = def.replace(act, tmp);
+					tmp = replace(def, act, tmp);
 				}
 				else {
 					if (def.endsWith(";"))
@@ -89,15 +95,20 @@ public class InsertPrintInfo {
 					else
 						tmp = "(Print[\"Int("+cnt+"th)@"+args[1]+"\"];\r\n"+def+")";
 					int pos = bracketDisMatch(tmp);
-					if (pos != -1) {
-						System.out.print("Need to modify manually[Enter]");
+					if (pos != 0) {
+						if (pos > 0) {
+							tmp = tmp.substring(0, pos)+")"+tmp.substring(pos);
+							if (tmp.endsWith(");")) tmp = tmp.substring(0, tmp.length()-2)+";";
+							else tmp = tmp.substring(0, tmp.length()-1);
+						}
+						System.out.print(pos+" You'd better to verify manually. [Enter]");
 						BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
 						stdin.readLine();
 					}
 				}
-				tmp = set.replace(def, tmp);
+				tmp = replace(set, def, tmp);
 				System.out.println(tmp);
-				str = str.replace(set, tmp);
+				str = replace(str, set, tmp);
 			}
 			else System.out.println("!!!");
 			m_set.region(m_set.end(), m_set.regionEnd());

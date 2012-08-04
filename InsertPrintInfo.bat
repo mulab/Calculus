@@ -1,1 +1,1 @@
-for %%i in (*.m) do java InsertPrintInfo .\ %%i
+for %%i in (*.m) do java InsertPrintInfo .\ "%%i"
