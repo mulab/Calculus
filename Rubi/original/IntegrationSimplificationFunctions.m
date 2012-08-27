@@ -20,6 +20,8 @@ Dist[1,v_] := v
 Dist[u_,v_] := -Dist[-u,v] /;
 NumericFactor[u]<0
 
+(* FIXME: we don't support TagSet yet, uncomment the following when we start supporting TagSet *)
+(*
 Dist /: Dist[u_,v_]+Dist[w_,v_] := 
   If[ZeroQ[u+w],
     0,
@@ -31,6 +33,7 @@ Dist /: Dist[u_,v_]-Dist[w_,v_] :=
   Dist[u-w,v]]
 
 Dist /: w_*Dist[u_,v_] := Dist[w*u,v] /; w=!=-1
+*)
 
 Dist[u_,Dist[v_,w_]] := Dist[Sim[u*v],w]
 
