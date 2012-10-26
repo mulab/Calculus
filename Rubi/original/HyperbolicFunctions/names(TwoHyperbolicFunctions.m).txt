@@ -1,0 +1,1 @@
+[Regularize, ZeroQ, A, B, PolynomialQ, RationalQ, EvenQ, FreeQ, IntegerQ, IndependentQ, I, Module, Code, Subst, False, NonzeroQ, IntegersQ, Cancel, Package, Int, ShowSteps, Block, Tanh, OddQ, HalfIntegerQ, Sech, StepCounter, Sinh, Pi, Coth, Print, Not, Symbol, Dist, TwoHyperbolicFunctions, Cosh, Null, Csch]

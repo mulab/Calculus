@@ -1,0 +1,1 @@
+[Regularize, Hold, ZeroQ, F, FreeQ, IntegerQ, TryPureTanSubst, Csc, Module, Code, Subst, SubstFor, Coefficient, FunctionOfQ, NonsumQ, Package, TrigSubstitution, Int, ShowSteps, Tanh, Sqrt, Tan, MemberQ, Sinh, Coth, Print, Sec, Sin, NotFalseQ, ShowStep, Cos, FunctionOfTrig, Symbol, Dist, True, If, Cosh, Cot, SimplifyFlag]

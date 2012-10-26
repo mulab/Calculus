@@ -1,0 +1,1 @@
+[Regularize, ZeroQ, A, B, C, RationalQ, ArcTanh, FreeQ, IntegerQ, I, PosQ, Code, Subst, Rt, NonzeroQ, Log, IntegersQ, Package, RationalFunctionsOfHyperbolicSinesAndCosines, Int, Tanh, OddQ, Sqrt, ArcTan, EllipticF, PositiveQ, Sinh, Pi, Coth, EllipticE, Print, Not, MatchQ, Symbol, Dist, NegQ, Cosh]

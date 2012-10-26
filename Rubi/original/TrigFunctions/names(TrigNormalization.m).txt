@@ -1,0 +1,1 @@
+[Sqrt, ZeroQ, A, B, SubstInertSineForTrigOfLinear, C, FunctionOfTrigOfLinearQ, FreeQ, TrigNormalization, IntegerQ, Csc, Print, Sin, Not, Symbol, Defer, Dist, Package, If, Int, RecognizedFunctionOfTrigQ, ShowSteps, SimplifyFlag]

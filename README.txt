@@ -1,10 +1,10 @@
-��Ŀ¼����������Ƴ���
-Rubi(Rule Based Integration)���ǻ��ڹ���/���ֱ��Ļ���
-Albi(Algorithm Based Integration)���ǻ����㷨�Ļ���
-Albi\Risch\����Risch��Parallel Risch�㷨
+根目录下是整体控制程序
+Rubi(Rule Based Integration)下是基于规则/积分表的积分
+Albi(Algorithm Based Integration)下是基于算法的积分
+Albi\Risch\下是Risch和Parallel Risch算法
 
-�ں˻�����ҽ�����һ��init.m����Albi��Rubi�еĺ����ӿڼ��ص��ڴ��У���IntegrateU��һ�����е���ز���ʱ������Ŀ¼�µ�init.m�������Ŀ¼�µ�init.m
+内核会调用且仅调用一次init.m来将Albi、Rubi中的函数接口加载到内存中（在IntegrateU第一次运行到相关部分时），根目录下的init.m会调用子目录下的init.m
 
 -----------------------------------------------------
 
-�÷�֧�ڶ�Rubi��Int���������˴�ӡ��Ϣ���ܣ���һ��Int�����屻���õ�ʱ�򣬻��Զ���ӡ��Intλ�á�
+该分支内对Rubi的Int函数添加了打印信息功能，当一个Int函数体被调用的时候，会自动打印该Int位置。

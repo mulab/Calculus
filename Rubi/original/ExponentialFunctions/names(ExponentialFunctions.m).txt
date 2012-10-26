@@ -1,0 +1,1 @@
+[E, NegativeCoefficientQ, ZeroQ, LeafCount, ArcTanh, RationalQ, FreeQ, IntegerQ, Subst, Module, Code, PosQ, Gamma, False, ExponentialFunctions, Rt, Exp, NonzeroQ, Log, LinearQ, IntegersQ, Coefficient, Erf, Package, FractionQ, Int, ShowSteps, Block, Sqrt, StepCounter, ArcTan, Pi, Print, FractionOrNegativeQ, Erfi, Not, ExpIntegralEi, Symbol, Dist, NegQ, If, Null, Expand]

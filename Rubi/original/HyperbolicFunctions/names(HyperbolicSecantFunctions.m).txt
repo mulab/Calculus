@@ -1,0 +1,1 @@
+[Regularize, E, ZeroQ, ArcTanh, RationalQ, FreeQ, EvenQ, IntegerQ, ArcCoth, Csc, PosQ, Code, Subst, NonzeroQ, Log, IntegersQ, Package, FractionQ, Int, Tanh, OddQ, Sqrt, Tan, Inth, Sech, HyperbolicSecantFunctions, ArcTan, Sinh, Coth, Print, Sec, Not, Symbol, Dist, NegQ, Cosh, Cot, Csch]

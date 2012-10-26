@@ -1,0 +1,1 @@
+[D, Simp, Mod, ExpnExpand, LeafCount, ArcCot, StringJoin, Simplify, False, TrigSimplify, SumQ, Package, MakeList, Prt, Int, ShowSteps, Integrate, Subsection, Tan, SimplifyD, Closed, Map, Function, IndentedPrint, ArcTan, NumericQ, Append, Debug, Pi, Rules, Simplification, Print, RecognizedFormQ, Title, FullSimplify, Functions, True, Symmetric, NormalForm, Integer, If, Null, Mods]

@@ -1,0 +1,1 @@
+[Regularize, Hold, HyperbolicSubstitution, FreeQ, IntegerQ, Subst, Code, Module, SubstFor, IntegersQ, TrigSimplify, Coefficient, FunctionOfQ, Package, NonsumQ, Int, ShowSteps, Tanh, Sech, FunctionOfHyperbolic, Sinh, Coth, Print, Not, MatchQ, TryPureTanhSubst, NotFalseQ, ShowStep, Symbol, Dist, True, Cosh, If, Csch, SimplifyFlag]

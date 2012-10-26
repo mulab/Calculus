@@ -1,0 +1,1 @@
+[D, Regularize, E, InverseHyperbolicCosineFunctions, PolynomialQ, InverseFunctionFreeQ, RationalQ, FreeQ, IntegerQ, Code, Gamma, Subst, NonzeroQ, Log, Erf, FunctionOfExponentialOfLinear, Package, Int, CoshIntegral, Tanh, Sqrt, ArcSech, SinhIntegral, ArcCosh, Sinh, Pi, Print, Erfi, Not, Symbol, Dist, Cosh]

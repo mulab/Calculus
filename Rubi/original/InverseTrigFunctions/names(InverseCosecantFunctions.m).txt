@@ -1,0 +1,1 @@
+[D, Regularize, Sqrt, ArcCsc, InverseFunctionFreeQ, PolyLog, InverseCosecantFunctions, ArcSin, FreeQ, IntegerQ, I, Code, Subst, Print, Not, NonzeroQ, Log, Symbol, Dist, FunctionOfExponentialOfLinear, Package, Int]

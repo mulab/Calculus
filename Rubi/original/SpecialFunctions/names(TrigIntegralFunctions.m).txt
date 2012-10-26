@@ -1,0 +1,1 @@
+[TrigIntegralFunctions, FreeQ, IntegerQ, Code, Print, CosIntegral, Sin, NonzeroQ, Cos, SinIntegral, Symbol, Dist, Package, Int]

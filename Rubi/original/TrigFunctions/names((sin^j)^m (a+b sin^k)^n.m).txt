@@ -1,0 +1,1 @@
+[Regularize, ZeroQ, A, B, ArcTanh, RationalQ, ArcSin, FreeQ, EvenQ, IntegerQ, Csc, PosQ, Subst, Simplify, Rt, NonzeroQ, Package, Int, OddQ, Sqrt, Tan, ArcTan, EllipticPi, EllipticF, PositiveQ, Pi, EllipticE, Print, Sec, Sin, Not, Cos, Symbol, Dist, OneQ, NegQ, Cot, Expand]

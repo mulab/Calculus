@@ -1,0 +1,1 @@
+[Regularize, E, ZeroQ, ProductLog, RationalQ, FreeQ, IntegerQ, Simplify, Code, PosQ, Gamma, Subst, Rt, SubstFor, NonzeroQ, Log, IntegersQ, FunctionOfQ, Erf, Package, Int, ProductLogarithmFunctions, Sqrt, Pi, Print, Not, Erfi, ExpIntegralEi, Symbol, Dist, NegQ, Expand]

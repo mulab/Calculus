@@ -1,0 +1,1 @@
+[Regularize, ZeroQ, A, B, C, ArcTanh, RationalQ, FreeQ, IntegerQ, Csc, PosQ, Code, Subst, Rt, NonzeroQ, Log, IntegersQ, Package, FractionQ, Int, OddQ, Sqrt, Tan, ArcTan, PositiveQ, Print, Sec, Sin, Not, MatchQ, Cos, Symbol, Dist, RationalFunctionsOfSinesAndCosines, NegQ, Cot]

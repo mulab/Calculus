@@ -1,0 +1,1 @@
+[D, Regularize, Hold, E, ZeroQ, A, B, ArcTanh, RationalQ, FreeQ, IntegerQ, Simplify, Module, Subst, Code, PosQ, Gamma, Rt, NonzeroQ, AlgebraicFunctionQ, LogarithmFunctions, Log, IntegersQ, LogIntegral, Erf, NonsumQ, Package, Int, ShowSteps, Sqrt, FunctionOfLog, PolyLog, PositiveQ, FalseQ, Pi, Print, Not, Erfi, ShowStep, ExpIntegralEi, Symbol, Dist, NegQ, If, SimplifyFlag]

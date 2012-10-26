@@ -1,0 +1,1 @@
+[Sqrt, ZeroQ, A, B, RationalQ, FreeQ, Csc, Simplify, Print, Not, Sin, NonzeroQ, Cos, Symbol, Dist, OneQ, Package, Int, Cot]

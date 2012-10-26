@@ -1,0 +1,1 @@
+[ZeroQ, PolynomialQ, ArcTanh, FreeQ, ArcSin, IntegerQ, Subst, Code, PosQ, Module, Rt, NonzeroQ, Exponent, IntegersQ, Package, FractionQ, Int, Sqrt, ArcSinh, ArcTan, PositiveQ, Print, Not, MatchQ, Symbol, Dist, AlgebraicFunctionsOfTrinomials, NegQ, Expand]

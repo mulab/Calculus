@@ -1,0 +1,1 @@
+[D, Regularize, ZeroQ, InverseFunctionFreeQ, RationalQ, FreeQ, IntegerQ, ArcCos, Code, Gamma, I, Subst, FresnelS, CosIntegral, NonzeroQ, Log, FunctionOfQ, SinIntegral, FunctionOfExponentialOfLinear, Package, Int, FresnelC, Sqrt, Tan, ArcSec, Pi, Print, Sin, Not, Cos, Symbol, Dist, InverseCosineFunctions]

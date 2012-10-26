@@ -1,0 +1,1 @@
+[E, ZeroQ, RationalQ, FreeQ, IntegerQ, Subst, Code, I, FresnelS, CosIntegral, Rt, NonzeroQ, Log, IntegersQ, SinIntegral, Package, FractionQ, Int, OddQ, FresnelC, Sqrt, Tan, FunctionOfTrigQ, Pi, Print, FractionOrNegativeQ, Sin, Not, Cos, FunctionOfTrig, Symbol, Dist, SineFunctions, Cot]
