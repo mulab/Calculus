@@ -1,1 +1,25 @@
-[Regularize, D, E, InverseFunctionFreeQ, PolynomialQ, RationalQ, InverseHyperbolicSecantFunctions, FreeQ, IntegerQ, Subst, Code, NonzeroQ, Log, FunctionOfExponentialOfLinear, Package, Int, Sqrt, ArcSech, PolyLog, ArcCosh, ArcTan, Print, Not, Symbol, Dist]
+ArcCosh
+ArcSech
+ArcTan
+Code
+D
+Dist
+E
+FreeQ
+FunctionOfExponentialOfLinear
+Int
+IntegerQ
+InverseFunctionFreeQ
+InverseHyperbolicSecantFunctions
+Log
+NonzeroQ
+Not
+Package
+PolyLog
+PolynomialQ
+Print
+RationalQ
+Regularize
+Sqrt
+Subst
+Symbol

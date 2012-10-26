@@ -1,1 +1,22 @@
-[Sqrt, ZeroQ, Tan, RationalQ, ArcTanh, ArcSin, FreeQ, ArcTan, PositiveQ, Pi, Csc, Print, Not, Sin, NonzeroQ, Cos, Symbol, Dist, OneQ, Package, Int, Cot]
+ArcSin
+ArcTan
+ArcTanh
+Cos
+Cot
+Csc
+Dist
+FreeQ
+Int
+NonzeroQ
+Not
+OneQ
+Package
+Pi
+PositiveQ
+Print
+RationalQ
+Sin
+Sqrt
+Symbol
+Tan
+ZeroQ

@@ -4,6 +4,8 @@
 */
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.regex.*;
 
@@ -25,6 +27,10 @@ public class ExtractFunctionNames {
 		HashSet<String> s = new HashSet<String>();
 		while (m.find()) s.add(m.group());
 		
-		System.out.println(s);
+		ArrayList<String> l = new ArrayList<String>(s);
+		Collections.sort(l);
+		
+		for (String str: l)
+			System.out.println(str);
 	}
 }

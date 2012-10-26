@@ -1,1 +1,19 @@
-[Sqrt, ZeroQ, A, B, RationalQ, FreeQ, Csc, Simplify, Print, Not, Sin, NonzeroQ, Cos, Symbol, Dist, OneQ, Package, Int, Cot]
+A
+B
+Cos
+Cot
+Csc
+Dist
+FreeQ
+Int
+NonzeroQ
+Not
+OneQ
+Package
+Print
+RationalQ
+Simplify
+Sin
+Sqrt
+Symbol
+ZeroQ

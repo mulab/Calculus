@@ -1,1 +1,14 @@
-[SinhIntegral, FreeQ, IntegerQ, Sinh, Code, Print, NonzeroQ, Symbol, Dist, HyperbolicIntegralFunctions, Package, Int, Cosh, CoshIntegral]
+Code
+Cosh
+CoshIntegral
+Dist
+FreeQ
+HyperbolicIntegralFunctions
+Int
+IntegerQ
+NonzeroQ
+Package
+Print
+Sinh
+SinhIntegral
+Symbol

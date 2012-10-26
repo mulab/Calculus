@@ -1,1 +1,20 @@
-[ZeroQ, Mod, FresnelIntegralFunctions, EvenQ, FreeQ, IntegerQ, Pi, Subst, Code, FresnelS, Print, Not, Sin, NonzeroQ, Cos, Symbol, Dist, Package, Int, FresnelC]
+Code
+Cos
+Dist
+EvenQ
+FreeQ
+FresnelC
+FresnelIntegralFunctions
+FresnelS
+Int
+IntegerQ
+Mod
+NonzeroQ
+Not
+Package
+Pi
+Print
+Sin
+Subst
+Symbol
+ZeroQ

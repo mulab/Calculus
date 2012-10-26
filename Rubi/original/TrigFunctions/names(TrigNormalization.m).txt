@@ -1,1 +1,23 @@
-[Sqrt, ZeroQ, A, B, SubstInertSineForTrigOfLinear, C, FunctionOfTrigOfLinearQ, FreeQ, TrigNormalization, IntegerQ, Csc, Print, Sin, Not, Symbol, Defer, Dist, Package, If, Int, RecognizedFunctionOfTrigQ, ShowSteps, SimplifyFlag]
+A
+B
+C
+Csc
+Defer
+Dist
+FreeQ
+FunctionOfTrigOfLinearQ
+If
+Int
+IntegerQ
+Not
+Package
+Print
+RecognizedFunctionOfTrigQ
+ShowSteps
+SimplifyFlag
+Sin
+Sqrt
+SubstInertSineForTrigOfLinear
+Symbol
+TrigNormalization
+ZeroQ

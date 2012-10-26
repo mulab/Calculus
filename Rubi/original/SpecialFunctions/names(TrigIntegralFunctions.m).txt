@@ -1,1 +1,14 @@
-[TrigIntegralFunctions, FreeQ, IntegerQ, Code, Print, CosIntegral, Sin, NonzeroQ, Cos, SinIntegral, Symbol, Dist, Package, Int]
+Code
+Cos
+CosIntegral
+Dist
+FreeQ
+Int
+IntegerQ
+NonzeroQ
+Package
+Print
+Sin
+SinIntegral
+Symbol
+TrigIntegralFunctions

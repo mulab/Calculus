@@ -1,1 +1,15 @@
-[Regularize, ArcTan, FreeQ, Subst, Title, Print, SubstFor, Log, Item, FunctionOfQ, Symbol, CalculusFunctions, Package, Derivative, Int]
+ArcTan
+CalculusFunctions
+Derivative
+FreeQ
+FunctionOfQ
+Int
+Item
+Log
+Package
+Print
+Regularize
+Subst
+SubstFor
+Symbol
+Title

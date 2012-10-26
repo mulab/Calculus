@@ -1,1 +1,26 @@
-[ProductsOfExponentialAndHyperbolicFunctions, E, ZeroQ, Sech, StepCounter, PolynomialQ, RationalQ, FreeQ, IntegerQ, Sinh, Module, Code, False, Print, NonzeroQ, Exponent, Log, Symbol, Dist, Package, Int, Cosh, ShowSteps, Null, Block, Csch]
+Block
+Code
+Cosh
+Csch
+Dist
+E
+Exponent
+False
+FreeQ
+Int
+IntegerQ
+Log
+Module
+NonzeroQ
+Null
+Package
+PolynomialQ
+Print
+ProductsOfExponentialAndHyperbolicFunctions
+RationalQ
+Sech
+ShowSteps
+Sinh
+StepCounter
+Symbol
+ZeroQ

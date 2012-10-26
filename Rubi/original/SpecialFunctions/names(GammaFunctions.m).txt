@@ -1,1 +1,15 @@
-[ZeroQ, RationalQ, GammaFunctions, FreeQ, IntegerQ, PositiveQ, Code, Gamma, Print, Symbol, Dist, PolyGamma, Package, Int, LogGamma]
+Code
+Dist
+FreeQ
+Gamma
+GammaFunctions
+Int
+IntegerQ
+LogGamma
+Package
+PolyGamma
+PositiveQ
+Print
+RationalQ
+Symbol
+ZeroQ
