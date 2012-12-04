@@ -1,0 +1,264 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 8.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     10237,        255]
+NotebookOptionsPosition[      9942,        240]
+NotebookOutlinePosition[     10296,        256]
+CellTagsIndexPosition[     10253,        253]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "\[IndentingNewLine]", 
+   RowBox[{"\:8bf4\:660e", "\:ff1a", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"\:ff08", "1", "\:ff09"}], 
+     "\:6709\:5173\:4e0a\:6b21\:63d0\:5230\:7684print\:95ee\:9898"}], 
+    "\:ff0c", 
+    "\:51e0\:4e4e\:6240\:6709\:4ee3\:7801\:4e2d\:8fd0\:7528module\:7684\:5730\
+\:65b9\:90fd\:6709", "\:ff0c", 
+    RowBox[{
+    "\:5e76\:4e0d\:5f71\:54cd\:7a0b\:5e8f\:8fd0\:884c\:4f46\:662f\:5f88\:5f71\
+\:54cd\:6211\:4eec\:5224\:65ad\:5230\:5e95\:54ea\:4e00\:6b65\:9519\:4e86\
+\[Ellipsis]\[Ellipsis]", "\[IndentingNewLine]", 
+     "\:91cd\:65b0\:63cf\:8ff0\:4e00\:4e0b"}], "\:ff0c", 
+    "\:672c\:6765\:8fd0\:884c\:7684\:7a0b\:5e8f\:6bb5\:5e94\:8be5\:662f", 
+    "\:ff1a", 
+    RowBox[{
+     RowBox[{"\:6a21\:5f0f\:5339\:914d", "\[Rule]", 
+      RowBox[{"\:5224\:65ad\:53ef\:884c", "\[Rule]", 
+       RowBox[{"\:8f93\:51fa\:4f7f\:7528\:7684\:89c4\:5219", "\[Rule]", 
+        RowBox[{
+        "\:8c03\:7528\:4e0b\:4e00\:6b65", "\[IndentingNewLine]", 
+         "\:6240\:4ee5\:5e94\:8be5\:662f\:8fd9\:6837\:7684", 
+         RowBox[{
+         "\:ff08", "\:53c2\:89c1\:4e0b\:9762\:7ed9\:7684\:4f8b\:5b50", 
+          "\:ff09"}], "\[IndentingNewLine]", 
+         RowBox[{"Int", "[", 
+          RowBox[{"u_", ",", "x_symbol"}], "]"}]}]}]}]}], ":=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Module", "[", 
+         RowBox[{
+          RowBox[{"{", "\:5b9a\:4e49\:81ea\:53d8\:91cf", "}"}], ",", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"\:8f93\:51fa\:89c4\:5219", ";", "\:4e0b\:4e00\:6b65"}], 
+            ")"}], "/;", "\:5224\:65ad\:53ef\:884c"}]}], "]"}], ")"}], "/;", 
+       RowBox[{
+        RowBox[{"(", "\:6a21\:5f0f", ")"}], "\[IndentingNewLine]", " ", 
+        "\:800c\:4e0d\:662f", "\[IndentingNewLine]", " ", 
+        RowBox[{"Int", "[", 
+         RowBox[{"u_", ",", "x_symbol"}], "]"}]}]}], ":=", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"\:8f93\:51fa\:89c4\:5219", ";", 
+         RowBox[{"Module", "[", 
+          RowBox[{
+           RowBox[{"{", "\:5b9a\:4e49\:81ea\:53d8\:91cf", "}"}], ",", 
+           RowBox[{"\:4e0b\:4e00\:6b65", "/;", "\:5224\:65ad\:53ef\:884c"}]}],
+           "]"}]}], ")"}], "/;", 
+       RowBox[{
+        RowBox[{"(", "\:6a21\:5f0f", ")"}], "\[IndentingNewLine]", 
+        "\:540e\:8005\:7684\:7ed3\:679c\:5c31\:662f\:90e8\:5206\:64cd\:4f5c\
+\:5176\:5b9e\:4e0d\:7b26\:5408\:5224\:65ad\:53ef\:884c\:7684\:6761\:4ef6"}]}]}\
+]}], "\:ff0c", 
+    "\:4f46\:662f\:4e00\:6837\:8f93\:51fa\:4e86\:8fd9\:6761\:89c4\:5219", 
+    "\:3002", "\[IndentingNewLine]", "\:7ecf\:8fc7\:6d4b\:8bd5", "\:ff0c", 
+    "\:6bdb\:4f1f\:5149\:8dd1\:51fa\:6765\:7684\:7b2c\:4e00\:4e2a\:51fa\:9519\
+\:7684\:6837\:4f8b", "\:ff0c", 
+    "\:6240\:6709maTHmU\:91cc\:9762\:663e\:793a\:7684\:89c4\:5219\:5168\:90e8\
+\:6ca1\:6709\:4f7f\:7528", "\:ff0c", 
+    "\:5b9e\:9645\:4e0a\:662f\:76f4\:63a5\:5d29\:6e83\:4e86", "\:3002", 
+    RowBox[{"\:ff08", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+       "\:5728\:8c03\:7528GeneralIntegrationRuels", ".", 
+        "m\:4e2d\:7684\:7b2c96\:6761\:89c4\:5219\:4e4b\:524d"}], 
+       RowBox[{"\:ff08", "\:6216\:4e4b\:4e2d", "\:ff09"}], 
+       "\:5c31\:5d29\:6e83\:4e86"}], "\:3002"}], "\:ff09"}]}], 
+   "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"\:ff08", "2", "\:ff09"}], 
+     "\:5173\:4e8e\:589e\:52a0\:4e00\:4e2a\:8f93\:51fa\:5f53\:524d\:64cd\:4f5c\
+\:7684\:51fd\:6570\:7684\:64cd\:4f5c"}], "\:3002", "\[IndentingNewLine]", 
+    RowBox[{
+    "\:51fa\:4e8e\:65b9\:4fbf\:7684\:8003\:8651\:6211\:5c06Module\:4e2d\:7684\
+\:64cd\:4f5c\:6539\:4e3a", 
+     RowBox[{
+     "\:ff08", "\:53c2\:89c1\:4e0b\:9762\:7ed9\:7684\:4f8b\:5b50", "\:ff09"}], 
+     RowBox[{"(", 
+      RowBox[{"\:8f93\:51fa\:89c4\:5219", ";", 
+       RowBox[{"\:8f93\:51fa\:5339\:914d\:7684\:51fd\:6570", 
+        RowBox[{"\:ff08", 
+         RowBox[{"\:8fd9\:91cc\:5c31\:662fu", "\:ff0c", 
+          RowBox[{
+          "\:522b\:7684\:5730\:65b9\:53ef\:80fd\:662fx", "^", 
+           "n\:7b49\:7b49"}]}], "\:ff09"}]}], ";", "\:4e0b\:4e00\:6b65"}], 
+      ")"}]}], "\:3002", "\[IndentingNewLine]", 
+    "\:8fd9\:6837\:6bcf\:4e00\:6b65\:64cd\:4f5c\:90fd\:80fd\:591f\:8f93\:51fa\
+\:8fd9\:4e00\:89c4\:5219\:6240\:5904\:7406\:7684\:539f\:51fd\:6570\:662f\:4ec0\
+\:4e48", "\:ff0c", "\:4fbf\:4e8e\:67e5\:9519", "\:3002"}], 
+   "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", "\[IndentingNewLine]", "  ", 
+   RowBox[{
+   "\:6211\:73b0\:5728\:662f\:81ea\:5df1\:4e00\:6bb5\:4e00\:6bb5\:6539\:7684",
+     "\:ff0c", 
+    RowBox[{
+    "\:80fd\:4e0d\:80fd\:9ebb\:70e6\:4f60\:628a\:8fd9\:4e24\:6761\:7ed9\:6bcf\
+\:4e00\:6bb5\:89c4\:5219\:90fd\:6539\:4e00\:4e0b\[Ellipsis]\[Ellipsis]", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+     "P", ".", "S", ".", 
+      "\:76ee\:524d\:67e5\:51fa\:6765ExpnExpand\:8fd9\:4e2a\:51fd\:6570\:91cc\
+\:6709\:95ee\:9898"}]}], "\:ff0c", 
+    "\:5177\:4f53\:5728\:54ea\:91cc\:51fa\:95ee\:9898\:8fd8\:4e0d\:6e05\:695a\
+", "\:3002"}], "\[IndentingNewLine]", "*)"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", "\:539f\:7a0b\:5e8f\:6bb5", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Int", "[", 
+     RowBox[{"u_", ",", "x_Symbol"}], "]"}], " ", ":=", "\n", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Print", "[", "\"\<Int(10th)@TrigSubstitution.m\>\"", "]"}], 
+      ";", "\n", "  ", 
+      RowBox[{"Module", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"v", "=", 
+          RowBox[{"FunctionOfTrig", "[", 
+           RowBox[{"u", ",", "x"}], "]"}]}], "}"}], ",", "\n", "\t", 
+        RowBox[{
+         RowBox[{"Dist", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "1"}], "/", 
+            RowBox[{"Coefficient", "[", 
+             RowBox[{"v", ",", "x", ",", "1"}], "]"}]}], ",", 
+           RowBox[{"Subst", "[", 
+            RowBox[{
+             RowBox[{"Int", "[", 
+              RowBox[{
+               RowBox[{"Regularize", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"SubstFor", "[", 
+                   RowBox[{
+                    RowBox[{"Cot", "[", "v", "]"}], ",", "u", ",", "x"}], 
+                   "]"}], "/", 
+                  RowBox[{"(", 
+                   RowBox[{"1", "+", 
+                    RowBox[{"x", "^", "2"}]}], ")"}]}], ",", "x"}], "]"}], 
+               ",", "x"}], "]"}], ",", "x", ",", 
+             RowBox[{"Cot", "[", "v", "]"}]}], "]"}]}], "]"}], " ", "/;", 
+         "\n", " ", 
+         RowBox[{
+          RowBox[{"NotFalseQ", "[", "v", "]"}], " ", "&&", " ", 
+          RowBox[{"FunctionOfQ", "[", 
+           RowBox[{
+            RowBox[{"Cot", "[", "v", "]"}], ",", "u", ",", "x", ",", "True"}],
+            "]"}], " ", "&&", " ", 
+          RowBox[{"TryPureTanSubst", "[", 
+           RowBox[{"u", ",", "x"}], "]"}]}]}]}], "]"}]}], ")"}]}], 
+   "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.5635871192711143`*^9, 3.5635871629868855`*^9}, {
+  3.5635872258637753`*^9, 3.5635878086845417`*^9}, {3.563590796035554*^9, 
+  3.56359083586717*^9}, {3.5635909273608437`*^9, 3.56359119424804*^9}, {
+  3.563593935777258*^9, 3.5635939863904953`*^9}, {3.5635940475421033`*^9, 
+  3.5635940736615524`*^9}, {3.563594110336776*^9, 3.56359411099253*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", "\:65b0\:7a0b\:5e8f\:6bb5", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"Int", "[", 
+    RowBox[{"u_", ",", "x_Symbol"}], "]"}], " ", ":=", "\n", 
+   RowBox[{"(", 
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"v", "=", 
+        RowBox[{"FunctionOfTrig", "[", 
+         RowBox[{"u", ",", "x"}], "]"}]}], "}"}], ",", "\n", "  ", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Print", "[", "\"\<Int(10th)@TrigSubstitution.m\>\"", "]"}], 
+         ";", "\n", "   ", 
+         RowBox[{"Dist", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "1"}], "/", 
+            RowBox[{"Coefficient", "[", 
+             RowBox[{"v", ",", "x", ",", "1"}], "]"}]}], ",", 
+           RowBox[{"Subst", "[", 
+            RowBox[{
+             RowBox[{"Int", "[", 
+              RowBox[{
+               RowBox[{"Regularize", "[", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"SubstFor", "[", 
+                   RowBox[{
+                    RowBox[{"Cot", "[", "v", "]"}], ",", "u", ",", "x"}], 
+                   "]"}], "/", 
+                  RowBox[{"(", 
+                   RowBox[{"1", "+", 
+                    RowBox[{"x", "^", "2"}]}], ")"}]}], ",", "x"}], "]"}], 
+               ",", "x"}], "]"}], ",", "x", ",", 
+             RowBox[{"Cot", "[", "v", "]"}]}], "]"}]}], "]"}]}], ")"}], " ", "/;",
+        "\n", " ", 
+       RowBox[{
+        RowBox[{"NotFalseQ", "[", "v", "]"}], " ", "&&", " ", 
+        RowBox[{"FunctionOfQ", "[", 
+         RowBox[{
+          RowBox[{"Cot", "[", "v", "]"}], ",", "u", ",", "x", ",", "True"}], 
+         "]"}], " ", "&&", " ", 
+        RowBox[{"TryPureTanSubst", "[", 
+         RowBox[{"u", ",", "x"}], "]"}]}]}]}], "]"}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.5635871333180647`*^9, 3.5635871423917027`*^9}, {
+  3.5635872422650867`*^9, 3.5635872467084074`*^9}}]
+},
+WindowSize->{715, 474},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"8.0 for Microsoft Windows (32-bit) (2011\:5e7410\:670824\
+\:65e5)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 7429, 166, 741, "Input"],
+Cell[7989, 188, 1949, 50, 152, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
